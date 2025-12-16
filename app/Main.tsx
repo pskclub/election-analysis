@@ -162,7 +162,9 @@ interface PartyAnalysisProps {
 }
 
 const PartyAnalysis: React.FC<PartyAnalysisProps> = ({ data }) => {
-    const [selectedPartyId, setSelectedPartyId] = useState<number | string>(data.parties[0]?.id || '');
+    const [selectedPartyId, setSelectedPartyId] = useState<number | string>(
+        data.partyStats.sort((a, b) => b.totalSeat - a.totalSeat)[0]?.id || ''
+    );
     
     const partyStats = useMemo(() => {
         if (!selectedPartyId) return null;
@@ -203,7 +205,9 @@ const PartyAnalysis: React.FC<PartyAnalysisProps> = ({ data }) => {
                     value={selectedPartyId}
                     onChange={(e) => setSelectedPartyId(e.target.value)}
                 >
-                    {data.parties.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+                    {data.partyStats
+                        .sort((a, b) => b.totalSeat - a.totalSeat)
+                        .map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
                 </select>
             </div>
 
@@ -593,7 +597,8 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
 
                 const partyStats: PartyStats[] = Object.values(r.partyScores || {}).map((s: any) => ({
                     ...s, ...(partyMap.get(s.id) || {}),
-                    totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0)
+                    totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0),
+                    totalVotes: s.totalVotes || 0
                 })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
 
                 return {

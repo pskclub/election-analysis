@@ -43,6 +43,7 @@ export interface PartyStats extends Party {
     totalSeat: number;
     areaSeats?: number;
     partyListSeats?: number;
+    totalVotes?: number;
 }
 
 export interface ElectionScores {

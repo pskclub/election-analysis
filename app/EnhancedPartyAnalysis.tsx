@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, AreaChart, Area } from 'recharts';
-import { Flag, Trophy, TrendingUp, MapPin, Target, Users, Award, Zap, Shield, AlertCircle } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Flag, Trophy, TrendingUp, MapPin, Users, Zap, AlertCircle } from 'lucide-react';
 import { AppData } from './types';
 import { fNum, fPercent, analyzeCandidates, analyzeSeatsByCategory } from './utils';
 
@@ -11,7 +11,19 @@ interface EnhancedPartyAnalysisProps {
 }
 
 export const EnhancedPartyAnalysis: React.FC<EnhancedPartyAnalysisProps> = ({ data }) => {
-    const [selectedPartyId, setSelectedPartyId] = useState<number | string>(data.parties[0]?.id || '');
+    // Sort parties by impact (totalSeat) in descending order
+    const sortedParties = useMemo(() => {
+        return [...data.parties].sort((a, b) => {
+            const aStats = data.partyStats.find(ps => ps.id === a.id);
+            const bStats = data.partyStats.find(ps => ps.id === b.id);
+            const aTotalSeat = aStats?.totalSeat || 0;
+            const bTotalSeat = bStats?.totalSeat || 0;
+            return bTotalSeat - aTotalSeat;
+        });
+    }, [data.parties, data.partyStats]);
+
+    // Initialize with the party that has the highest impact (totalSeat)
+    const [selectedPartyId, setSelectedPartyId] = useState<number | string>(sortedParties[0]?.id || '');
     
     const candidateAnalysis = useMemo(() => analyzeCandidates(data), [data]);
     const seatAnalysis = useMemo(() => analyzeSeatsByCategory(data), [data]);
@@ -142,7 +154,7 @@ export const EnhancedPartyAnalysis: React.FC<EnhancedPartyAnalysisProps> = ({ da
                     value={selectedPartyId}
                     onChange={(e) => setSelectedPartyId(e.target.value)}
                 >
-                    {data.parties.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+                    {sortedParties.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
                 </select>
             </div>
 

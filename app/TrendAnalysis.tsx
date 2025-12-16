@@ -37,21 +37,36 @@ export const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ multiYearData }) =
 
     // Calculate party-specific trends
     const partyTrends = useMemo((): PartyTrend[] => {
-        const partyMap = new Map<number, PartyTrend>();
+        // Party name mapping for evolution across years
+        const partyNameMapping: Record<string, string> = {
+            'อนาคตใหม่': 'ก้าวไกล', // Future Forward → Move Forward
+            'พรรคอนาคตใหม่': 'ก้าวไกล',
+        };
+        
+        // Normalize party name
+        const normalizePartyName = (name: string): string => {
+            return partyNameMapping[name] || name;
+        };
+        
+        const partyMap = new Map<string, PartyTrend>(); // Use name as key instead of ID
 
         multiYearData.years.forEach(yearData => {
             yearData.data.partyStats.forEach(partyStat => {
-                if (!partyMap.has(partyStat.id)) {
-                    partyMap.set(partyStat.id, {
+                const normalizedName = normalizePartyName(partyStat.name);
+                
+                if (!partyMap.has(normalizedName)) {
+                    partyMap.set(normalizedName, {
                         partyId: partyStat.id,
-                        partyName: partyStat.name,
+                        partyName: normalizedName,
                         partyColor: partyStat.color,
                         yearlyData: []
                     });
                 }
 
-                const trend = partyMap.get(partyStat.id)!;
-                const totalVotes = yearData.data.candidates
+                const trend = partyMap.get(normalizedName)!;
+                
+                // Use totalVotes from partyStats if available, otherwise sum from candidates
+                const totalVotes = partyStat.totalVotes || yearData.data.candidates
                     .filter(c => c.partyId === partyStat.id)
                     .reduce((sum, c) => sum + c.score, 0);
 
