@@ -62,6 +62,43 @@ export interface AppData {
     electionScores: ElectionScores;
 }
 
+// --- Multi-Year Election Types ---
+
+export interface ElectionYear {
+    year: number;
+    label: string; // e.g., "2566", "2562"
+    description: string; // e.g., "การเลือกตั้งทั่วไป พ.ศ. 2566"
+    date: string; // ISO date string
+    data: AppData;
+}
+
+export interface MultiYearData {
+    years: ElectionYear[];
+    currentYear: number;
+}
+
+export interface TrendData {
+    year: number;
+    label: string;
+    totalVotes: number;
+    turnout: number;
+    totalSeats: number;
+    partySeats: Record<number, number>; // partyId -> seats
+}
+
+export interface PartyTrend {
+    partyId: number;
+    partyName: string;
+    partyColor: string;
+    yearlyData: {
+        year: number;
+        seats: number;
+        votes: number;
+        seatChange?: number;
+        voteChange?: number;
+    }[];
+}
+
 // --- Analysis Types ---
 
 export interface CandidateAnalysis extends Candidate {

@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 // Import types and utilities
-import type { AppData, Region, Province, Party, ElectionArea, Candidate, PartyStats, ElectionScores } from './types';
+import type { AppData, Region, Province, Party, ElectionArea, Candidate, PartyStats, ElectionScores, MultiYearData, ElectionYear } from './types';
 import { fNum } from './utils';
 
 // Import new Phase 1 components
@@ -21,6 +21,7 @@ import { AdvancedFilters } from './AdvancedFilters';
 import { EnhancedOverview } from './EnhancedOverview';
 import { EnhancedRegionalAnalysis } from './EnhancedRegionalAnalysis';
 import { EnhancedPartyAnalysis } from './EnhancedPartyAnalysis';
+import { TrendAnalysis } from './TrendAnalysis';
 
 // --- Configuration ---
 const API_URLS = {
@@ -280,16 +281,24 @@ const PartyAnalysis: React.FC<PartyAnalysisProps> = ({ data }) => {
 };
 
 interface WarRoomDashboardProps {
-    data: AppData;
+    multiYearData: MultiYearData;
     onReset: () => void;
 }
 
-const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) => {
+const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ multiYearData, onReset }) => {
     const [activeTab, setActiveTab] = useState('overview');
+    const [selectedYear, setSelectedYear] = useState(multiYearData.currentYear);
     const [selectedProvince, setSelectedProvince] = useState<number | null>(null);
     const [selectedArea, setSelectedArea] = useState<number | null>(null);
     const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
     const [simulationSwing, setSimulationSwing] = useState(0);
+
+    // Get current year data
+    const currentYearData = useMemo(() => {
+        return multiYearData.years.find(y => y.year === selectedYear);
+    }, [multiYearData, selectedYear]);
+
+    const data = currentYearData?.data || multiYearData.years[0].data;
 
     const filteredAreas = useMemo(() => {
         if (selectedProvince === null) return [];
@@ -424,6 +433,7 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
                             { id: 'target', label: 'เขตเป้าหมาย', sublabel: 'Target Seats', icon: Target },
                             { id: 'filters', label: 'ค้นหาขั้นสูง', sublabel: 'Advanced', icon: Filter },
                             { id: 'intelligence', label: 'เจาะลึกพื้นที่', sublabel: 'Intelligence', icon: Search },
+                            { id: 'trends', label: 'แนวโน้ม', sublabel: 'Trends', icon: Activity },
                         ].map(tab => (
                             <button
                                 key={tab.id}
@@ -489,6 +499,35 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
 
                 {/* Content Area */}
                 <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
+                    {/* Year Selector - Show only if not on trends tab and multiple years available */}
+                    {activeTab !== 'trends' && multiYearData.years.length > 1 && (
+                        <div className="mb-6 bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+                            <div className="flex items-center gap-4 flex-wrap">
+                                <span className="font-bold text-gray-700">เลือกปีการเลือกตั้ง:</span>
+                                <div className="flex gap-2">
+                                    {multiYearData.years.map(year => (
+                                        <button
+                                            key={year.year}
+                                            onClick={() => setSelectedYear(year.year)}
+                                            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                                selectedYear === year.year
+                                                    ? 'bg-blue-600 text-white shadow-md'
+                                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                            }`}
+                                        >
+                                            {year.label}
+                                        </button>
+                                    ))}
+                                </div>
+                                {currentYearData && (
+                                    <span className="text-sm text-gray-500 ml-auto">
+                                        {currentYearData.description}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
                     {activeTab === 'overview' && <EnhancedOverview data={data} />}
                     {activeTab === 'region' && <EnhancedRegionalAnalysis data={data} />}
                     {activeTab === 'party' && <EnhancedPartyAnalysis data={data} />}
@@ -496,6 +535,7 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
                     {activeTab === 'target' && <TargetSeatAnalyzer data={data} />}
                     {activeTab === 'filters' && <AdvancedFilters data={data} />}
                     {activeTab === 'intelligence' && renderIntelligence()}
+                    {activeTab === 'trends' && <TrendAnalysis multiYearData={multiYearData} />}
                 </div>
             </main>
         </div>
@@ -503,7 +543,7 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
 };
 
 interface DataLoaderProps {
-    onDataLoaded: (data: AppData) => void;
+    onDataLoaded: (multiYearData: MultiYearData) => void;
 }
 
 const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
@@ -547,7 +587,7 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
                 totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0)
             })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
 
-            onDataLoaded({
+            const appData: AppData = {
                 regions, 
                 provinces, 
                 parties, 
@@ -555,7 +595,23 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
                 partyStats,
                 electionAreas: (m.electionAreas || []) as ElectionArea[],
                 electionScores: (r.electionScores || {}) as ElectionScores
-            });
+            };
+
+            // Create multi-year data structure with 2566 data
+            const electionYear: ElectionYear = {
+                year: 2566,
+                label: "2566",
+                description: "การเลือกตั้งทั่วไป พ.ศ. 2566",
+                date: "2023-05-14",
+                data: appData
+            };
+
+            const multiYearData: MultiYearData = {
+                years: [electionYear],
+                currentYear: 2566
+            };
+
+            onDataLoaded(multiYearData);
         } catch (e: any) { 
             setError(e.message || "An error occurred"); 
         } finally { 
@@ -582,11 +638,11 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
 };
 
 const Main: React.FC = () => {
-    const [data, setData] = useState<AppData | null>(null);
+    const [multiYearData, setMultiYearData] = useState<MultiYearData | null>(null);
     return (
         <>
             <style>{`@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap'); body { font-family: 'Sarabun', sans-serif; }`}</style>
-            {!data ? <DataLoader onDataLoaded={setData} /> : <WarRoomDashboard data={data} onReset={() => setData(null)} />}
+            {!multiYearData ? <DataLoader onDataLoaded={setMultiYearData} /> : <WarRoomDashboard multiYearData={multiYearData} onReset={() => setMultiYearData(null)} />}
         </>
     );
 };
