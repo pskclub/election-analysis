@@ -15,6 +15,16 @@ export const TargetSeatAnalyzer: React.FC<TargetSeatAnalyzerProps> = ({ data }) 
 
     const seatAnalysis = useMemo(() => analyzeSeatsByCategory(data), [data]);
 
+    const sortedParties = useMemo(() => {
+        return [...data.parties].sort((a, b) => {
+            const aStats = data.partyStats.find(ps => ps.id === a.id);
+            const bStats = data.partyStats.find(ps => ps.id === b.id);
+            const aTotalSeat = aStats?.totalSeat || 0;
+            const bTotalSeat = bStats?.totalSeat || 0;
+            return bTotalSeat - aTotalSeat;
+        });
+    }, [data.parties, data.partyStats]);
+
     const filteredSeats = useMemo(() => {
         let seats = selectedCategory === 'all' ? seatAnalysis.all : seatAnalysis[selectedCategory];
         
@@ -101,7 +111,7 @@ export const TargetSeatAnalyzer: React.FC<TargetSeatAnalyzerProps> = ({ data }) 
                         onChange={(e) => setSelectedPartyId(e.target.value === 'all' ? 'all' : parseInt(e.target.value))}
                     >
                         <option value="all">ทุกพรรค</option>
-                        {data.parties.map(p => (
+                        {sortedParties.map(p => (
                             <option key={p.id} value={p.id}>{p.name}</option>
                         ))}
                     </select>
