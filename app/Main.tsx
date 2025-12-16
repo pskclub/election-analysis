@@ -348,27 +348,45 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ multiYearData, onRe
             {areaAnalytics ? (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-1 space-y-4">
-                        <StatCard title="Winner" value={areaAnalytics.winner.fullName} subtext={areaAnalytics.winner.partyName} icon={Trophy} color="yellow" />
-                        <StatCard title="Margin" value={`+${fNum(areaAnalytics.margin)}`} subtext={`${areaAnalytics.marginPercent.toFixed(1)}% Gap`} icon={Shield} color={areaAnalytics.marginPercent > 10 ? 'green' : 'red'} />
+                        {areaAnalytics.winner ? (
+                            <>
+                                <StatCard title="Winner" value={areaAnalytics.winner.fullName} subtext={areaAnalytics.winner.partyName} icon={Trophy} color="yellow" />
+                                <StatCard title="Margin" value={`+${fNum(areaAnalytics.margin)}`} subtext={`${areaAnalytics.marginPercent.toFixed(1)}% Gap`} icon={Shield} color={areaAnalytics.marginPercent > 10 ? 'green' : 'red'} />
+                            </>
+                        ) : (
+                            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-center">
+                                <AlertTriangle className="mx-auto mb-2 text-yellow-600" size={32} />
+                                <p className="text-yellow-800 font-semibold">ไม่มีข้อมูลคะแนนเสียงรายเขต</p>
+                                <p className="text-yellow-600 text-sm mt-1">ข้อมูลปี 2562 ไม่มีคะแนนเสียงระดับเขตเลือกตั้ง</p>
+                            </div>
+                        )}
                     </div>
                     <div className="lg:col-span-2 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                         <div className="px-6 py-4 border-b border-gray-100 font-bold">ผลการเลือกตั้ง (Simulation Mode)</div>
-                         <table className="w-full text-sm text-left">
-                            <thead className="bg-gray-50 text-gray-500"><tr><th className="px-6 py-3">ผู้สมัคร</th><th className="px-6 py-3 text-right">คะแนน</th><th className="px-6 py-3 text-right">%</th></tr></thead>
-                            <tbody className="divide-y divide-gray-100">
-                                {areaAnalytics.candidates.map(c => (
-                                    <tr key={c.id}>
-                                        <td className="px-6 py-3">
-                                            <div className="font-bold text-gray-800">{c.fullName}</div>
-                                            <div className="text-xs text-gray-500">{c.partyName}</div>
-                                        </td>
-                                        <td className="px-6 py-3 text-right font-mono text-blue-600">{fNum(c.score)}</td>
-                                        <td className="px-6 py-3 text-right text-gray-500">{((c.score/areaAnalytics.totalVotes)*100).toFixed(1)}%</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                         </table>
-                    </div>
+                         {areaAnalytics.candidates.length > 0 ? (
+                             <>
+                                 <div className="px-6 py-4 border-b border-gray-100 font-bold">ผลการเลือกตั้ง (Simulation Mode)</div>
+                                 <table className="w-full text-sm text-left">
+                                     <thead className="bg-gray-50 text-gray-500"><tr><th className="px-6 py-3">ผู้สมัคร</th><th className="px-6 py-3 text-right">คะแนน</th><th className="px-6 py-3 text-right">%</th></tr></thead>
+                                     <tbody className="divide-y divide-gray-100">
+                                         {areaAnalytics.candidates.map(c => (
+                                             <tr key={c.id}>
+                                                 <td className="px-6 py-3">
+                                                     <div className="font-bold text-gray-800">{c.fullName}</div>
+                                                     <div className="text-xs text-gray-500">{c.partyName}</div>
+                                                 </td>
+                                                 <td className="px-6 py-3 text-right font-mono text-blue-600">{fNum(c.score)}</td>
+                                                 <td className="px-6 py-3 text-right text-gray-500">{((c.score/areaAnalytics.totalVotes)*100).toFixed(1)}%</td>
+                                             </tr>
+                                         ))}
+                                     </tbody>
+                                 </table>
+                             </>
+                         ) : (
+                             <div className="px-6 py-12 text-center text-gray-400">
+                                 <p>ไม่มีข้อมูลผู้สมัครในเขตนี้</p>
+                             </div>
+                         )}
+                     </div>
                 </div>
             ) : (
                 <div className="text-center py-20 text-gray-400 bg-white border-2 border-dashed border-gray-200 rounded-xl">เลือกพื้นที่เพื่อเริ่มวิเคราะห์</div>
@@ -554,63 +572,95 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
         setIsLoading(true);
         setError("");
         try {
-            const [masterRes, resultRes] = await Promise.all([
+            // Helper function to process election data
+            const processElectionData = (m: any, r: any): AppData => {
+                const regions: Region[] = Object.values(m.regions || {}).map((v: any) => v as Region);
+                const provinces: Province[] = (m.provinces || []) as Province[];
+                const parties: Party[] = Object.values(m.parties || {}).map((v: any) => ({...v, id: parseInt(v.id || 0)})) as Party[];
+                const partyMap = new Map(parties.map(p => [p.id, p]));
+                
+                const scoreMap = new Map<number, number>();
+                (r.areaBallotScores || []).forEach((area: any) => {
+                    if(area.candidates) area.candidates.forEach((c: any) => scoreMap.set(c.id, c.totalVotes));
+                });
+
+                const candidates: Candidate[] = (m.candidates || []).map((c: any) => ({
+                    ...c,
+                    score: scoreMap.get(c.id) || 0,
+                    partyName: partyMap.get(c.partyId)?.name || 'N/A',
+                    partyColor: partyMap.get(c.partyId)?.color || '#ccc'
+                })) as Candidate[];
+
+                const partyStats: PartyStats[] = Object.values(r.partyScores || {}).map((s: any) => ({
+                    ...s, ...(partyMap.get(s.id) || {}),
+                    totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0)
+                })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
+
+                return {
+                    regions, 
+                    provinces, 
+                    parties, 
+                    candidates, 
+                    partyStats,
+                    electionAreas: (m.electionAreas || []) as ElectionArea[],
+                    electionScores: (r.electionScores || {}) as ElectionScores
+                };
+            };
+
+            // Fetch 2566 data from API
+            const [masterRes2566, resultRes2566] = await Promise.all([
                 fetch(API_URLS.MASTER),
                 fetch(API_URLS.RESULT)
             ]);
 
-            if (!masterRes.ok || !resultRes.ok) throw new Error("Failed to connect to Data API");
+            if (!masterRes2566.ok || !resultRes2566.ok) throw new Error("Failed to connect to Data API");
 
-            const m: any = await masterRes.json();
-            const r: any = await resultRes.json();
+            const m2566: any = await masterRes2566.json();
+            const r2566: any = await resultRes2566.json();
+            const appData2566 = processElectionData(m2566, r2566);
 
-            // Process Data
-            const regions: Region[] = Object.values(m.regions || {}).map((v: any) => v as Region);
-            const provinces: Province[] = (m.provinces || []) as Province[];
-            const parties: Party[] = Object.values(m.parties || {}).map((v: any) => ({...v, id: parseInt(v.id || 0)})) as Party[];
-            const partyMap = new Map(parties.map(p => [p.id, p]));
+            // Try to fetch 2562 data from local files
+            const years: ElectionYear[] = [];
             
-            const scoreMap = new Map<number, number>();
-            (r.areaBallotScores || []).forEach((area: any) => {
-                if(area.candidates) area.candidates.forEach((c: any) => scoreMap.set(c.id, c.totalVotes));
-            });
+            try {
+                const [masterRes2562, resultRes2562] = await Promise.all([
+                    fetch('/data/2562/master-data.json'),
+                    fetch('/data/2562/result.json')
+                ]);
 
-            const candidates: Candidate[] = (m.candidates || []).map((c: any) => ({
-                ...c,
-                score: scoreMap.get(c.id) || 0,
-                partyName: partyMap.get(c.partyId)?.name || 'N/A',
-                partyColor: partyMap.get(c.partyId)?.color || '#ccc'
-            })) as Candidate[];
+                if (masterRes2562.ok && resultRes2562.ok) {
+                    const m2562: any = await masterRes2562.json();
+                    const r2562: any = await resultRes2562.json();
+                    const appData2562 = processElectionData(m2562, r2562);
+                    
+                    years.push({
+                        year: 2562,
+                        label: "2562",
+                        description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
+                        date: "2019-03-24",
+                        data: appData2562
+                    });
+                    console.log('✅ Loaded 2562 election data successfully');
+                }
+            } catch (e) {
+                console.warn('⚠️ Could not load 2562 data, continuing with 2566 only:', e);
+            }
 
-            const partyStats: PartyStats[] = Object.values(r.partyScores || {}).map((s: any) => ({
-                ...s, ...(partyMap.get(s.id) || {}),
-                totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0)
-            })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
-
-            const appData: AppData = {
-                regions, 
-                provinces, 
-                parties, 
-                candidates, 
-                partyStats,
-                electionAreas: (m.electionAreas || []) as ElectionArea[],
-                electionScores: (r.electionScores || {}) as ElectionScores
-            };
-
-            // Create multi-year data structure with 2566 data
-            const electionYear: ElectionYear = {
+            // Add 2566 data
+            years.push({
                 year: 2566,
                 label: "2566",
                 description: "การเลือกตั้งทั่วไป พ.ศ. 2566",
                 date: "2023-05-14",
-                data: appData
-            };
+                data: appData2566
+            });
 
             const multiYearData: MultiYearData = {
-                years: [electionYear],
+                years,
                 currentYear: 2566
             };
 
+            console.log(`📊 Loaded ${years.length} election year(s):`, years.map(y => y.year).join(', '));
             onDataLoaded(multiYearData);
         } catch (e: any) { 
             setError(e.message || "An error occurred"); 
