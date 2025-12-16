@@ -1,82 +1,32 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, 
-    PieChart, Pie, Cell, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis 
+    PieChart, Pie, Cell
 } from 'recharts';
 import { 
-    FileText, BarChart2, Target, TrendingUp, AlertTriangle, 
-    Users, Trophy, Search, MapPin, User, CheckCircle, XCircle, 
-    Edit3, Loader2, Flag, Activity, Zap, Shield, Map as MapIcon, Layout, Filter, CloudLightning, LucideIcon
+    Users, Trophy, Search, MapPin, Flag, Activity, Map as MapIcon, 
+    Layout, Filter, CloudLightning, Loader2, AlertTriangle, Zap, LucideIcon, Target, User, Shield
 } from 'lucide-react';
 
-// --- Type Definitions ---
-interface Region {
-    id: number;
-    name: string;
-}
+// Import types and utilities
+import type { AppData, Region, Province, Party, ElectionArea, Candidate, PartyStats, ElectionScores } from './types';
+import { fNum } from './utils';
 
-interface Province {
-    id: number;
-    name: string;
-    regionId: number;
-}
-
-interface Party {
-    id: number;
-    name: string;
-    color: string;
-}
-
-interface ElectionArea {
-    id: number;
-    name: string;
-    provinceId: number;
-    areaNo: number;
-}
-
-interface Candidate {
-    id: number;
-    fullName: string;
-    partyId: number;
-    electionAreaId: number;
-    score: number;
-    partyName: string;
-    partyColor: string;
-}
-
-interface PartyStats extends Party {
-    totalSeat: number;
-    areaSeats?: number;
-    partyListSeats?: number;
-}
-
-interface ElectionScores {
-    [key: number]: {
-        totalVotes: number;
-        percentVoter: number;
-    };
-}
-
-interface AppData {
-    regions: Region[];
-    provinces: Province[];
-    parties: Party[];
-    candidates: Candidate[];
-    partyStats: PartyStats[];
-    electionAreas: ElectionArea[];
-    electionScores: ElectionScores;
-}
+// Import new Phase 1 components
+import { CandidateDeepDive } from './CandidateDeepDive';
+import { TargetSeatAnalyzer } from './TargetSeatAnalyzer';
+import { AdvancedFilters } from './AdvancedFilters';
+import { EnhancedOverview } from './EnhancedOverview';
+import { EnhancedRegionalAnalysis } from './EnhancedRegionalAnalysis';
+import { EnhancedPartyAnalysis } from './EnhancedPartyAnalysis';
 
 // --- Configuration ---
 const API_URLS = {
     MASTER: "https://storage.googleapis.com/voicetv-election-data-prod/result/master-data.json",
     RESULT: "https://storage.googleapis.com/voicetv-election-data-prod/result/result.json"
 };
-
-// --- Helper Functions ---
-const fNum = (n: number): string => new Intl.NumberFormat('th-TH').format(n);
 
 // --- Sub-Components ---
 
@@ -336,15 +286,14 @@ interface WarRoomDashboardProps {
 
 const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) => {
     const [activeTab, setActiveTab] = useState('overview');
-    
-    // Existing "Intelligence" Logic
-    const [selectedProvince, setSelectedProvince] = useState('');
-    const [selectedArea, setSelectedArea] = useState('');
+    const [selectedProvince, setSelectedProvince] = useState<number | null>(null);
+    const [selectedArea, setSelectedArea] = useState<number | null>(null);
+    const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
     const [simulationSwing, setSimulationSwing] = useState(0);
 
     const filteredAreas = useMemo(() => {
-        if (!selectedProvince) return [];
-        return data.electionAreas.filter(a => a.provinceId === parseInt(selectedProvince)).sort((a,b) => a.areaNo - b.areaNo);
+        if (selectedProvince === null) return [];
+        return data.electionAreas.filter(a => a.provinceId === selectedProvince).sort((a,b) => a.areaNo - b.areaNo);
     }, [selectedProvince, data]);
 
     const areaAnalytics = useMemo(() => {
@@ -360,17 +309,17 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
 
     const renderIntelligence = () => (
         <div className="space-y-6 animate-in fade-in duration-300">
-            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row gap-4 items-center sticky top-20 z-20">
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row gap-4 items-center">
                 <div className="flex items-center gap-2 w-full md:w-auto">
                     <MapPin className="text-gray-400" size={18} />
-                    <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm w-full md:w-64 outline-none" value={selectedProvince} onChange={(e) => { setSelectedProvince(e.target.value); setSelectedArea(''); }}>
+                    <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm w-full md:w-64 outline-none" value={selectedProvince || ''} onChange={(e) => { setSelectedProvince(e.target.value ? parseInt(e.target.value) : null); setSelectedArea(null); }}>
                         <option value="">เลือกจังหวัด (Province)</option>
                         {data.provinces.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
                     </select>
                 </div>
                 <div className="flex items-center gap-2 w-full md:w-auto">
                     <Target className="text-gray-400" size={18} />
-                    <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm w-full md:w-64 outline-none" value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)} disabled={!selectedProvince}>
+                    <select className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm w-full md:w-64 outline-none" value={selectedArea || ''} onChange={(e) => setSelectedArea(e.target.value ? parseInt(e.target.value) : null)} disabled={selectedProvince === null}>
                         <option value="">เลือกเขต (Area)</option>
                         {filteredAreas.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
                     </select>
@@ -418,68 +367,136 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
         </div>
     );
 
+    const handleMenuClick = (tabId: string) => {
+        setActiveTab(tabId);
+        setIsMobileSidebarOpen(false); // Close mobile sidebar after selection
+    };
+
     return (
-        <div className="min-h-screen bg-gray-50 pb-20 font-sans text-gray-900">
-             <header className="bg-white shadow-sm sticky top-0 z-30 border-b border-gray-200">
-                <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-                    <div className="flex items-center gap-3">
-                        <div className="bg-gray-900 text-white p-2 rounded-lg"><Activity size={20} /></div>
-                        <h1 className="font-bold text-lg">War Room <span className="text-gray-400 font-normal text-sm ml-2">Commander Edition</span></h1>
+        <div className="min-h-screen bg-gray-50 flex">
+            {/* Mobile Overlay */}
+            {isMobileSidebarOpen && (
+                <div 
+                    className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+                    onClick={() => setIsMobileSidebarOpen(false)}
+                />
+            )}
+
+            {/* Sidebar */}
+            <aside className={`
+                w-64 bg-white border-r border-gray-200 flex flex-col h-screen
+                fixed lg:sticky top-0 z-50 lg:z-auto
+                transition-transform duration-300 ease-in-out
+                ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+            `}>
+                {/* Logo/Header */}
+                <div className="p-4 border-b border-gray-200">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <div className="bg-gray-900 text-white p-2 rounded-lg">
+                                <Activity size={20} />
+                            </div>
+                            <div>
+                                <h1 className="font-bold text-base">War Room</h1>
+                                <p className="text-xs text-gray-500">Commander Edition</p>
+                            </div>
+                        </div>
+                        {/* Close button for mobile */}
+                        <button
+                            onClick={() => setIsMobileSidebarOpen(false)}
+                            className="lg:hidden p-1 hover:bg-gray-100 rounded"
+                        >
+                            <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
                     </div>
-                    <button onClick={onReset} className="text-sm text-red-500 hover:text-red-700 font-medium">Reset Data</button>
                 </div>
-                <div className="border-t border-gray-100 bg-gray-50/50 backdrop-blur">
-                    <div className="max-w-7xl mx-auto px-4 flex gap-1 overflow-x-auto py-1">
+
+                {/* Navigation */}
+                <nav className="flex-1 overflow-y-auto py-4">
+                    <div className="px-3 space-y-1">
                         {[
-                            { id: 'overview', label: 'ภาพรวม (Overview)', icon: Layout },
-                            { id: 'region', label: 'รายภาค (Regional)', icon: MapIcon }, // Use aliased MapIcon
-                            { id: 'party', label: 'รายพรรค (Party)', icon: Flag },
-                            { id: 'intelligence', label: 'เจาะลึกพื้นที่ (Intelligence)', icon: Search },
+                            { id: 'overview', label: 'ภาพรวม', sublabel: 'Overview', icon: Layout },
+                            { id: 'region', label: 'รายภาค', sublabel: 'Regional', icon: MapIcon },
+                            { id: 'party', label: 'รายพรรค', sublabel: 'Party', icon: Flag },
+                            { id: 'candidate', label: 'รายบุคคล', sublabel: 'Candidate', icon: User },
+                            { id: 'target', label: 'เขตเป้าหมาย', sublabel: 'Target Seats', icon: Target },
+                            { id: 'filters', label: 'ค้นหาขั้นสูง', sublabel: 'Advanced', icon: Filter },
+                            { id: 'intelligence', label: 'เจาะลึกพื้นที่', sublabel: 'Intelligence', icon: Search },
                         ].map(tab => (
-                            <button 
+                            <button
                                 key={tab.id}
-                                onClick={() => setActiveTab(tab.id)}
-                                className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-all flex items-center gap-2 whitespace-nowrap
-                                    ${activeTab === tab.id ? 'border-blue-600 text-blue-600 bg-blue-50/50' : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-100'}`}
+                                onClick={() => handleMenuClick(tab.id)}
+                                className={`w-full text-left px-3 py-2.5 rounded-lg transition-all flex items-center gap-3 group ${
+                                    activeTab === tab.id 
+                                        ? 'bg-blue-50 text-blue-700 font-medium shadow-sm' 
+                                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                }`}
                             >
-                                <tab.icon size={16} />
-                                {tab.label}
+                                <tab.icon 
+                                    size={18} 
+                                    className={activeTab === tab.id ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-600'}
+                                />
+                                <div className="flex-1">
+                                    <div className={`text-sm ${activeTab === tab.id ? 'font-semibold' : 'font-medium'}`}>
+                                        {tab.label}
+                                    </div>
+                                    <div className="text-xs opacity-60">{tab.sublabel}</div>
+                                </div>
+                                {activeTab === tab.id && (
+                                    <div className="w-1 h-8 bg-blue-600 rounded-full absolute right-0" />
+                                )}
                             </button>
                         ))}
                     </div>
-                </div>
-            </header>
+                </nav>
 
-            <main className="max-w-7xl mx-auto px-4 py-6">
-                {activeTab === 'overview' && (
-                    <div className="space-y-6 animate-in fade-in">
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                            <StatCard title="Total Votes" value={fNum(data.electionScores?.[1]?.totalVotes || 0)} icon={Users} />
-                            <StatCard title="Turnout" value={`${data.electionScores?.[1]?.percentVoter || 0}%`} icon={Activity} color="green" />
-                            <StatCard title="Winning Party" value={data.partyStats[0]?.name || '-'} icon={Trophy} color="yellow" />
-                            <StatCard title="Candidates" value={fNum(data.candidates.length)} icon={User} color="indigo" />
+                {/* Footer */}
+                <div className="p-4 border-t border-gray-200">
+                    <button 
+                        onClick={onReset} 
+                        className="w-full px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                    >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        Reset Data
+                    </button>
+                </div>
+            </aside>
+
+            {/* Main Content */}
+            <main className="flex-1 overflow-auto w-full lg:w-auto">
+                {/* Mobile Header with Hamburger */}
+                <div className="lg:hidden sticky top-0 z-30 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+                    <button
+                        onClick={() => setIsMobileSidebarOpen(true)}
+                        className="p-2 hover:bg-gray-100 rounded-lg"
+                    >
+                        <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <div className="flex items-center gap-2">
+                        <div className="bg-gray-900 text-white p-1.5 rounded">
+                            <Activity size={16} />
                         </div>
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                            <h3 className="font-bold mb-4">Parliament Composition</h3>
-                            <div className="h-96">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={data.partyStats.slice(0, 10)} layout="vertical" margin={{left:20}}>
-                                        <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
-                                        <XAxis type="number" />
-                                        <YAxis dataKey="name" type="category" width={120} style={{fontSize:12}} />
-                                        <Tooltip formatter={(val) => fNum(val as number)} />
-                                        <Bar dataKey="totalSeat" fill="#3b82f6" radius={[0,4,4,0]} barSize={24}>
-                                            {data.partyStats.slice(0, 10).map((e,i) => <Cell key={i} fill={e.color || '#ccc'} />)}
-                                        </Bar>
-                                    </BarChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </div>
+                        <span className="font-bold text-sm">War Room</span>
                     </div>
-                )}
-                {activeTab === 'region' && <RegionalAnalysis data={data} />}
-                {activeTab === 'party' && <PartyAnalysis data={data} />}
-                {activeTab === 'intelligence' && renderIntelligence()}
+                    <div className="w-10" /> {/* Spacer for centering */}
+                </div>
+
+                {/* Content Area */}
+                <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
+                    {activeTab === 'overview' && <EnhancedOverview data={data} />}
+                    {activeTab === 'region' && <EnhancedRegionalAnalysis data={data} />}
+                    {activeTab === 'party' && <EnhancedPartyAnalysis data={data} />}
+                    {activeTab === 'candidate' && <CandidateDeepDive data={data} />}
+                    {activeTab === 'target' && <TargetSeatAnalyzer data={data} />}
+                    {activeTab === 'filters' && <AdvancedFilters data={data} />}
+                    {activeTab === 'intelligence' && renderIntelligence()}
+                </div>
             </main>
         </div>
     );
