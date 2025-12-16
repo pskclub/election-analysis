@@ -298,7 +298,7 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ data, onReset }) =>
 
     const areaAnalytics = useMemo(() => {
         if (!selectedProvince || !selectedArea) return null;
-        const cands = data.candidates.filter(c => c.electionAreaId === parseInt(selectedArea));
+        const cands = data.candidates.filter(c => c.electionAreaId === selectedArea);
         const simulatedCands = cands.map(c => ({ ...c, score: Math.floor(c.score * (1 + (simulationSwing/100))) })).sort((a, b) => b.score - a.score);
         const totalVotes = simulatedCands.reduce((sum, c) => sum + c.score, 0);
         const winner = simulatedCands[0];
