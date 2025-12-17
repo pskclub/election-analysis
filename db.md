@@ -1,4 +1,4 @@
-# การออกแบบฐานข้อมูลสำหรับ Political Analytics Platform (Jomsuksit) - Version 2 (Full Support)
+# การออกแบบฐานข้อมูลสำหรับ Political Analytics Platform
 
 เอกสารนี้ระบุโครงสร้างฐานข้อมูล (Database Schema) ที่อัปเดตเพิ่มเติมจากการวิเคราะห์ **Codebase** จริง (`types.ts`, `result.json`) เพื่อให้รองรับการแสดงผลหน้า Dashboard, การคำนวณ Swing Vote, และการเก็บข้อมูลสถิติการเลือกตั้งอย่างละเอียด
 
@@ -189,3 +189,111 @@ erDiagram
 2.  **Calculation**: มี `eligible_voters` ใช้คำนวณ % Turnout `(turnout/eligible)*100`
 3.  **Analysis**: มี `people` แยกจาก `participation` ทำให้ดูประวัติย้ายพรรคได้
 4.  **War Room**: มี `user_simulations` เก็บการตั้งค่าจำลองผล
+
+---
+
+## 6. Technology Recommendation: PostgreSQL vs MongoDB
+
+สำหรับโปรเจกต์ **Political Analytics Platform** นี้ ขอแนะนำให้ใช้ **PostgreSQL** ครับ ด้วยเหตุผลดังนี้:
+
+### ทำไมต้อง PostgreSQL? (The Winner)
+
+1.  **Relation คือหัวใจสำคัญ**: โจทย์ของคุณเน้น "ความสัมพันธ์" (Relationships) มาก
+    *   *ผู้สมัคร* ย้าย *พรรค*
+    *   *พรรค* แตกตัวมาจาก *พรรคเดิม*
+    *   *คน* สังกัด *มุ้ง/บ้านใหญ่*
+    *   การเปรียบเทียบข้ามปี (62 vs 66) ต้องใช้การ `JOIN` ข้อมูลที่ซับซ้อน ซึ่ง SQL ทำได้ดีและเร็วกว่า MongoDB มาก
+
+2.  **Structure + Flexibility (Hybrid)**:
+    *   ข้อมูลเลือกตั้ง (ผลคะแนน, เขต) เป็นข้อมูลที่มีโครงสร้างชัดเจน (Structured) ต้องการความถูกต้องสูง (ACID) เหมาะกับ SQL
+    *   ข้อมูล Social/Profile (การศึกษา, Social Handles) อาจมีความหลากหลาย PostgreSQL มี **`JSONB`** ที่ให้คุณเก็บข้อมูลแบบ NoSQL ได้ในตารางเดียว ทำให้ได้ข้อดีของทั้งสองโลก
+
+3.  **Geospatial (GIS)**:
+    *   การทำ Map Visualization (ขอบเขตเลือกตั้ง) PostgreSQL มี **PostGIS** ซึ่งเป็นมาตรฐานโลกที่เก่งกว่า Geo feature ของ Mongo มาก
+
+4.  **Supabase Integration**:
+    *   Project นี้ดูเหมือนจะใช้ Supabase ซึ่งเป็น Postgres-native ทำให้การจัดการ Authentication, Realtime, และ Edge Functions ทำได้ทันทีโดยไม่ต้อง Setup เพิ่ม
+
+### เมื่อไหร่ถึงควรใช้ MongoDB?
+*   ถ้าคุณเน้นเก็บ "Log โซเชียลมีเดียจำนวนมหาศาล" (เช่น เก็บทุก Comment, ทุก Tweet เป็นล้านๆ record ต่อวัน) โดย*ไม่เน้น*การวิเคราะห์ความสัมพันธ์ตัวบุคคลที่ซับซ้อน แต่กรณีนี้เราเก็บแค่ "Summary Stats" (ยอด Follow รายวัน) ซึ่ง Postgres รับไหวสบายๆ
+
+### สรุป (Conclusion)
+ออกแบบเป็น **PostgreSQL** ดีที่สุดครับ โดยใช้ฟีเจอร์ JSONB มาช่วยในส่วนที่ต้องการความยืดหยุ่น (Social/Extra Data)
+
+---
+
+## 7. ส่วนเสริมเพื่อการวิเคราะห์ขั้นสูงสุด (Maximum Analytics Roadmap)
+
+เพื่อให้ระบบไปถึงจุดที่วิเคราะห์ได้ทั้ง "เชิงลึก-ตื้น" และ "กว้าง-แคบ" อย่างสมบูรณ์ ควรพิจารณาเพิ่ม Module เหล่านี้ในอนาคต:
+
+## 7. ส่วนเสริมเพื่อการวิเคราะห์ขั้นสูงสุด (Maximum Analytics Roadmap)
+
+เพื่อให้ระบบไปถึงจุดที่วิเคราะห์ได้ทั้ง "เชิงลึก-ตื้น" และ "กว้าง-แคบ" อย่างสมบูรณ์ ควรพิจารณาเพิ่ม Module เหล่านี้ในอนาคต:
+
+### 7.1 Money Politics & Assets (เส้นทางการเงินและทรัพย์สิน)
+*วิเคราะห์ท่อน้ำเลี้ยงและความมั่งคั่ง (Follow the Money)*
+
+15. **`asset_declarations` (บัญชีทรัพย์สินหนี้สิน)**
+    *   *Analysis*: ดูความมั่งคั่งที่เพิ่มขึ้น/ลดลง เทียบกับช่วงเวลาที่ดำรงตำแหน่ง
+    *   `id`: PK
+    *   `person_id`: FK -> (**people**)
+    *   `submission_date`: วันที่ยื่นบัญชี (e.g., เข้ารับตำแหน่ง, พ้นตำแหน่ง)
+    *   `total_assets`: มูลค่าทรัพย์สินรวม
+    *   `total_liabilities`: มูลค่าหนี้สินรวม
+    *   `cash_deposits`: เงินฝาก/เงินสด
+    *   `land_value`: มูลค่าที่ดิน
+    *   `source_doc_url`: ลิงก์เอกสาร ป.ป.ช. (PDF)
+
+16. **`party_donations` (เงินบริจาคพรรค)**
+    *   *Analysis*: ใครคือนายทุนพรรค? บริษัทไหนสนับสนุนพรรคไหน?
+    *   `id`: PK
+    *   `party_id`: FK
+    *   `donor_name`: ชื่อผู้บริจาค (บุคคล/นิติบุคคล)
+    *   `amount`: จำนวนเงิน
+    *   `donation_date`: วันที่บริจาค
+    *   `month_year`: เดือน/ปี (สำหรับการ Grouping รายเดือนข่าว กกต.)
+
+### 7.2 Parliamentary Performance (ผลงานในสภา)
+*วิเคราะห์คุณภาพ สส. ไม่ใช่แค่ความนิยม (Performance vs Popularity)*
+
+17. **`parliament_votes` (ประวัติการลงมติ)**
+    *   *Analysis*: สส. คนนี้โหวตสวนมติพรรคหรือไม่ (งูเห่า)?
+    *   `id`: PK
+    *   `bill_name`: ชื่อร่างกฎหมาย/ญัตติ
+    *   `vote_date`: วันที่โหวต
+    *   `person_id`: FK
+    *   `vote_choice`: ENUM ('AGREE', 'DISAGREE', 'ABSTAIN', 'ABSENT')
+    *   `is_party_rebel`: Boolean (โหวตสวนมติพรรคหรือไม่)
+
+18. **`parliament_motions` (กระทู้/การปรึกษาหารือ)**
+    *   *Analysis*: Active แค่ไหนในสภา เน้นเรื่องอะไร
+    *   `id`: PK
+    *   `person_id`: FK
+    *   `topic`: หัวข้อกระทู้
+    *   `type`: ENUM ('ปรึกษาหารือ', 'กระทู้สด', 'กระทู้ทั่วไป')
+    *   `date`: วันที่ตั้งกระทู้
+    *   `tags`: Array/JSON (e.g., ["น้ำท่วม", "ราคาข้าว"])
+
+### 7.3 Procurement & Business Connections (เครือข่ายธุรกิจ)
+*วิเคราะห์ผลประโยชน์ทับซ้อน (Conflict of Interest)*
+
+19. **`business_holdings` (การถือหุ้นธุรกิจ)**
+    *   `id`: PK
+    *   `person_id`: FK
+    *   `company_name`: ชื่อบริษัท
+    *   `company_reg_id`: เลขทะเบียนนิติบุคคล (สำคัญสำหรับเชื่อมโยง Database กรมพัฒน์ฯ)
+    *   `shares_percent`: % การถือหุ้น
+    *   `role`: ตำแหน่ง (กรรมการ/ผู้ถือหุ้น)
+    *   `status`: 'ACTIVE' | 'RESIGNED' (ลาออกก่อนรับตำแหน่งหรือไม่)
+
+20. **`government_contracts` (การจัดซื้อจัดจ้าง)**
+    *   *Analysis*: บริษัทนี้ได้งานรัฐหรือไม่
+    *   `id`: PK
+    *   `project_name`: ชื่อโครงการ
+    *   `agency_name`: หน่วยงานเจ้าของโครงการ (e.g., กรมทางหลวง)
+    *   `winner_company_id`: เลขทะเบียนนิติบุคคลผู้ชนะประมูล
+    *   `contract_amount`: มูลค่าสัญญา
+    *   `contract_date`: วันที่ทำสัญญา
+    *   `related_politician_id`: FK (Link แบบ Manual หรือ Heuristic ว่าเกี่ยวข้องกับนักการเมืองคนไหน)
+
+---
