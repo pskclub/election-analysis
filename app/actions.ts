@@ -59,7 +59,7 @@ export async function getElectionData(year: number): Promise<AppData | null> {
         name: p.name,
         color: p.color || '#999'
     }));
-    const partyMap = new Map<number, Party>(parties.map(p => [p.id, p]));
+    // const partyMap = new Map<number, Party>(parties.map(p => [p.id, p]));
 
     // Areas
     const electionAreas: ElectionArea[] = areasDb.map(a => ({
@@ -71,83 +71,85 @@ export async function getElectionData(year: number): Promise<AppData | null> {
 
     // Candidates
     const candidates: Candidate[] = participations.map(p => {
-        // Construct a unique-ish ID for frontend key
-        const areaId = p.constituency_id!;
-        const candNo = p.candidate_no || 0;
-        // Logic from loader2562: areaId * 1000 + no? No, parseInt(`${areaId}${pad(candNo)}`)
-        const id = parseInt(`${areaId}${String(candNo).padStart(3, '0')}`);
-        
+        // Use DB ID for uniqueness - Prevents Duplicate Key Error
         return {
-            id: id,
+            id: p.id,
             fullName: `${p.person.first_name} ${p.person.last_name}`,
             partyId: p.party_id,
-            electionAreaId: areaId,
+            electionAreaId: p.constituency_id || 0,
             score: p.score,
             partyName: p.party.name,
             partyColor: p.party.color || '#ccc',
-            isIncumbent: false // Not tracked yet
+            isIncumbent: false
         };
     });
 
     // 5. Calculate Stats (On the fly aggregation)
     
-    // Aggregation
+    // Aggregation for Falback
     const partyScoreAggr: Record<number, number> = {};
     const zoneMaxScore: Record<number, number> = {};
 
     candidates.forEach(c => {
-        // Party Score
-        partyScoreAggr[c.partyId] = (partyScoreAggr[c.partyId] || 0) + c.score;
-
-        // Zone Max
-        const currentMax = zoneMaxScore[c.electionAreaId] || 0;
-        if (c.score > currentMax) zoneMaxScore[c.electionAreaId] = c.score;
+        if(c.electionAreaId > 0) {
+            partyScoreAggr[c.partyId] = (partyScoreAggr[c.partyId] || 0) + c.score;
+            const currentMax = zoneMaxScore[c.electionAreaId] || 0;
+            if (c.score > currentMax) zoneMaxScore[c.electionAreaId] = c.score;
+        }
     });
 
-    // Party Stats
-    // Formula depends on year. For simplicity, we calculate "Constituency Seats" (Winners).
-    // Party List seats requires more logic/data. We will approximate or leave 0 if unknown.
-    // 2562: MMA. 2566: Parallel.
-    
-    // Total Votes (Constituency)
-    const totalVotesAll = Object.values(partyScoreAggr).reduce((a,b)=>a+b, 0);
-    const votePerMP = totalVotesAll / 500; // Assumption for 2562
+    // Party Stats Strategy: Use DB Stored First
+    const partyStatsDb = await prisma.partyElectionStats.findMany({
+        where: { election_id: election.id },
+        include: { party: true }
+    });
 
-    const partyStats: PartyStats[] = parties.map(p => {
-        const score = partyScoreAggr[p.id] || 0;
-        
-        // Count Winners
-        const constituencySeats = candidates.filter(c => 
-            c.partyId === p.id && 
-            c.score > 0 && 
-            c.score === zoneMaxScore[c.electionAreaId]
-        ).length;
+    let partyStats: PartyStats[] = [];
 
-        let totalSeats = constituencySeats;
-        let partyListSeats = 0;
+    if (partyStatsDb.length > 0) {
+         partyStats = partyStatsDb.map(ps => ({
+            id: ps.party.id,
+            name: ps.party.name,
+            color: ps.party.color || '#999',
+            totalVotes: ps.total_votes,
+            areaSeats: ps.constituency_seats,
+            partyListSeats: ps.partylist_seats,
+            totalSeat: ps.total_seats
+        })).sort((a,b) => b.totalSeat - a.totalSeat);
+    } else {
+        // Fallback Logic
+        const totalVotesAll = Object.values(partyScoreAggr).reduce((a,b)=>a+b, 0);
+        const votePerMP = totalVotesAll / 500; 
 
-        if (year === 2562) {
-            const theoretical = Math.round(score / votePerMP);
-            partyListSeats = Math.max(0, theoretical - constituencySeats);
-            totalSeats = constituencySeats + partyListSeats;
-        } else {
-             // 2566: We don't have Party List votes here (yet). 
-             // So Party List Seats = 0 (unless we fetch 'candidate_type=PARTY_LIST' participations?)
-             // My seed only fetched Constituency candidates for 2566 (m.candidates).
-             // So Party List is missing.
-             // We return what we have.
-        }
+        partyStats = parties.map(p => {
+            const score = partyScoreAggr[p.id] || 0;
+            
+            const constituencySeats = candidates.filter(c => 
+                c.partyId === p.id && 
+                c.score > 0 && 
+                c.score === zoneMaxScore[c.electionAreaId]
+            ).length;
 
-        return {
-            id: p.id,
-            name: p.name,
-            color: p.color,
-            totalVotes: score,
-            areaSeats: constituencySeats,
-            partyListSeats: partyListSeats,
-            totalSeat: totalSeats
-        }
-    }).filter(ps => ps.totalVotes > 0 || ps.totalSeat > 0).sort((a,b) => b.totalSeat - a.totalSeat);
+            let totalSeats = constituencySeats;
+            let partyListSeats = 0;
+
+            if (year === 2562) {
+                const theoretical = Math.round(score / votePerMP);
+                partyListSeats = Math.max(0, theoretical - constituencySeats);
+                totalSeats = constituencySeats + partyListSeats;
+            }
+
+            return {
+                id: p.id,
+                name: p.name,
+                color: p.color,
+                totalVotes: score,
+                areaSeats: constituencySeats,
+                partyListSeats: partyListSeats,
+                totalSeat: totalSeats
+            }
+        }).filter(ps => ps.totalVotes > 0 || ps.totalSeat > 0).sort((a,b) => b.totalSeat - a.totalSeat);
+    }
 
     // Election Scores (Turnout)
     const electionScores: ElectionScores = {};
