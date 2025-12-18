@@ -297,9 +297,3 @@ erDiagram
     *   `related_politician_id`: FK (Link แบบ Manual หรือ Heuristic ว่าเกี่ยวข้องกับนักการเมืองคนไหน)
 
 ---
-
-username = doadmin
-host = db-postgresql-political-do-user-3696149-0.m.db.ondigitalocean.com
-port = 25060
-database = defaultdb
-sslmode = require
