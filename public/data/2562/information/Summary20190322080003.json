@@ -1,0 +1,7398 @@
+{
+  "updatedAt": "2019-03-25T13:06:04.384564+07:00",
+  "zoneWinningCandidateMap": {
+    "10": {
+      "1": {
+        "no": 81,
+        "score": 21892,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "กานต์กนิษฐ์",
+        "lastName": "แห้วสันตติ"
+      },
+      "2": {
+        "no": 99,
+        "score": 25774,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "พัชรินทร์",
+        "lastName": "ซำศิริพงษ์"
+      },
+      "3": {
+        "no": 142,
+        "score": 27070,
+        "partyId": 68,
+        "title": "นางสาว",
+        "firstName": "วรรณวรี",
+        "lastName": "ตะล่อมสิน"
+      },
+      "4": {
+        "no": 167,
+        "score": 26693,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "กรณิศ",
+        "lastName": "งามสุคนธ์รัตนา"
+      },
+      "5": {
+        "no": 195,
+        "score": 26583,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "อรพินทร์",
+        "lastName": "เพชรทัต"
+      },
+      "6": {
+        "no": 237,
+        "score": 27967,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ภาดาท์",
+        "lastName": "วรกานนท์"
+      },
+      "7": {
+        "no": 260,
+        "score": 23524,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ธณิกานต์",
+        "lastName": "พรพงษาโรจน์"
+      },
+      "8": {
+        "no": 289,
+        "score": 27979,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "กษิดิ์เดช",
+        "lastName": "ชุติมันต์"
+      },
+      "9": {
+        "no": 327,
+        "score": 33227,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สิระ",
+        "lastName": "เจนจาคะ"
+      },
+      "10": {
+        "no": 352,
+        "score": 29624,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "การุณ",
+        "lastName": "โหสกุล"
+      },
+      "11": {
+        "no": 392,
+        "score": 33323,
+        "partyId": 8,
+        "title": "นาวาอากาศเอก",
+        "firstName": "อนุดิษฐ์",
+        "lastName": "นาครทรรพ"
+      },
+      "12": {
+        "no": 419,
+        "score": 28969,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "อนุสรณ์",
+        "lastName": "ปั้นทอง"
+      },
+      "13": {
+        "no": 453,
+        "score": 26037,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ฐิติภัสร์",
+        "lastName": "โชติเดชาชัยนันต์"
+      },
+      "14": {
+        "no": 480,
+        "score": 29930,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "พลภูมิ",
+        "lastName": "วิภัติภูมิประเทศ"
+      },
+      "15": {
+        "no": 520,
+        "score": 30407,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ชาญวิทย์",
+        "lastName": "วิภูศิริ"
+      },
+      "16": {
+        "no": 546,
+        "score": 30477,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จิรายุ",
+        "lastName": "ห่วงทรัพย์"
+      },
+      "17": {
+        "no": 581,
+        "score": 23811,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ศิริพงษ์",
+        "lastName": "รัสมี"
+      },
+      "18": {
+        "no": 622,
+        "score": 33825,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "ธีรรัตน์",
+        "lastName": "สำเร็จวาณิชย์"
+      },
+      "19": {
+        "no": 645,
+        "score": 26866,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ประสิทธิ์",
+        "lastName": "มะหะหมัด"
+      },
+      "20": {
+        "no": 668,
+        "score": 39289,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "มณฑล",
+        "lastName": "โพธิ์คาย"
+      },
+      "21": {
+        "no": 702,
+        "score": 33987,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "สมเกียรติ",
+        "lastName": "ถนอมสินธุ์"
+      },
+      "22": {
+        "no": 731,
+        "score": 30777,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "เท่าพิภพ",
+        "lastName": "ลิ้มจิตรกร"
+      },
+      "23": {
+        "no": 757,
+        "score": 26291,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "โชติพิพัฒน์",
+        "lastName": "เตชะโสภณมณี"
+      },
+      "24": {
+        "no": 790,
+        "score": 36162,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ทศพร",
+        "lastName": "ทองศิริ"
+      },
+      "25": {
+        "no": 821,
+        "score": 32633,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ณัฐชา",
+        "lastName": "บุญไชยอินสวัสดิ์"
+      },
+      "26": {
+        "no": 863,
+        "score": 29059,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วัน",
+        "lastName": "อยู่บำรุง"
+      },
+      "27": {
+        "no": 886,
+        "score": 28304,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "จิรวัฒน์",
+        "lastName": "อรัณยกานนท์"
+      },
+      "28": {
+        "no": 913,
+        "score": 23841,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "กฤชนนท์",
+        "lastName": "อัยยปัญญา"
+      },
+      "29": {
+        "no": 948,
+        "score": 27605,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "สุภาภรณ์",
+        "lastName": "คงวุฒิปัญญา"
+      },
+      "30": {
+        "no": 976,
+        "score": 29968,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "จักรพันธ์",
+        "lastName": "พรนิมิตร"
+      }
+    },
+    "11": {
+      "1": {
+        "no": 9000,
+        "score": 33386,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อัครวัฒน์",
+        "lastName": "อัศวเหม"
+      },
+      "2": {
+        "no": 9027,
+        "score": 34681,
+        "partyId": 83,
+        "title": "ดร.",
+        "firstName": "ยงยุทธ",
+        "lastName": "สุวรรณบุตร"
+      },
+      "3": {
+        "no": 9066,
+        "score": 28057,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ภริม",
+        "lastName": "พูลเจริญ"
+      },
+      "4": {
+        "no": 9088,
+        "score": 32428,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "วุฒินันท์",
+        "lastName": "บุญชู"
+      },
+      "5": {
+        "no": 9115,
+        "score": 41119,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "กรุงศรีวิไล",
+        "lastName": "สุทินเผือก"
+      },
+      "6": {
+        "no": 9144,
+        "score": 26833,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ฐาปกรณ์",
+        "lastName": "กุลเจริญ"
+      },
+      "7": {
+        "no": 9160,
+        "score": 26607,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ไพลิน",
+        "lastName": "เทียนสุวรรณ"
+      }
+    },
+    "12": {
+      "1": {
+        "no": 4673,
+        "score": 30464,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "เจริญ",
+        "lastName": "เรี่ยวแรง"
+      },
+      "2": {
+        "no": 4697,
+        "score": 27651,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จิรพงษ์",
+        "lastName": "ทรงวัชราภรณ์"
+      },
+      "3": {
+        "no": 4735,
+        "score": 31215,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "มานะศักดิ์",
+        "lastName": "จันทร์ประสงค์"
+      },
+      "4": {
+        "no": 4765,
+        "score": 30666,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "มนตรี",
+        "lastName": "ตั้งเจริญถาวร"
+      },
+      "5": {
+        "no": 4793,
+        "score": 31996,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วันชัย",
+        "lastName": "เจริญนนทสิทธิ์"
+      },
+      "6": {
+        "no": 4816,
+        "score": 31399,
+        "partyId": 8,
+        "title": "ดร.",
+        "firstName": "ภณณัฏฐ์",
+        "lastName": "ศรีอินทร์สุทธิ์"
+      }
+    },
+    "13": {
+      "1": {
+        "no": 5405,
+        "score": 40257,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สุรพงษ์",
+        "lastName": "อึ้งอัมพรวิไล"
+      },
+      "2": {
+        "no": 5430,
+        "score": 39929,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศุภชัย",
+        "lastName": "นพขำ"
+      },
+      "3": {
+        "no": 5459,
+        "score": 28576,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "อนาวิล",
+        "lastName": "รัตนสถาพร"
+      },
+      "4": {
+        "no": 5478,
+        "score": 27307,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ชัยยันต์",
+        "lastName": "ผลสุวรรณ์"
+      },
+      "5": {
+        "no": 5510,
+        "score": 33534,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "พรพิมล",
+        "lastName": "ธรรมสาร"
+      },
+      "6": {
+        "no": 5535,
+        "score": 29688,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "พิษณุ",
+        "lastName": "พลธี"
+      }
+    },
+    "14": {
+      "1": {
+        "no": 5843,
+        "score": 31878,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "เกื้อกูล",
+        "lastName": "ด่านชัยวิจิตร"
+      },
+      "2": {
+        "no": 5876,
+        "score": 32958,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นพ",
+        "lastName": "ชีวานันท์"
+      },
+      "3": {
+        "no": 5902,
+        "score": 54628,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สุรศักดิ์",
+        "lastName": "พันธ์เจริญวรกุล"
+      },
+      "4": {
+        "no": 5931,
+        "score": 47667,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จิรทัศ",
+        "lastName": "ไกรเดชา"
+      }
+    },
+    "15": {
+      "1": {
+        "no": 10319,
+        "score": 59998,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ภราดร",
+        "lastName": "ปริศนานันทกุล"
+      }
+    },
+    "16": {
+      "1": {
+        "no": 7795,
+        "score": 29881,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ประทวน",
+        "lastName": "สุทธิอำนวยเดช"
+      },
+      "2": {
+        "no": 7833,
+        "score": 31718,
+        "partyId": 15,
+        "title": "นางสาว",
+        "firstName": "มัลลิกา",
+        "lastName": "จิระพันธุ์วาณิช"
+      },
+      "3": {
+        "no": 7856,
+        "score": 28279,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "อุบลศักดิ์",
+        "lastName": "บัวหลวงงาม"
+      },
+      "4": {
+        "no": 7896,
+        "score": 28986,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "เกียรติ",
+        "lastName": "เหลืองขจรวิทย์"
+      }
+    },
+    "17": {
+      "1": {
+        "no": 9449,
+        "score": 46543,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "โชติวุฒิ",
+        "lastName": "ธนาคมานุสรณ์"
+      }
+    },
+    "18": {
+      "1": {
+        "no": 2262,
+        "score": 39327,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อนุชา",
+        "lastName": "นาคาศัย"
+      },
+      "2": {
+        "no": 2284,
+        "score": 42620,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "มณเฑียร",
+        "lastName": "สงฆ์ประชา"
+      }
+    },
+    "19": {
+      "1": {
+        "no": 9364,
+        "score": 29306,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "กัลยา",
+        "lastName": "รุ่งวิจิตรชัย"
+      },
+      "2": {
+        "no": 9395,
+        "score": 42255,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สมบัติ",
+        "lastName": "อำนาคะ"
+      },
+      "3": {
+        "no": 9417,
+        "score": 31191,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "องอาจ",
+        "lastName": "วงษ์ประยูร"
+      }
+    },
+    "20": {
+      "1": {
+        "no": 2045,
+        "score": 36329,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุชาติ",
+        "lastName": "ชมกลิ่น"
+      },
+      "2": {
+        "no": 2070,
+        "score": 40574,
+        "partyId": 83,
+        "title": "ร้อยเอก",
+        "firstName": "จองชัย",
+        "lastName": "วงศ์ทรายทอง"
+      },
+      "3": {
+        "no": 2098,
+        "score": 51793,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "รณเทพ",
+        "lastName": "อนุวัฒน์"
+      },
+      "4": {
+        "no": 2119,
+        "score": 29635,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สรวุฒิ",
+        "lastName": "เนื่องจำนงค์"
+      },
+      "5": {
+        "no": 2147,
+        "score": 42376,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ขวัญเลิศ",
+        "lastName": "พานิชมาท"
+      },
+      "6": {
+        "no": 2175,
+        "score": 36810,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "จรัส",
+        "lastName": "คุ้มไข่น้ำ"
+      },
+      "7": {
+        "no": 2212,
+        "score": 30160,
+        "partyId": 68,
+        "title": "นางสาว",
+        "firstName": "กวินนาถ",
+        "lastName": "ตาคีย์"
+      },
+      "8": {
+        "no": 2233,
+        "score": 32429,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สะถิระ",
+        "lastName": "เผือกประพันธุ์"
+      }
+    },
+    "21": {
+      "1": {
+        "no": 7554,
+        "score": 30346,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "สาธิต",
+        "lastName": "ปิตุเตชะ"
+      },
+      "2": {
+        "no": 7584,
+        "score": 33101,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "บัญญัติ",
+        "lastName": "เจตนจันทร์"
+      },
+      "3": {
+        "no": 7616,
+        "score": 28780,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ธารา",
+        "lastName": "ปิตุเตชะ"
+      },
+      "4": {
+        "no": 7638,
+        "score": 27780,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สมพงษ์",
+        "lastName": "โสภณ"
+      }
+    },
+    "22": {
+      "1": {
+        "no": 1868,
+        "score": 26413,
+        "partyId": 68,
+        "title": "พันตำรวจโท",
+        "firstName": "ฐนภัทร",
+        "lastName": "กิตติวงศา"
+      },
+      "2": {
+        "no": 1886,
+        "score": 27274,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "จารึก",
+        "lastName": "ศรีอ่อน"
+      },
+      "3": {
+        "no": 1917,
+        "score": 31377,
+        "partyId": 68,
+        "title": "นางสาว",
+        "firstName": "ญาณธิชา",
+        "lastName": "บัวเผื่อน"
+      }
+    },
+    "23": {
+      "1": {
+        "no": 3289,
+        "score": 35173,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ศักดินัย",
+        "lastName": "นุ่มหนู"
+      }
+    },
+    "24": {
+      "1": {
+        "no": 1949,
+        "score": 34057,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "กิตติชัย",
+        "lastName": "เรืองสวัสดิ์"
+      },
+      "2": {
+        "no": 1964,
+        "score": 43378,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ชัยวัฒน์",
+        "lastName": "เป้าเปี่ยมทรัพย์"
+      },
+      "3": {
+        "no": 1993,
+        "score": 30022,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุชาติ",
+        "lastName": "ตันเจริญ"
+      },
+      "4": {
+        "no": 2018,
+        "score": 39799,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "จิรัฏฐ์",
+        "lastName": "ทองสุวรรณ์"
+      }
+    },
+    "25": {
+      "1": {
+        "no": 5638,
+        "score": 36009,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "อำนาจ",
+        "lastName": "วิลาวัลย์"
+      },
+      "2": {
+        "no": 5657,
+        "score": 31685,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ชยุต",
+        "lastName": "ภุมมะกาญจนะ"
+      },
+      "3": {
+        "no": 5687,
+        "score": 33563,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สฤษดิ์",
+        "lastName": "บุตรเนียร"
+      }
+    },
+    "26": {
+      "1": {
+        "no": 3396,
+        "score": 57105,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วุฒิชัย",
+        "lastName": "กิตติธเนศวร"
+      }
+    },
+    "27": {
+      "1": {
+        "no": 9290,
+        "score": 60422,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ฐานิสร์",
+        "lastName": "เทียนทอง"
+      },
+      "2": {
+        "no": 9322,
+        "score": 50969,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ตรีนุช",
+        "lastName": "เทียนทอง"
+      },
+      "3": {
+        "no": 9342,
+        "score": 40465,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุรศักดิ์",
+        "lastName": "ชิงนวรรณ์"
+      }
+    },
+    "30": {
+      "1": {
+        "no": 3676,
+        "score": 24661,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "เกษม",
+        "lastName": "ศุภรานนท์"
+      },
+      "2": {
+        "no": 3718,
+        "score": 26767,
+        "partyId": 10,
+        "title": "นาย",
+        "firstName": "วัชรพล",
+        "lastName": "โตมรศักดิ์"
+      },
+      "3": {
+        "no": 3751,
+        "score": 38406,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ประเสริฐ",
+        "lastName": "จันทรรวงทอง"
+      },
+      "4": {
+        "no": 3780,
+        "score": 38021,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ทวิรัฐ",
+        "lastName": "รัตนเศรษฐ"
+      },
+      "5": {
+        "no": 3824,
+        "score": 31736,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "โกศล",
+        "lastName": "ปัทมะ"
+      },
+      "6": {
+        "no": 3857,
+        "score": 37719,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อธิรัฐ",
+        "lastName": "รัตนเศรษฐ"
+      },
+      "7": {
+        "no": 3895,
+        "score": 34985,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "ทัศนียา",
+        "lastName": "รัตนเศรษฐ"
+      },
+      "8": {
+        "no": 3928,
+        "score": 34328,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "ทัศนาพร",
+        "lastName": "เกษเมธีการุณ"
+      },
+      "9": {
+        "no": 3966,
+        "score": 37074,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "อภิชา",
+        "lastName": "เลิศพชรกมล"
+      },
+      "10": {
+        "no": 3993,
+        "score": 50292,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "พรชัย",
+        "lastName": "อำนวยทรัพย์"
+      },
+      "11": {
+        "no": 4030,
+        "score": 39963,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สมศักดิ์",
+        "lastName": "พันธ์เกษม"
+      },
+      "12": {
+        "no": 4070,
+        "score": 31831,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศิรสิทธิ์",
+        "lastName": "เลิศด้วยลาภ"
+      },
+      "13": {
+        "no": 4112,
+        "score": 34153,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "วิสิทธิ์",
+        "lastName": "พิทยาภรณ์"
+      },
+      "14": {
+        "no": 4147,
+        "score": 26360,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สุชาติ",
+        "lastName": "ภิญโญ"
+      }
+    },
+    "31": {
+      "1": {
+        "no": 5147,
+        "score": 35453,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สนอง",
+        "lastName": "เทพอักษรณรงค์"
+      },
+      "2": {
+        "no": 5179,
+        "score": 30026,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "รังสิกร",
+        "lastName": "ทิมาตฤกะ"
+      },
+      "3": {
+        "no": 5209,
+        "score": 43061,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สมบูรณ์",
+        "lastName": "ซารัมย์"
+      },
+      "4": {
+        "no": 5243,
+        "score": 45566,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "โสภณ",
+        "lastName": "ซารัมย์"
+      },
+      "5": {
+        "no": 5284,
+        "score": 46000,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "อดิพงษ์",
+        "lastName": "ฐิติพิทยา"
+      },
+      "6": {
+        "no": 5309,
+        "score": 40303,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ไตรเทพ",
+        "lastName": "งามกมล"
+      },
+      "7": {
+        "no": 5344,
+        "score": 37183,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "จักรกฤษณ์",
+        "lastName": "ทองศรี"
+      },
+      "8": {
+        "no": 5370,
+        "score": 38549,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "รุ่งโรจน์",
+        "lastName": "ทองศรี"
+      }
+    },
+    "32": {
+      "1": {
+        "no": 9869,
+        "score": 30797,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ปกรณ์",
+        "lastName": "มุ่งเจริญพร"
+      },
+      "2": {
+        "no": 9905,
+        "score": 34164,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ณัฏฐพล",
+        "lastName": "จรัสรพีพงษ์"
+      },
+      "3": {
+        "no": 9941,
+        "score": 28254,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "คุณากร",
+        "lastName": "ปรีชาชนะชัย"
+      },
+      "4": {
+        "no": 9973,
+        "score": 33617,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ตี๋ใหญ่",
+        "lastName": "พูนศรีธนากูล"
+      },
+      "5": {
+        "no": 10005,
+        "score": 44226,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ครูมานิตย์",
+        "lastName": "สังข์พุ่ม"
+      },
+      "6": {
+        "no": 10039,
+        "score": 22491,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สมบัติ",
+        "lastName": "ศรีสุรินทร์"
+      },
+      "7": {
+        "no": 10072,
+        "score": 27351,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ชูศักดิ์",
+        "lastName": "แอกทอง"
+      }
+    },
+    "33": {
+      "1": {
+        "no": 8209,
+        "score": 45597,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สิริพงศ์",
+        "lastName": "อังคสกุลเกียรติ"
+      },
+      "2": {
+        "no": 8236,
+        "score": 47380,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สุรชาติ",
+        "lastName": "ชาญประดิษฐ์"
+      },
+      "3": {
+        "no": 8274,
+        "score": 39095,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วิวัฒน์ชัย",
+        "lastName": "โหตระไวศยะ"
+      },
+      "4": {
+        "no": 8303,
+        "score": 38834,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จาตุรงค์",
+        "lastName": "เพ็งนรพัฒน์"
+      },
+      "5": {
+        "no": 8337,
+        "score": 33614,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ธีระ",
+        "lastName": "ไตรสรณกุล"
+      },
+      "6": {
+        "no": 8375,
+        "score": 30110,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วีระพล",
+        "lastName": "จิตสัมฤทธิ์"
+      },
+      "7": {
+        "no": 8400,
+        "score": 47453,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "อาสพลธ์",
+        "lastName": "สรรณ์ไตรภพ"
+      },
+      "8": {
+        "no": 8440,
+        "score": 48098,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "ผ่องศรี",
+        "lastName": "แซ่จึง"
+      }
+    },
+    "34": {
+      "1": {
+        "no": 10820,
+        "score": 36001,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วรสิทธิ์",
+        "lastName": "กัลป์ตินันท์"
+      },
+      "2": {
+        "no": 10858,
+        "score": 40105,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "วุฒิพงษ์",
+        "lastName": "นามบุตร"
+      },
+      "3": {
+        "no": 10896,
+        "score": 42054,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "กิตติ์ธัญญา",
+        "lastName": "วาจาดี"
+      },
+      "4": {
+        "no": 10936,
+        "score": 21758,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "เอกชัย",
+        "lastName": "ทรงอำนาจเจริญ"
+      },
+      "5": {
+        "no": 10968,
+        "score": 45076,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "รัฐกิตติ์",
+        "lastName": "ผาลีพัฒน์"
+      },
+      "6": {
+        "no": 11009,
+        "score": 31311,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ธนะสิทธิ์",
+        "lastName": "โควสุรัตน์"
+      },
+      "7": {
+        "no": 11043,
+        "score": 33440,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ชูวิทย์",
+        "lastName": "พิทักษ์พรพัลลภ"
+      },
+      "8": {
+        "no": 11087,
+        "score": 23392,
+        "partyId": 1,
+        "title": "นางสาว",
+        "firstName": "แนน บุณย์ธิดา",
+        "lastName": "สมชัย"
+      },
+      "9": {
+        "no": 11117,
+        "score": 31932,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ประภูศักดิ์",
+        "lastName": "จินตะเวช"
+      },
+      "10": {
+        "no": 11154,
+        "score": 34899,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สมคิด",
+        "lastName": "เชื้อคง"
+      }
+    },
+    "35": {
+      "1": {
+        "no": 7062,
+        "score": 32092,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ปิยวัฒน",
+        "lastName": "พันธ์สายเชื้อ"
+      },
+      "2": {
+        "no": 7100,
+        "score": 42946,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "บุญแก้ว",
+        "lastName": "สมวงศ์"
+      },
+      "3": {
+        "no": 7130,
+        "score": 34178,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ธนกร",
+        "lastName": "ไชยกุล"
+      }
+    },
+    "36": {
+      "1": {
+        "no": 2309,
+        "score": 31827,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "โอชิษฐ์",
+        "lastName": "เกียรติก้องชูชัย"
+      },
+      "2": {
+        "no": 2346,
+        "score": 28751,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "เชิงชาย",
+        "lastName": "ชาลีรินทร์"
+      },
+      "3": {
+        "no": 2383,
+        "score": 26983,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สัมฤทธิ์",
+        "lastName": "แทนทรัพย์"
+      },
+      "4": {
+        "no": 2424,
+        "score": 33865,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "มานะ",
+        "lastName": "โลหะวณิชย์"
+      },
+      "5": {
+        "no": 2465,
+        "score": 29966,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "พรเพ็ญ",
+        "lastName": "บุญศิริวัฒนกุล"
+      },
+      "6": {
+        "no": 2507,
+        "score": 30317,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สุรวิทย์",
+        "lastName": "คนสมบูรณ์"
+      }
+    },
+    "37": {
+      "1": {
+        "no": 10347,
+        "score": 24168,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "สมหญิง",
+        "lastName": "บัวบุตร"
+      },
+      "2": {
+        "no": 10381,
+        "score": 25925,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ดะนัย",
+        "lastName": "มะหิพันธ์"
+      }
+    },
+    "38": {
+      "1": {
+        "no": 5078,
+        "score": 34571,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "เชิดพงศ์",
+        "lastName": "ราชป้องขันธ์"
+      },
+      "2": {
+        "no": 5118,
+        "score": 33331,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ไตรรงค์",
+        "lastName": "ติธรรม"
+      }
+    },
+    "39": {
+      "1": {
+        "no": 10213,
+        "score": 35277,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สยาม",
+        "lastName": "หัตถสงเคราะห์"
+      },
+      "2": {
+        "no": 10250,
+        "score": 24652,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ไชยา",
+        "lastName": "พรหมา"
+      },
+      "3": {
+        "no": 10281,
+        "score": 39103,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ณัฐวุฒิ",
+        "lastName": "กองจันทร์ดี"
+      }
+    },
+    "40": {
+      "1": {
+        "no": 1443,
+        "score": 36680,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ฐิตินันท์",
+        "lastName": "แสงนาค"
+      },
+      "2": {
+        "no": 1488,
+        "score": 44090,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "วัฒนา",
+        "lastName": "ช่างเหลา"
+      },
+      "3": {
+        "no": 1526,
+        "score": 33310,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จตุพร",
+        "lastName": "เจริญเชื้อ"
+      },
+      "4": {
+        "no": 1579,
+        "score": 43496,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "มุกดา",
+        "lastName": "พงษ์สมบัติ"
+      },
+      "5": {
+        "no": 1614,
+        "score": 37679,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ภาควัต",
+        "lastName": "ศรีสุรพล"
+      },
+      "6": {
+        "no": 1652,
+        "score": 31121,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สิงหภณ",
+        "lastName": "ดีนาง"
+      },
+      "7": {
+        "no": 1703,
+        "score": 28057,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นวัธ",
+        "lastName": "เตาะเจริญสุข"
+      },
+      "8": {
+        "no": 1740,
+        "score": 52280,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "สรัสนันท์",
+        "lastName": "อรรณนพพร"
+      },
+      "9": {
+        "no": 1779,
+        "score": 49169,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วันนิวัติ",
+        "lastName": "สมบูรณ์"
+      },
+      "10": {
+        "no": 1815,
+        "score": 24691,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "บัลลังก์",
+        "lastName": "อรรณนพพร"
+      }
+    },
+    "41": {
+      "1": {
+        "no": 10402,
+        "score": 29775,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศราวุธ",
+        "lastName": "เพชรพนมพร"
+      },
+      "2": {
+        "no": 10449,
+        "score": 30760,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "อนันต์",
+        "lastName": "ศรีพันธุ์"
+      },
+      "3": {
+        "no": 10484,
+        "score": 34756,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ขจิตร",
+        "lastName": "ชัยนิคม"
+      },
+      "4": {
+        "no": 10521,
+        "score": 45914,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "อาภรณ์",
+        "lastName": "สาราคำ"
+      },
+      "5": {
+        "no": 10565,
+        "score": 37845,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "จุฑาพัตธน์",
+        "lastName": "เมนะสวัสดิ์"
+      },
+      "6": {
+        "no": 10609,
+        "score": 40617,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จักรพรรดิ",
+        "lastName": "ไชยสาส์น"
+      },
+      "7": {
+        "no": 10641,
+        "score": 43669,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "เกรียงศักดิ์",
+        "lastName": "ฝ้ายสีงาม"
+      },
+      "8": {
+        "no": 10680,
+        "score": 55731,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "เทียบจุฑา",
+        "lastName": "ขาวขำ"
+      }
+    },
+    "42": {
+      "1": {
+        "no": 8098,
+        "score": 50813,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "เลิศศักดิ์",
+        "lastName": "พัฒนชัยกุล"
+      },
+      "2": {
+        "no": 8141,
+        "score": 52703,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศรัณย์",
+        "lastName": "ทิมสุวรรณ"
+      },
+      "3": {
+        "no": 8169,
+        "score": 38506,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ธนยศ",
+        "lastName": "ทิมสุวรรณ"
+      }
+    },
+    "43": {
+      "1": {
+        "no": 10115,
+        "score": 31215,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "กฤษฎา",
+        "lastName": "ตันเทอดทิตย์"
+      },
+      "2": {
+        "no": 10151,
+        "score": 25760,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "ชนก",
+        "lastName": "จันทาทอง"
+      },
+      "3": {
+        "no": 10188,
+        "score": 42041,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "เอกธนัช",
+        "lastName": "อินทร์รอด"
+      }
+    },
+    "44": {
+      "1": {
+        "no": 6782,
+        "score": 38308,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "กิตติศักดิ์",
+        "lastName": "คณาสวัสดิ์"
+      },
+      "2": {
+        "no": 6822,
+        "score": 33039,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ไชยวัฒนา",
+        "lastName": "ติณรัตน์"
+      },
+      "3": {
+        "no": 6855,
+        "score": 29735,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ยุทธพงศ์",
+        "lastName": "จรัสเสถียร"
+      },
+      "4": {
+        "no": 6891,
+        "score": 39620,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จิรวัฒน์",
+        "lastName": "ศิริพานิชย์"
+      },
+      "5": {
+        "no": 6922,
+        "score": 44233,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สุทิน",
+        "lastName": "คลังแสง"
+      }
+    },
+    "45": {
+      "1": {
+        "no": 7261,
+        "score": 38744,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "อนุรักษ์",
+        "lastName": "จุรีมาศ"
+      },
+      "2": {
+        "no": 7315,
+        "score": 46241,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ฉลาด",
+        "lastName": "ขามช่วง"
+      },
+      "3": {
+        "no": 7346,
+        "score": 36707,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นิรมิต",
+        "lastName": "สุจารี"
+      },
+      "4": {
+        "no": 7390,
+        "score": 48184,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นิรันดร์",
+        "lastName": "นาเมืองรักษ์"
+      },
+      "5": {
+        "no": 7414,
+        "score": 55971,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "จิราพร",
+        "lastName": "สินธุไพร"
+      },
+      "6": {
+        "no": 7453,
+        "score": 50569,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "กิตติ",
+        "lastName": "สมทรัพย์"
+      },
+      "7": {
+        "no": 7505,
+        "score": 39205,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศักดา",
+        "lastName": "คงเพชร"
+      }
+    },
+    "46": {
+      "1": {
+        "no": 1144,
+        "score": 34489,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "บุญรื่น",
+        "lastName": "ศรีธเรศ"
+      },
+      "2": {
+        "no": 1179,
+        "score": 36581,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วีระวัฒน์",
+        "lastName": "โอสถานุเคราะห์"
+      },
+      "3": {
+        "no": 1217,
+        "score": 31144,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "คมเดช",
+        "lastName": "ไชยศิวามงคล"
+      },
+      "4": {
+        "no": 1244,
+        "score": 43321,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "พีระเพชร",
+        "lastName": "ศิริกุล"
+      },
+      "5": {
+        "no": 1292,
+        "score": 36964,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ประเสริฐ",
+        "lastName": "บุญเรือง"
+      }
+    },
+    "47": {
+      "1": {
+        "no": 8474,
+        "score": 36843,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "อภิชาติ",
+        "lastName": "ตีรสวัสดิชัย"
+      },
+      "2": {
+        "no": 8513,
+        "score": 33512,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นิยม",
+        "lastName": "เวชกามา"
+      },
+      "3": {
+        "no": 8540,
+        "score": 35539,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "พัฒนา",
+        "lastName": "สัพโส"
+      },
+      "4": {
+        "no": 8574,
+        "score": 34050,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "อนุรักษ์",
+        "lastName": "บุญศล"
+      },
+      "5": {
+        "no": 8601,
+        "score": 44597,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "สกุณา",
+        "lastName": "สาระนันท์"
+      },
+      "6": {
+        "no": 8635,
+        "score": 27341,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "เกษม",
+        "lastName": "อุประ"
+      }
+    },
+    "48": {
+      "1": {
+        "no": 3542,
+        "score": 46709,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ศุภชัย",
+        "lastName": "โพธิ์สุ"
+      },
+      "2": {
+        "no": 3562,
+        "score": 40747,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "มนพร",
+        "lastName": "เจริญศรี"
+      },
+      "3": {
+        "no": 3597,
+        "score": 32742,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ไพจิต",
+        "lastName": "ศรีวรขาน"
+      },
+      "4": {
+        "no": 3627,
+        "score": 42973,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ชวลิต",
+        "lastName": "วิชยสุทธิ์"
+      }
+    },
+    "49": {
+      "1": {
+        "no": 6970,
+        "score": 34718,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "อนุรักษ์",
+        "lastName": "ตั้งปณิธานนท์"
+      },
+      "2": {
+        "no": 7004,
+        "score": 32817,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "บุญฐิณ",
+        "lastName": "ประทุมลี"
+      }
+    },
+    "50": {
+      "1": {
+        "no": 2867,
+        "score": 40826,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "ทัศนีย์",
+        "lastName": "บูรณุปกรณ์"
+      },
+      "2": {
+        "no": 2902,
+        "score": 45656,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นพคุณ",
+        "lastName": "รัฐผไท"
+      },
+      "3": {
+        "no": 2945,
+        "score": 60459,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จักรพล",
+        "lastName": "ตั้งสุทธิธรรม"
+      },
+      "4": {
+        "no": 2976,
+        "score": 35659,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วิทยา",
+        "lastName": "ทรงคำ"
+      },
+      "5": {
+        "no": 3015,
+        "score": 39652,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สมพงษ์",
+        "lastName": "อมรวิวัฒน์"
+      },
+      "6": {
+        "no": 3037,
+        "score": 22175,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จุลพันธ์",
+        "lastName": "อมรวิวัฒน์"
+      },
+      "7": {
+        "no": 3084,
+        "score": 26694,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ประสิทธิ์",
+        "lastName": "วุฒินันชัย"
+      },
+      "8": {
+        "no": 3112,
+        "score": 49251,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สุรพล",
+        "lastName": "เกียรติไชยากร"
+      },
+      "9": {
+        "no": 3146,
+        "score": 38302,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศรีเรศ",
+        "lastName": "โกฎคำลือ"
+      }
+    },
+    "51": {
+      "1": {
+        "no": 8044,
+        "score": 49592,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "สงวน",
+        "lastName": "พงษ์มณี"
+      },
+      "2": {
+        "no": 8068,
+        "score": 47682,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "รังสรรค์",
+        "lastName": "มณีรัตน์"
+      }
+    },
+    "52": {
+      "1": {
+        "no": 7927,
+        "score": 34519,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "กิตติกร",
+        "lastName": "โล่ห์สุนทร"
+      },
+      "2": {
+        "no": 7954,
+        "score": 33486,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ไพโรจน์",
+        "lastName": "โล่ห์สุนทร"
+      },
+      "3": {
+        "no": 7986,
+        "score": 47066,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "จรัสฤทธิ์",
+        "lastName": "จันทรสุรินทร์"
+      },
+      "4": {
+        "no": 8012,
+        "score": 40810,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "อิทธิรัตน์",
+        "lastName": "จันทรสุรินทร์"
+      }
+    },
+    "53": {
+      "1": {
+        "no": 10716,
+        "score": 51563,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "กนก",
+        "lastName": "ลิ้มตระกูล"
+      },
+      "2": {
+        "no": 10752,
+        "score": 49120,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ศรัณย์วุฒิ",
+        "lastName": "ศรัณย์เกตุ"
+      }
+    },
+    "54": {
+      "1": {
+        "no": 6661,
+        "score": 69279,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "เอกการ",
+        "lastName": "ซื่อทรงธรรม"
+      },
+      "2": {
+        "no": 6688,
+        "score": 54363,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "กฤติดนัย",
+        "lastName": "สันแก้ว"
+      }
+    },
+    "55": {
+      "1": {
+        "no": 4993,
+        "score": 35306,
+        "partyId": 8,
+        "title": "นาง",
+        "firstName": "สิรินทร",
+        "lastName": "รามสูต"
+      },
+      "2": {
+        "no": 5023,
+        "score": 44977,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ชลน่าน",
+        "lastName": "ศรีแก้ว"
+      },
+      "3": {
+        "no": 5048,
+        "score": 30911,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ณัฐพงษ์",
+        "lastName": "สุปริยศิลป์"
+      }
+    },
+    "56": {
+      "1": {
+        "no": 5963,
+        "score": 50291,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ธรรมนัส",
+        "lastName": "พรหมเผ่า"
+      },
+      "2": {
+        "no": 5979,
+        "score": 35763,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วิสุทธิ์",
+        "lastName": "ไชยณรุณ"
+      },
+      "3": {
+        "no": 6018,
+        "score": 39744,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "จีรเดช",
+        "lastName": "ศรีวิราช"
+      }
+    },
+    "57": {
+      "1": {
+        "no": 2630,
+        "score": 28916,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "เอกภพ",
+        "lastName": "เพียรพิเศษ"
+      },
+      "2": {
+        "no": 2668,
+        "score": 39264,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วิสิษฐ์",
+        "lastName": "เตชะธีราวัฒน์"
+      },
+      "3": {
+        "no": 2705,
+        "score": 51285,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "วิสาร",
+        "lastName": "เตชะธีราวัฒน์"
+      },
+      "4": {
+        "no": 2736,
+        "score": 58886,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "รังสรรค์",
+        "lastName": "วันไชยธนวงศ์"
+      },
+      "5": {
+        "no": 2770,
+        "score": 38718,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "พิเชษฐ์",
+        "lastName": "เชื้อเมืองพาน"
+      },
+      "6": {
+        "no": 2798,
+        "score": 22742,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "พีรเดช",
+        "lastName": "คำสมุทร"
+      },
+      "7": {
+        "no": 2838,
+        "score": 32137,
+        "partyId": 8,
+        "title": "นางสาว",
+        "firstName": "ละออง",
+        "lastName": "ติยะไพรัช"
+      }
+    },
+    "58": {
+      "1": {
+        "no": 7040,
+        "score": 27932,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ปัญญา",
+        "lastName": "จีนาคำ"
+      }
+    },
+    "60": {
+      "1": {
+        "no": 4495,
+        "score": 22394,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ภิญโญ",
+        "lastName": "นิโรจน์"
+      },
+      "2": {
+        "no": 4518,
+        "score": 23149,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "วีระกร",
+        "lastName": "คำประกอบ"
+      },
+      "3": {
+        "no": 4542,
+        "score": 29973,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สัญญา",
+        "lastName": "นิลสุพรรณ"
+      },
+      "4": {
+        "no": 4576,
+        "score": 31936,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "มานพ",
+        "lastName": "ศรีผึ้ง"
+      },
+      "5": {
+        "no": 4611,
+        "score": 33369,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "ทายาท",
+        "lastName": "เกียรติชูศักดิ์"
+      },
+      "6": {
+        "no": 4643,
+        "score": 25019,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "นิโรธ",
+        "lastName": "สุนทรเลขา"
+      }
+    },
+    "61": {
+      "1": {
+        "no": 10775,
+        "score": 53434,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "เจเศรษฐ์",
+        "lastName": "ไทยเศรษฐ์"
+      },
+      "2": {
+        "no": 10799,
+        "score": 32455,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ชาดา",
+        "lastName": "ไทยเศรษฐ์"
+      }
+    },
+    "62": {
+      "1": {
+        "no": 1334,
+        "score": 30012,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ไผ่",
+        "lastName": "ลิกค์"
+      },
+      "2": {
+        "no": 1362,
+        "score": 32543,
+        "partyId": 83,
+        "title": "พันตำรวจโท",
+        "firstName": "ไวพจน์",
+        "lastName": "อาภรณ์รัตน์"
+      },
+      "3": {
+        "no": 1381,
+        "score": 28472,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อนันต์",
+        "lastName": "ผลอำนวย"
+      },
+      "4": {
+        "no": 1412,
+        "score": 28345,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ปริญญา",
+        "lastName": "ฤกษ์หร่าย"
+      }
+    },
+    "63": {
+      "1": {
+        "no": 3315,
+        "score": 40332,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ธนัสถ์",
+        "lastName": "ทวีเกื้อกูลกิจ"
+      },
+      "2": {
+        "no": 3334,
+        "score": 31556,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ชัยวุฒิ",
+        "lastName": "บรรณวัฒน์"
+      },
+      "3": {
+        "no": 3363,
+        "score": 19930,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ภาคภูมิ",
+        "lastName": "บูลย์ประมุข"
+      }
+    },
+    "64": {
+      "1": {
+        "no": 9475,
+        "score": 41696,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "พรรณสิริ",
+        "lastName": "กุลนาถศิริ"
+      },
+      "2": {
+        "no": 9490,
+        "score": 38336,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ชูศักดิ์",
+        "lastName": "คีรีมาศทอง"
+      },
+      "3": {
+        "no": 9525,
+        "score": 33949,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สมเจตน์",
+        "lastName": "ลิมปะพันธุ์"
+      }
+    },
+    "65": {
+      "1": {
+        "no": 6263,
+        "score": 34091,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ปดิพัทธ์",
+        "lastName": "สันติภาดา"
+      },
+      "2": {
+        "no": 6306,
+        "score": 28343,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นพพล",
+        "lastName": "เหลืองทองนารา"
+      },
+      "3": {
+        "no": 6334,
+        "score": 23770,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อนุชา",
+        "lastName": "น้อยวงศ์"
+      },
+      "4": {
+        "no": 6366,
+        "score": 36190,
+        "partyId": 8,
+        "title": "นาย",
+        "firstName": "นิยม",
+        "lastName": "ช่างพินิจ"
+      },
+      "5": {
+        "no": 6403,
+        "score": 26066,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "มานัส",
+        "lastName": "อ่อนอ้าย"
+      }
+    },
+    "66": {
+      "1": {
+        "no": 6174,
+        "score": 24127,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "พรชัย",
+        "lastName": "อินทร์สุข"
+      },
+      "2": {
+        "no": 6207,
+        "score": 21102,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ภูดิท",
+        "lastName": "อินสุวรรณ์"
+      },
+      "3": {
+        "no": 6237,
+        "score": 28944,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุรชาติ",
+        "lastName": "ศรีบุศกร"
+      }
+    },
+    "67": {
+      "1": {
+        "no": 6517,
+        "score": 32339,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "พิมพ์พร",
+        "lastName": "พรพฤฒิพันธุ์"
+      },
+      "2": {
+        "no": 6537,
+        "score": 49789,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "จักรัตน์",
+        "lastName": "พั้วช่วย"
+      },
+      "3": {
+        "no": 6575,
+        "score": 41957,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "วันเพ็ญ",
+        "lastName": "พร้อมพัฒน์"
+      },
+      "4": {
+        "no": 6607,
+        "score": 32404,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุรศักดิ์",
+        "lastName": "อนรรฆพันธ์"
+      },
+      "5": {
+        "no": 6627,
+        "score": 34279,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "เอี่ยม",
+        "lastName": "ทองใจสด"
+      }
+    },
+    "70": {
+      "1": {
+        "no": 7667,
+        "score": 38636,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "กุลวลี",
+        "lastName": "นพอมรบดี"
+      },
+      "2": {
+        "no": 7694,
+        "score": 38176,
+        "partyId": 83,
+        "title": "นาง",
+        "firstName": "บุญยิ่ง",
+        "lastName": "นิติกาญจนา"
+      },
+      "3": {
+        "no": 7723,
+        "score": 45849,
+        "partyId": 83,
+        "title": "นางสาว",
+        "firstName": "ปารีณา",
+        "lastName": "ไกรคุปต์"
+      },
+      "4": {
+        "no": 7742,
+        "score": 35213,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "อัครเดช",
+        "lastName": "วงษ์พิทักษ์โรจน์"
+      },
+      "5": {
+        "no": 7766,
+        "score": 35683,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "บุญลือ",
+        "lastName": "ประเสริฐโสภา"
+      }
+    },
+    "71": {
+      "1": {
+        "no": 1001,
+        "score": 37996,
+        "partyId": 83,
+        "title": "พลเอก",
+        "firstName": "สมชาย",
+        "lastName": "วิษณุวงศ์"
+      },
+      "2": {
+        "no": 1035,
+        "score": 31627,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สมเกียรติ",
+        "lastName": "วอนเพียร"
+      },
+      "3": {
+        "no": 1062,
+        "score": 29706,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ยศวัฒน์",
+        "lastName": "มาไพศาลสิน"
+      },
+      "4": {
+        "no": 1081,
+        "score": 29034,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ธรรมวิชญ์",
+        "lastName": "โพธิพิพิธ"
+      },
+      "5": {
+        "no": 1117,
+        "score": 20414,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อัฏฐพล",
+        "lastName": "โพธิพิพิธ"
+      }
+    },
+    "72": {
+      "1": {
+        "no": 9550,
+        "score": 64216,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "สรชัด",
+        "lastName": "สุจิตต์"
+      },
+      "2": {
+        "no": 9573,
+        "score": 66485,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "ณัฐวุฒิ",
+        "lastName": "ประเสริฐสุวรรณ"
+      },
+      "3": {
+        "no": 9609,
+        "score": 58218,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "ประภัตร",
+        "lastName": "โพธสุธน"
+      },
+      "4": {
+        "no": 9631,
+        "score": 56185,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "เสมอกัน",
+        "lastName": "เที่ยงธรรม"
+      }
+    },
+    "73": {
+      "1": {
+        "no": 3410,
+        "score": 28542,
+        "partyId": 1,
+        "title": "พันโท",
+        "firstName": "สินธพ",
+        "lastName": "แก้วพิจิตร"
+      },
+      "2": {
+        "no": 3447,
+        "score": 25035,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "พาณุวัฒณ์",
+        "lastName": "สะสมทรัพย์"
+      },
+      "3": {
+        "no": 3460,
+        "score": 32617,
+        "partyId": 68,
+        "title": "น.ส.",
+        "firstName": "สุทธวรรณ",
+        "lastName": "สุบรรณ ณ อยุธยา"
+      },
+      "4": {
+        "no": 3495,
+        "score": 30708,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ปฐมพงศ์",
+        "lastName": "สูญจันทร์"
+      },
+      "5": {
+        "no": 3521,
+        "score": 30613,
+        "partyId": 68,
+        "title": "นาง",
+        "firstName": "จุมพิตา",
+        "lastName": "จันทรขจร"
+      }
+    },
+    "74": {
+      "1": {
+        "no": 9214,
+        "score": 28618,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "ทองแดง",
+        "lastName": "เบ็ญจะปัก"
+      },
+      "2": {
+        "no": 9253,
+        "score": 35366,
+        "partyId": 68,
+        "title": "นาย",
+        "firstName": "สมัคร",
+        "lastName": "ป้องวงษ์"
+      },
+      "3": {
+        "no": 9266,
+        "score": 21871,
+        "partyId": 12,
+        "title": "นาย",
+        "firstName": "ปัญญา",
+        "lastName": "ชวนบุญ"
+      }
+    },
+    "75": {
+      "1": {
+        "no": 9198,
+        "score": 25714,
+        "partyId": 1,
+        "title": "นางสาว",
+        "firstName": "รังสิมา",
+        "lastName": "รอดรัศมี"
+      }
+    },
+    "76": {
+      "1": {
+        "no": 6434,
+        "score": 33195,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "กฤษณ์",
+        "lastName": "แก้วอยู่"
+      },
+      "2": {
+        "no": 6455,
+        "score": 32827,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สาธิต",
+        "lastName": "อุ๋ยตระกูล"
+      },
+      "3": {
+        "no": 6484,
+        "score": 45215,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุชาติ",
+        "lastName": "อุสาหะ"
+      }
+    },
+    "77": {
+      "1": {
+        "no": 5560,
+        "score": 27345,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "มนตรี",
+        "lastName": "ปาน้อยนนท์"
+      },
+      "2": {
+        "no": 5578,
+        "score": 31066,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "เฉลิมชัย",
+        "lastName": "ศรีอ่อน"
+      },
+      "3": {
+        "no": 5601,
+        "score": 26524,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ประมวล",
+        "lastName": "พงศ์ถาวราเดช"
+      }
+    },
+    "80": {
+      "1": {
+        "no": 4179,
+        "score": 34272,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "รงค์",
+        "lastName": "บุญสวยขวัญ"
+      },
+      "2": {
+        "no": 4215,
+        "score": 31983,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สัณหพจน์",
+        "lastName": "สุขศรีเมือง"
+      },
+      "3": {
+        "no": 4260,
+        "score": 24816,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "เทพไท",
+        "lastName": "เสนพงศ์"
+      },
+      "4": {
+        "no": 4300,
+        "score": 28966,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ประกอบ",
+        "lastName": "รัตนพันธ์"
+      },
+      "5": {
+        "no": 4333,
+        "score": 29305,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ชินวรณ์",
+        "lastName": "บุณยเกียรติ"
+      },
+      "6": {
+        "no": 4379,
+        "score": 28671,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ชัยชนะ",
+        "lastName": "เดชเดโช"
+      },
+      "7": {
+        "no": 4407,
+        "score": 29239,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สายัณห์",
+        "lastName": "ยุติธรรม"
+      },
+      "8": {
+        "no": 4458,
+        "score": 34992,
+        "partyId": 1,
+        "title": "นางสาว",
+        "firstName": "พิมพ์ภัทรา",
+        "lastName": "วิชัยกุล"
+      }
+    },
+    "81": {
+      "1": {
+        "no": 18,
+        "score": 41192,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "สาคร",
+        "lastName": "เกี่ยวข้อง"
+      },
+      "2": {
+        "no": 36,
+        "score": 38841,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "สฤษฏ์พงษ์",
+        "lastName": "เกี่ยวข้อง"
+      }
+    },
+    "82": {
+      "1": {
+        "no": 6041,
+        "score": 56865,
+        "partyId": 1,
+        "title": "นาง",
+        "firstName": "กันตวรรณ",
+        "lastName": "ตันเถียร"
+      }
+    },
+    "83": {
+      "1": {
+        "no": 6724,
+        "score": 30791,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สุทา",
+        "lastName": "ประทีป ณ ถลาง"
+      },
+      "2": {
+        "no": 6737,
+        "score": 25133,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "นัทธี",
+        "lastName": "ถิ่นสาคู"
+      }
+    },
+    "84": {
+      "1": {
+        "no": 9663,
+        "score": 30173,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ภานุ",
+        "lastName": "ศรีบุศยกาญจน์"
+      },
+      "2": {
+        "no": 9701,
+        "score": 20977,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "วิวรรธน์",
+        "lastName": "นิลวัชรมณี"
+      },
+      "3": {
+        "no": 9725,
+        "score": 43137,
+        "partyId": 1,
+        "title": "นางสาว",
+        "firstName": "วชิราภรณ์",
+        "lastName": "กาญจนะ"
+      },
+      "4": {
+        "no": 9773,
+        "score": 45078,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "สมชาติ",
+        "lastName": "ประดิษฐพร"
+      },
+      "5": {
+        "no": 9799,
+        "score": 41985,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "สินิตย์",
+        "lastName": "เลิศไกร"
+      },
+      "6": {
+        "no": 9842,
+        "score": 40360,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ธีรภัทร",
+        "lastName": "พริ้งศุลกะ"
+      }
+    },
+    "85": {
+      "1": {
+        "no": 7527,
+        "score": 35132,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "คงกฤษ",
+        "lastName": "ฉัตรมาลีรัตน์"
+      }
+    },
+    "86": {
+      "1": {
+        "no": 2536,
+        "score": 40420,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ชุมพล",
+        "lastName": "จุลใส"
+      },
+      "2": {
+        "no": 2565,
+        "score": 31529,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "สราวุธ",
+        "lastName": "อ่อนละมัย"
+      },
+      "3": {
+        "no": 2615,
+        "score": 39250,
+        "partyId": 72,
+        "title": "นาย",
+        "firstName": "สุพล",
+        "lastName": "จุลใส"
+      }
+    },
+    "90": {
+      "1": {
+        "no": 8676,
+        "score": 35430,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "วันชัย",
+        "lastName": "ปริญญาศิริ"
+      },
+      "2": {
+        "no": 8706,
+        "score": 34920,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "ศาสตรา",
+        "lastName": "ศรีปาน"
+      },
+      "3": {
+        "no": 8740,
+        "score": 40812,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "พยม",
+        "lastName": "พรหมเพชร"
+      },
+      "4": {
+        "no": 8775,
+        "score": 30194,
+        "partyId": 83,
+        "title": "ร้อยตำรวจเอก",
+        "firstName": "อรุณ",
+        "lastName": "สวัสดี"
+      },
+      "5": {
+        "no": 8812,
+        "score": 53639,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "เดชอิศม์",
+        "lastName": "ขาวทอง"
+      },
+      "6": {
+        "no": 8845,
+        "score": 26268,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "ถาวร",
+        "lastName": "เสนเนียม"
+      },
+      "7": {
+        "no": 8870,
+        "score": 30612,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ณัฏฐ์ชนน",
+        "lastName": "ศรีก่อเกื้อ"
+      },
+      "8": {
+        "no": 8915,
+        "score": 49748,
+        "partyId": 1,
+        "title": "พลตำรวจตรี",
+        "firstName": "สุรินทร์",
+        "lastName": "ปาลาเร่"
+      }
+    },
+    "91": {
+      "1": {
+        "no": 8944,
+        "score": 32130,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "พิบูลย์",
+        "lastName": "รัชกิจประการ"
+      },
+      "2": {
+        "no": 8970,
+        "score": 48999,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "วรศิษฎ์",
+        "lastName": "เลียงประสิทธิ์"
+      }
+    },
+    "92": {
+      "1": {
+        "no": 3175,
+        "score": 37849,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "นิพันธ์",
+        "lastName": "ศิริธร"
+      },
+      "2": {
+        "no": 3217,
+        "score": 45431,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "สาทิตย์",
+        "lastName": "วงศ์หนองเตย"
+      },
+      "3": {
+        "no": 3254,
+        "score": 49177,
+        "partyId": 1,
+        "title": "น.ส.",
+        "firstName": "สุณัฐชา",
+        "lastName": "โล่สถาพรพิพิธ"
+      }
+    },
+    "93": {
+      "1": {
+        "no": 6080,
+        "score": 38097,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ภูมิศิษฏ์",
+        "lastName": "คงมี"
+      },
+      "2": {
+        "no": 6111,
+        "score": 45678,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "ฉลอง",
+        "lastName": "เทอดวีระพงศ์"
+      },
+      "3": {
+        "no": 6140,
+        "score": 33093,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "นริศ",
+        "lastName": "ขำนุรักษ์"
+      }
+    },
+    "94": {
+      "1": {
+        "no": 5705,
+        "score": 18130,
+        "partyId": 1,
+        "title": "นาย",
+        "firstName": "อันวาร์",
+        "lastName": "สาและ"
+      },
+      "2": {
+        "no": 5737,
+        "score": 16180,
+        "partyId": 15,
+        "title": "นาย",
+        "firstName": "อับดุลบาซิม",
+        "lastName": "อาบู"
+      },
+      "3": {
+        "no": 5773,
+        "score": 35253,
+        "partyId": 78,
+        "title": "นาย",
+        "firstName": "อนุมัติ",
+        "lastName": "ซูสารอ"
+      },
+      "4": {
+        "no": 5812,
+        "score": 27419,
+        "partyId": 78,
+        "title": "นาย",
+        "firstName": "สมมุติ",
+        "lastName": "เบ็ญจลักษณ์"
+      }
+    },
+    "95": {
+      "1": {
+        "no": 7159,
+        "score": 23187,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "อาดิลัน",
+        "lastName": "อาลีอิสเฮาะ"
+      },
+      "2": {
+        "no": 7200,
+        "score": 36213,
+        "partyId": 78,
+        "title": "นาย",
+        "firstName": "ซูการ์โน",
+        "lastName": "มะทา"
+      },
+      "3": {
+        "no": 7235,
+        "score": 35439,
+        "partyId": 78,
+        "title": "นาย",
+        "firstName": "อับดุลอายี",
+        "lastName": "สาแม็ง"
+      }
+    },
+    "96": {
+      "1": {
+        "no": 4848,
+        "score": 30747,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "วัชระ",
+        "lastName": "ยาวอหะซัน"
+      },
+      "2": {
+        "no": 4883,
+        "score": 32683,
+        "partyId": 83,
+        "title": "นาย",
+        "firstName": "สัมพันธ์",
+        "lastName": "มะยูโซ๊ะ"
+      },
+      "3": {
+        "no": 4920,
+        "score": 37914,
+        "partyId": 78,
+        "title": "นาย",
+        "firstName": "กูเฮง",
+        "lastName": "ยาวอหะซัน"
+      },
+      "4": {
+        "no": 4964,
+        "score": 37830,
+        "partyId": 78,
+        "title": "นาย",
+        "firstName": "กมลศักดิ์",
+        "lastName": "ลีวาเมาะ"
+      }
+    }
+  },
+  "zoneStatsMap": {
+    "10": {
+      "1": {
+        "units": 183,
+        "eligible": 126247,
+        "votesTotal": 77010,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 77010,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 206,
+        "eligible": 131102,
+        "votesTotal": 82799,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 82799,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 210,
+        "eligible": 131087,
+        "votesTotal": 81812,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81812,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 186,
+        "eligible": 132196,
+        "votesTotal": 79305,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79305,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 209,
+        "eligible": 164107,
+        "votesTotal": 107037,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107037,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 212,
+        "eligible": 150461,
+        "votesTotal": 100374,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100374,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 234,
+        "eligible": 148662,
+        "votesTotal": 93177,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93177,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 193,
+        "eligible": 151758,
+        "votesTotal": 104377,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 104377,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "9": {
+        "units": 233,
+        "eligible": 171511,
+        "votesTotal": 116748,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 116748,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "10": {
+        "units": 184,
+        "eligible": 137079,
+        "votesTotal": 90536,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90536,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "11": {
+        "units": 201,
+        "eligible": 161370,
+        "votesTotal": 108574,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 108574,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "12": {
+        "units": 208,
+        "eligible": 156673,
+        "votesTotal": 107081,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107081,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "13": {
+        "units": 196,
+        "eligible": 153177,
+        "votesTotal": 99410,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99410,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "14": {
+        "units": 212,
+        "eligible": 156137,
+        "votesTotal": 107418,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107418,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "15": {
+        "units": 184,
+        "eligible": 139617,
+        "votesTotal": 96278,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96278,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "16": {
+        "units": 180,
+        "eligible": 153030,
+        "votesTotal": 104366,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 104366,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "17": {
+        "units": 166,
+        "eligible": 130687,
+        "votesTotal": 86048,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86048,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "18": {
+        "units": 181,
+        "eligible": 136455,
+        "votesTotal": 90726,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90726,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "19": {
+        "units": 192,
+        "eligible": 141466,
+        "votesTotal": 96767,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96767,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "20": {
+        "units": 237,
+        "eligible": 168864,
+        "votesTotal": 109634,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 109634,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "21": {
+        "units": 243,
+        "eligible": 147374,
+        "votesTotal": 94649,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94649,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "22": {
+        "units": 241,
+        "eligible": 160203,
+        "votesTotal": 94437,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94437,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "23": {
+        "units": 221,
+        "eligible": 162788,
+        "votesTotal": 104206,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 104206,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "24": {
+        "units": 187,
+        "eligible": 162426,
+        "votesTotal": 103648,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 103648,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "25": {
+        "units": 176,
+        "eligible": 141373,
+        "votesTotal": 83327,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83327,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "26": {
+        "units": 182,
+        "eligible": 145330,
+        "votesTotal": 99753,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99753,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "27": {
+        "units": 238,
+        "eligible": 166377,
+        "votesTotal": 114700,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 114700,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "28": {
+        "units": 220,
+        "eligible": 157528,
+        "votesTotal": 87521,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87521,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "29": {
+        "units": 216,
+        "eligible": 147799,
+        "votesTotal": 99348,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99348,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "30": {
+        "units": 219,
+        "eligible": 167305,
+        "votesTotal": 106791,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 106791,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "11": {
+      "1": {
+        "units": 172,
+        "eligible": 124673,
+        "votesTotal": 87912,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87912,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 172,
+        "eligible": 156778,
+        "votesTotal": 110126,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 110126,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 198,
+        "eligible": 141830,
+        "votesTotal": 94112,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94112,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 178,
+        "eligible": 171754,
+        "votesTotal": 113398,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 113398,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 229,
+        "eligible": 173036,
+        "votesTotal": 117777,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 117777,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 220,
+        "eligible": 137774,
+        "votesTotal": 95805,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95805,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 167,
+        "eligible": 128100,
+        "votesTotal": 87759,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87759,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "12": {
+      "1": {
+        "units": 203,
+        "eligible": 172586,
+        "votesTotal": 119492,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 119492,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 182,
+        "eligible": 157760,
+        "votesTotal": 104565,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 104565,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 214,
+        "eligible": 170587,
+        "votesTotal": 120931,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 120931,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 221,
+        "eligible": 165934,
+        "votesTotal": 106642,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 106642,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 234,
+        "eligible": 175781,
+        "votesTotal": 122764,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 122764,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 207,
+        "eligible": 159096,
+        "votesTotal": 108871,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 108871,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "13": {
+      "1": {
+        "units": 201,
+        "eligible": 148767,
+        "votesTotal": 100169,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100169,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 220,
+        "eligible": 154349,
+        "votesTotal": 96744,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96744,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 169,
+        "eligible": 138628,
+        "votesTotal": 87998,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87998,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 197,
+        "eligible": 153628,
+        "votesTotal": 105071,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 105071,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 177,
+        "eligible": 156094,
+        "votesTotal": 101870,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101870,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 179,
+        "eligible": 141982,
+        "votesTotal": 97604,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 97604,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "14": {
+      "1": {
+        "units": 235,
+        "eligible": 151034,
+        "votesTotal": 94573,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94573,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 253,
+        "eligible": 152899,
+        "votesTotal": 109248,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 109248,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 268,
+        "eligible": 183980,
+        "votesTotal": 126291,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 126291,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 267,
+        "eligible": 161125,
+        "votesTotal": 110297,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 110297,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "15": {
+      "1": {
+        "units": 474,
+        "eligible": 226924,
+        "votesTotal": 154171,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 154171,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "16": {
+      "1": {
+        "units": 209,
+        "eligible": 151560,
+        "votesTotal": 99510,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99510,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 276,
+        "eligible": 152530,
+        "votesTotal": 107248,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107248,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 254,
+        "eligible": 146447,
+        "votesTotal": 93380,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93380,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 278,
+        "eligible": 151279,
+        "votesTotal": 90900,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90900,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "17": {
+      "1": {
+        "units": 209,
+        "eligible": 170539,
+        "votesTotal": 119281,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 119281,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "18": {
+      "1": {
+        "units": 246,
+        "eligible": 133514,
+        "votesTotal": 85373,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85373,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 257,
+        "eligible": 132616,
+        "votesTotal": 80255,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 80255,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "19": {
+      "1": {
+        "units": 225,
+        "eligible": 168313,
+        "votesTotal": 114991,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 114991,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 254,
+        "eligible": 167568,
+        "votesTotal": 112767,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 112767,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 258,
+        "eligible": 165787,
+        "votesTotal": 119412,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 119412,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "20": {
+      "1": {
+        "units": 178,
+        "eligible": 151106,
+        "votesTotal": 106663,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 106663,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 188,
+        "eligible": 147138,
+        "votesTotal": 103876,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 103876,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 198,
+        "eligible": 139440,
+        "votesTotal": 99584,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99584,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 191,
+        "eligible": 136917,
+        "votesTotal": 90072,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90072,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 194,
+        "eligible": 165579,
+        "votesTotal": 108466,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 108466,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 162,
+        "eligible": 144927,
+        "votesTotal": 93026,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93026,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 137,
+        "eligible": 142425,
+        "votesTotal": 84191,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84191,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 142,
+        "eligible": 127763,
+        "votesTotal": 78898,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 78898,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "21": {
+      "1": {
+        "units": 177,
+        "eligible": 128227,
+        "votesTotal": 71648,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 71648,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 245,
+        "eligible": 140880,
+        "votesTotal": 93680,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93680,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 191,
+        "eligible": 141213,
+        "votesTotal": 93393,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93393,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 166,
+        "eligible": 134514,
+        "votesTotal": 92234,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92234,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "22": {
+      "1": {
+        "units": 233,
+        "eligible": 127497,
+        "votesTotal": 87893,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87893,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 270,
+        "eligible": 139567,
+        "votesTotal": 91131,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91131,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 303,
+        "eligible": 154871,
+        "votesTotal": 101267,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101267,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "23": {
+      "1": {
+        "units": 305,
+        "eligible": 172749,
+        "votesTotal": 113336,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 113336,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "24": {
+      "1": {
+        "units": 199,
+        "eligible": 141354,
+        "votesTotal": 100755,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100755,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 254,
+        "eligible": 138161,
+        "votesTotal": 100110,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100110,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 205,
+        "eligible": 128625,
+        "votesTotal": 84052,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84052,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 233,
+        "eligible": 148921,
+        "votesTotal": 99529,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99529,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "25": {
+      "1": {
+        "units": 230,
+        "eligible": 128381,
+        "votesTotal": 92383,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92383,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 278,
+        "eligible": 130791,
+        "votesTotal": 89557,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89557,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 236,
+        "eligible": 123355,
+        "votesTotal": 83523,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83523,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "26": {
+      "1": {
+        "units": 456,
+        "eligible": 207138,
+        "votesTotal": 140752,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 140752,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "27": {
+      "1": {
+        "units": 247,
+        "eligible": 142069,
+        "votesTotal": 96278,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96278,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 280,
+        "eligible": 141060,
+        "votesTotal": 93969,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93969,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 262,
+        "eligible": 144806,
+        "votesTotal": 94040,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94040,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "30": {
+      "1": {
+        "units": 238,
+        "eligible": 150462,
+        "votesTotal": 100928,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100928,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 230,
+        "eligible": 156723,
+        "votesTotal": 106580,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 106580,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 307,
+        "eligible": 155273,
+        "votesTotal": 103510,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 103510,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 322,
+        "eligible": 148602,
+        "votesTotal": 99534,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99534,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 336,
+        "eligible": 149853,
+        "votesTotal": 89255,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89255,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 369,
+        "eligible": 148238,
+        "votesTotal": 84712,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84712,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 311,
+        "eligible": 147973,
+        "votesTotal": 93398,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93398,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 320,
+        "eligible": 145407,
+        "votesTotal": 95072,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95072,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "9": {
+        "units": 306,
+        "eligible": 148113,
+        "votesTotal": 105016,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 105016,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "10": {
+        "units": 291,
+        "eligible": 144029,
+        "votesTotal": 98907,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 98907,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "11": {
+        "units": 337,
+        "eligible": 147657,
+        "votesTotal": 99913,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99913,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "12": {
+        "units": 273,
+        "eligible": 145099,
+        "votesTotal": 92596,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92596,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "13": {
+        "units": 371,
+        "eligible": 154509,
+        "votesTotal": 97266,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 97266,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "14": {
+        "units": 341,
+        "eligible": 144239,
+        "votesTotal": 90248,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90248,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "31": {
+      "1": {
+        "units": 307,
+        "eligible": 152864,
+        "votesTotal": 83286,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83286,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 322,
+        "eligible": 150273,
+        "votesTotal": 84214,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84214,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 334,
+        "eligible": 155414,
+        "votesTotal": 91959,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91959,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 342,
+        "eligible": 156946,
+        "votesTotal": 96670,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96670,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 319,
+        "eligible": 152404,
+        "votesTotal": 88793,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88793,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 301,
+        "eligible": 153181,
+        "votesTotal": 100462,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100462,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 265,
+        "eligible": 153714,
+        "votesTotal": 91114,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91114,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 270,
+        "eligible": 154142,
+        "votesTotal": 86400,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86400,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "32": {
+      "1": {
+        "units": 290,
+        "eligible": 153949,
+        "votesTotal": 99702,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99702,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 278,
+        "eligible": 155448,
+        "votesTotal": 101403,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101403,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 330,
+        "eligible": 156968,
+        "votesTotal": 93534,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93534,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 320,
+        "eligible": 156787,
+        "votesTotal": 96395,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96395,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 326,
+        "eligible": 157052,
+        "votesTotal": 91678,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91678,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 295,
+        "eligible": 150900,
+        "votesTotal": 85621,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85621,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 288,
+        "eligible": 147477,
+        "votesTotal": 87555,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87555,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "33": {
+      "1": {
+        "units": 337,
+        "eligible": 148552,
+        "votesTotal": 101715,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101715,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 330,
+        "eligible": 145348,
+        "votesTotal": 88549,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88549,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 329,
+        "eligible": 144961,
+        "votesTotal": 86276,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86276,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 275,
+        "eligible": 145928,
+        "votesTotal": 91516,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91516,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 280,
+        "eligible": 143310,
+        "votesTotal": 86350,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86350,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 347,
+        "eligible": 139462,
+        "votesTotal": 85478,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85478,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 399,
+        "eligible": 143076,
+        "votesTotal": 92077,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92077,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 419,
+        "eligible": 139753,
+        "votesTotal": 87002,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87002,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "34": {
+      "1": {
+        "units": 266,
+        "eligible": 161052,
+        "votesTotal": 109383,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 109383,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 347,
+        "eligible": 155871,
+        "votesTotal": 98398,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 98398,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 284,
+        "eligible": 147286,
+        "votesTotal": 99591,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99591,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 230,
+        "eligible": 131152,
+        "votesTotal": 60620,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 60620,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 362,
+        "eligible": 150390,
+        "votesTotal": 93864,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93864,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 283,
+        "eligible": 133775,
+        "votesTotal": 81991,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81991,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 296,
+        "eligible": 133340,
+        "votesTotal": 85241,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85241,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 290,
+        "eligible": 141296,
+        "votesTotal": 89949,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89949,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "9": {
+        "units": 252,
+        "eligible": 138248,
+        "votesTotal": 83667,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83667,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "10": {
+        "units": 341,
+        "eligible": 149147,
+        "votesTotal": 95929,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95929,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "35": {
+      "1": {
+        "units": 297,
+        "eligible": 145823,
+        "votesTotal": 85608,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85608,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 301,
+        "eligible": 142675,
+        "votesTotal": 76811,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 76811,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 294,
+        "eligible": 144405,
+        "votesTotal": 82196,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 82196,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "36": {
+      "1": {
+        "units": 283,
+        "eligible": 147431,
+        "votesTotal": 81830,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81830,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 365,
+        "eligible": 152773,
+        "votesTotal": 83325,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83325,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 310,
+        "eligible": 130706,
+        "votesTotal": 70556,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 70556,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 317,
+        "eligible": 169209,
+        "votesTotal": 82144,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 82144,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 274,
+        "eligible": 146346,
+        "votesTotal": 87992,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87992,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 336,
+        "eligible": 153954,
+        "votesTotal": 85964,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85964,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "37": {
+      "1": {
+        "units": 308,
+        "eligible": 144406,
+        "votesTotal": 92869,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92869,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 321,
+        "eligible": 153929,
+        "votesTotal": 99089,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99089,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "38": {
+      "1": {
+        "units": 302,
+        "eligible": 162217,
+        "votesTotal": 102140,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 102140,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 294,
+        "eligible": 160222,
+        "votesTotal": 95764,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95764,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "39": {
+      "1": {
+        "units": 271,
+        "eligible": 136229,
+        "votesTotal": 84690,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84690,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 264,
+        "eligible": 133612,
+        "votesTotal": 79116,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79116,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 236,
+        "eligible": 130250,
+        "votesTotal": 77026,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 77026,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "40": {
+      "1": {
+        "units": 185,
+        "eligible": 155571,
+        "votesTotal": 107155,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107155,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 241,
+        "eligible": 156606,
+        "votesTotal": 111586,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 111586,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 283,
+        "eligible": 154844,
+        "votesTotal": 99843,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99843,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 283,
+        "eligible": 153698,
+        "votesTotal": 102248,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 102248,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 267,
+        "eligible": 133254,
+        "votesTotal": 80113,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 80113,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 252,
+        "eligible": 138703,
+        "votesTotal": 85152,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85152,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 271,
+        "eligible": 133289,
+        "votesTotal": 84089,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84089,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 311,
+        "eligible": 147249,
+        "votesTotal": 89223,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89223,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "9": {
+        "units": 296,
+        "eligible": 138025,
+        "votesTotal": 82258,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 82258,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "10": {
+        "units": 248,
+        "eligible": 135357,
+        "votesTotal": 80138,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 80138,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "41": {
+      "1": {
+        "units": 232,
+        "eligible": 146021,
+        "votesTotal": 92835,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92835,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 278,
+        "eligible": 156933,
+        "votesTotal": 94641,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94641,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 279,
+        "eligible": 152097,
+        "votesTotal": 85849,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85849,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 266,
+        "eligible": 155130,
+        "votesTotal": 90681,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90681,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 286,
+        "eligible": 153145,
+        "votesTotal": 89885,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89885,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 286,
+        "eligible": 164851,
+        "votesTotal": 97900,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 97900,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 267,
+        "eligible": 151020,
+        "votesTotal": 92454,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92454,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 283,
+        "eligible": 153581,
+        "votesTotal": 91501,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91501,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "42": {
+      "1": {
+        "units": 303,
+        "eligible": 167516,
+        "votesTotal": 116998,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 116998,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 327,
+        "eligible": 167676,
+        "votesTotal": 110466,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 110466,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 379,
+        "eligible": 167284,
+        "votesTotal": 118076,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 118076,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "43": {
+      "1": {
+        "units": 262,
+        "eligible": 136558,
+        "votesTotal": 83314,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83314,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 268,
+        "eligible": 133133,
+        "votesTotal": 69144,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 69144,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 250,
+        "eligible": 135790,
+        "votesTotal": 79153,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79153,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "44": {
+      "1": {
+        "units": 299,
+        "eligible": 158147,
+        "votesTotal": 98939,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 98939,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 386,
+        "eligible": 154068,
+        "votesTotal": 84590,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84590,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 343,
+        "eligible": 152705,
+        "votesTotal": 84157,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84157,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 375,
+        "eligible": 154573,
+        "votesTotal": 92211,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92211,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 374,
+        "eligible": 157949,
+        "votesTotal": 95676,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95676,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "45": {
+      "1": {
+        "units": 337,
+        "eligible": 155773,
+        "votesTotal": 89636,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89636,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 406,
+        "eligible": 152132,
+        "votesTotal": 94037,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94037,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 345,
+        "eligible": 146564,
+        "votesTotal": 89204,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89204,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 378,
+        "eligible": 149780,
+        "votesTotal": 89917,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89917,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 390,
+        "eligible": 148862,
+        "votesTotal": 88430,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88430,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 328,
+        "eligible": 146462,
+        "votesTotal": 91278,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91278,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 360,
+        "eligible": 153244,
+        "votesTotal": 77843,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 77843,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "46": {
+      "1": {
+        "units": 315,
+        "eligible": 154397,
+        "votesTotal": 100941,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100941,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 296,
+        "eligible": 156911,
+        "votesTotal": 101486,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101486,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 343,
+        "eligible": 156234,
+        "votesTotal": 94663,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94663,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 316,
+        "eligible": 157553,
+        "votesTotal": 96047,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96047,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 320,
+        "eligible": 160076,
+        "votesTotal": 96290,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96290,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "47": {
+      "1": {
+        "units": 248,
+        "eligible": 152688,
+        "votesTotal": 99394,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99394,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 278,
+        "eligible": 139056,
+        "votesTotal": 79410,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79410,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 264,
+        "eligible": 147683,
+        "votesTotal": 92990,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92990,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 263,
+        "eligible": 153111,
+        "votesTotal": 88757,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88757,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 284,
+        "eligible": 151201,
+        "votesTotal": 88067,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88067,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 294,
+        "eligible": 150403,
+        "votesTotal": 89588,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89588,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "48": {
+      "1": {
+        "units": 270,
+        "eligible": 139077,
+        "votesTotal": 86732,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86732,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 268,
+        "eligible": 137912,
+        "votesTotal": 84787,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84787,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 273,
+        "eligible": 140086,
+        "votesTotal": 85484,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85484,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 289,
+        "eligible": 140328,
+        "votesTotal": 85941,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85941,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "49": {
+      "1": {
+        "units": 257,
+        "eligible": 136444,
+        "votesTotal": 86641,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86641,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 319,
+        "eligible": 135540,
+        "votesTotal": 89568,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89568,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "50": {
+      "1": {
+        "units": 305,
+        "eligible": 189994,
+        "votesTotal": 124962,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 124962,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 257,
+        "eligible": 142374,
+        "votesTotal": 102581,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 102581,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 312,
+        "eligible": 150657,
+        "votesTotal": 115393,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 115393,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 299,
+        "eligible": 154830,
+        "votesTotal": 111985,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 111985,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 313,
+        "eligible": 151657,
+        "votesTotal": 110566,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 110566,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 177,
+        "eligible": 96262,
+        "votesTotal": 64453,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 64453,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 243,
+        "eligible": 119429,
+        "votesTotal": 83844,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83844,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 377,
+        "eligible": 164327,
+        "votesTotal": 128387,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 128387,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "9": {
+        "units": 335,
+        "eligible": 140784,
+        "votesTotal": 105212,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 105212,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "51": {
+      "1": {
+        "units": 321,
+        "eligible": 168456,
+        "votesTotal": 131045,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 131045,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 358,
+        "eligible": 167687,
+        "votesTotal": 126868,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 126868,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "52": {
+      "1": {
+        "units": 283,
+        "eligible": 156455,
+        "votesTotal": 114461,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 114461,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 298,
+        "eligible": 142953,
+        "votesTotal": 98516,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 98516,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 280,
+        "eligible": 160705,
+        "votesTotal": 114553,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 114553,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 321,
+        "eligible": 164672,
+        "votesTotal": 111451,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 111451,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "53": {
+      "1": {
+        "units": 353,
+        "eligible": 195029,
+        "votesTotal": 128667,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 128667,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 354,
+        "eligible": 176138,
+        "votesTotal": 110448,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 110448,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "54": {
+      "1": {
+        "units": 404,
+        "eligible": 196794,
+        "votesTotal": 138072,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 138072,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 345,
+        "eligible": 177527,
+        "votesTotal": 113120,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 113120,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "55": {
+      "1": {
+        "units": 282,
+        "eligible": 139796,
+        "votesTotal": 100466,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100466,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 344,
+        "eligible": 131281,
+        "votesTotal": 94076,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94076,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 295,
+        "eligible": 118475,
+        "votesTotal": 83113,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83113,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "56": {
+      "1": {
+        "units": 270,
+        "eligible": 130139,
+        "votesTotal": 94968,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94968,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 284,
+        "eligible": 129500,
+        "votesTotal": 88732,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88732,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 294,
+        "eligible": 134298,
+        "votesTotal": 92544,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92544,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "57": {
+      "1": {
+        "units": 223,
+        "eligible": 134853,
+        "votesTotal": 93676,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93676,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 310,
+        "eligible": 139931,
+        "votesTotal": 96861,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96861,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 346,
+        "eligible": 150311,
+        "votesTotal": 107741,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107741,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 338,
+        "eligible": 150315,
+        "votesTotal": 106775,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 106775,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 285,
+        "eligible": 139552,
+        "votesTotal": 93344,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93344,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 204,
+        "eligible": 106724,
+        "votesTotal": 72210,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 72210,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 227,
+        "eligible": 114957,
+        "votesTotal": 73399,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 73399,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "58": {
+      "1": {
+        "units": 458,
+        "eligible": 174412,
+        "votesTotal": 129294,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 129294,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "60": {
+      "1": {
+        "units": 228,
+        "eligible": 141704,
+        "votesTotal": 86897,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86897,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 267,
+        "eligible": 142618,
+        "votesTotal": 77241,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 77241,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 297,
+        "eligible": 142228,
+        "votesTotal": 84353,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84353,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 281,
+        "eligible": 141236,
+        "votesTotal": 87459,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87459,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 288,
+        "eligible": 142566,
+        "votesTotal": 90351,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90351,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 250,
+        "eligible": 133969,
+        "votesTotal": 81352,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81352,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "61": {
+      "1": {
+        "units": 326,
+        "eligible": 128340,
+        "votesTotal": 83220,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83220,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 288,
+        "eligible": 132400,
+        "votesTotal": 79496,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79496,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "62": {
+      "1": {
+        "units": 244,
+        "eligible": 143494,
+        "votesTotal": 88881,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88881,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 296,
+        "eligible": 145172,
+        "votesTotal": 87929,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87929,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 266,
+        "eligible": 138238,
+        "votesTotal": 75536,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 75536,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 283,
+        "eligible": 139761,
+        "votesTotal": 84536,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84536,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "63": {
+      "1": {
+        "units": 288,
+        "eligible": 158935,
+        "votesTotal": 101527,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101527,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 178,
+        "eligible": 116421,
+        "votesTotal": 75962,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 75962,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 194,
+        "eligible": 113751,
+        "votesTotal": 75582,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 75582,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "64": {
+      "1": {
+        "units": 317,
+        "eligible": 158866,
+        "votesTotal": 107081,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107081,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 313,
+        "eligible": 158367,
+        "votesTotal": 98573,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 98573,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 331,
+        "eligible": 165126,
+        "votesTotal": 111022,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 111022,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "65": {
+      "1": {
+        "units": 209,
+        "eligible": 139971,
+        "votesTotal": 91372,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91372,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 239,
+        "eligible": 143884,
+        "votesTotal": 86431,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86431,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 266,
+        "eligible": 141489,
+        "votesTotal": 81911,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81911,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 278,
+        "eligible": 137231,
+        "votesTotal": 82938,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 82938,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 278,
+        "eligible": 130434,
+        "votesTotal": 81906,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81906,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "66": {
+      "1": {
+        "units": 294,
+        "eligible": 145995,
+        "votesTotal": 90847,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90847,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 339,
+        "eligible": 144293,
+        "votesTotal": 83338,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83338,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 343,
+        "eligible": 143130,
+        "votesTotal": 89077,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89077,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "67": {
+      "1": {
+        "units": 311,
+        "eligible": 157773,
+        "votesTotal": 90731,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90731,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 340,
+        "eligible": 158733,
+        "votesTotal": 108461,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 108461,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 343,
+        "eligible": 156499,
+        "votesTotal": 93589,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93589,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 307,
+        "eligible": 155938,
+        "votesTotal": 91259,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91259,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 321,
+        "eligible": 155981,
+        "votesTotal": 89633,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89633,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "70": {
+      "1": {
+        "units": 210,
+        "eligible": 137428,
+        "votesTotal": 100315,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100315,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 220,
+        "eligible": 130411,
+        "votesTotal": 95167,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95167,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 194,
+        "eligible": 136325,
+        "votesTotal": 99877,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99877,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 182,
+        "eligible": 137674,
+        "votesTotal": 96601,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96601,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 200,
+        "eligible": 133968,
+        "votesTotal": 94283,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94283,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "71": {
+      "1": {
+        "units": 213,
+        "eligible": 148284,
+        "votesTotal": 94279,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94279,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 173,
+        "eligible": 112148,
+        "votesTotal": 77528,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 77528,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 238,
+        "eligible": 147979,
+        "votesTotal": 103072,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 103072,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 272,
+        "eligible": 139007,
+        "votesTotal": 91153,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91153,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 136,
+        "eligible": 83628,
+        "votesTotal": 51612,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 51612,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "72": {
+      "1": {
+        "units": 295,
+        "eligible": 174267,
+        "votesTotal": 115574,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 115574,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 309,
+        "eligible": 166681,
+        "votesTotal": 111742,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 111742,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 307,
+        "eligible": 172573,
+        "votesTotal": 125585,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 125585,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 327,
+        "eligible": 163929,
+        "votesTotal": 109950,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 109950,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "73": {
+      "1": {
+        "units": 237,
+        "eligible": 144684,
+        "votesTotal": 81421,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 81421,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 259,
+        "eligible": 142909,
+        "votesTotal": 86996,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86996,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 242,
+        "eligible": 145678,
+        "votesTotal": 85190,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85190,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 221,
+        "eligible": 147338,
+        "votesTotal": 101500,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 101500,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 187,
+        "eligible": 143444,
+        "votesTotal": 92764,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92764,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "74": {
+      "1": {
+        "units": 167,
+        "eligible": 141508,
+        "votesTotal": 96757,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96757,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 165,
+        "eligible": 138723,
+        "votesTotal": 91710,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91710,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 238,
+        "eligible": 144883,
+        "votesTotal": 89827,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 89827,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "75": {
+      "1": {
+        "units": 260,
+        "eligible": 157769,
+        "votesTotal": 106879,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 106879,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "76": {
+      "1": {
+        "units": 222,
+        "eligible": 123818,
+        "votesTotal": 87494,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87494,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 220,
+        "eligible": 130786,
+        "votesTotal": 93220,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93220,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 241,
+        "eligible": 127715,
+        "votesTotal": 92373,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92373,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "77": {
+      "1": {
+        "units": 210,
+        "eligible": 143954,
+        "votesTotal": 94035,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94035,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 200,
+        "eligible": 146057,
+        "votesTotal": 96149,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96149,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 201,
+        "eligible": 126931,
+        "votesTotal": 83140,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 83140,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "80": {
+      "1": {
+        "units": 202,
+        "eligible": 148475,
+        "votesTotal": 93590,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93590,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 375,
+        "eligible": 163995,
+        "votesTotal": 99543,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99543,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 233,
+        "eligible": 151759,
+        "votesTotal": 75228,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 75228,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 238,
+        "eligible": 156411,
+        "votesTotal": 104475,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 104475,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 258,
+        "eligible": 146386,
+        "votesTotal": 94928,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94928,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 222,
+        "eligible": 139455,
+        "votesTotal": 80072,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 80072,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 222,
+        "eligible": 150011,
+        "votesTotal": 93065,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93065,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 263,
+        "eligible": 148575,
+        "votesTotal": 87385,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87385,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "81": {
+      "1": {
+        "units": 276,
+        "eligible": 170951,
+        "votesTotal": 117201,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 117201,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 299,
+        "eligible": 172261,
+        "votesTotal": 118245,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 118245,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "82": {
+      "1": {
+        "units": 346,
+        "eligible": 202831,
+        "votesTotal": 136746,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 136746,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "83": {
+      "1": {
+        "units": 172,
+        "eligible": 145051,
+        "votesTotal": 92256,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92256,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 194,
+        "eligible": 149655,
+        "votesTotal": 94289,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94289,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "84": {
+      "1": {
+        "units": 198,
+        "eligible": 135072,
+        "votesTotal": 87909,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87909,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 230,
+        "eligible": 141642,
+        "votesTotal": 92187,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92187,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 238,
+        "eligible": 131956,
+        "votesTotal": 91843,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91843,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 237,
+        "eligible": 134583,
+        "votesTotal": 91376,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91376,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 230,
+        "eligible": 127355,
+        "votesTotal": 88479,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88479,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 248,
+        "eligible": 132870,
+        "votesTotal": 93463,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93463,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "85": {
+      "1": {
+        "units": 203,
+        "eligible": 135654,
+        "votesTotal": 91295,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91295,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "86": {
+      "1": {
+        "units": 242,
+        "eligible": 133454,
+        "votesTotal": 91826,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91826,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 239,
+        "eligible": 132205,
+        "votesTotal": 92300,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 92300,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 249,
+        "eligible": 131416,
+        "votesTotal": 90332,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 90332,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "90": {
+      "1": {
+        "units": 195,
+        "eligible": 127989,
+        "votesTotal": 86598,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86598,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 215,
+        "eligible": 140848,
+        "votesTotal": 95326,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 95326,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 200,
+        "eligible": 140302,
+        "votesTotal": 99141,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 99141,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 236,
+        "eligible": 126305,
+        "votesTotal": 84346,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 84346,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "5": {
+        "units": 252,
+        "eligible": 147869,
+        "votesTotal": 102578,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 102578,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "6": {
+        "units": 195,
+        "eligible": 126480,
+        "votesTotal": 80894,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 80894,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "7": {
+        "units": 210,
+        "eligible": 123697,
+        "votesTotal": 88004,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88004,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "8": {
+        "units": 242,
+        "eligible": 134809,
+        "votesTotal": 96051,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 96051,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "91": {
+      "1": {
+        "units": 168,
+        "eligible": 110587,
+        "votesTotal": 76831,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 76831,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 196,
+        "eligible": 121009,
+        "votesTotal": 91499,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 91499,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "92": {
+      "1": {
+        "units": 277,
+        "eligible": 166246,
+        "votesTotal": 119528,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 119528,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 322,
+        "eligible": 160230,
+        "votesTotal": 115360,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 115360,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 285,
+        "eligible": 165657,
+        "votesTotal": 114644,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 114644,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "93": {
+      "1": {
+        "units": 248,
+        "eligible": 131751,
+        "votesTotal": 97159,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 97159,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 255,
+        "eligible": 132753,
+        "votesTotal": 100224,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 100224,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 262,
+        "eligible": 147267,
+        "votesTotal": 107855,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 107855,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "94": {
+      "1": {
+        "units": 190,
+        "eligible": 131608,
+        "votesTotal": 86038,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86038,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 203,
+        "eligible": 116660,
+        "votesTotal": 79182,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79182,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 221,
+        "eligible": 120977,
+        "votesTotal": 86548,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 86548,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 189,
+        "eligible": 119267,
+        "votesTotal": 79803,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 79803,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "95": {
+      "1": {
+        "units": 184,
+        "eligible": 121195,
+        "votesTotal": 85061,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 85061,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 181,
+        "eligible": 121865,
+        "votesTotal": 88651,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 88651,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 212,
+        "eligible": 121575,
+        "votesTotal": 82410,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 82410,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    },
+    "96": {
+      "1": {
+        "units": 216,
+        "eligible": 137964,
+        "votesTotal": 93703,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 93703,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "2": {
+        "units": 216,
+        "eligible": 131541,
+        "votesTotal": 87203,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 87203,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "3": {
+        "units": 234,
+        "eligible": 136833,
+        "votesTotal": 94535,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 94535,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      },
+      "4": {
+        "units": 261,
+        "eligible": 145232,
+        "votesTotal": 102814,
+        "votesM": 0,
+        "votesF": 0,
+        "goodVotes": 102814,
+        "badVotes": 0,
+        "noVotes": 0,
+        "progress": 94,
+        "finished": false
+      }
+    }
+  },
+  "partyScoreMap": {
+    "1": 3704654,
+    "2": 10996,
+    "3": 16758,
+    "4": 180,
+    "6": 8348,
+    "7": 15899,
+    "8": 7423361,
+    "9": 28788,
+    "10": 237287,
+    "11": 15759,
+    "12": 736948,
+    "13": 192,
+    "15": 3512446,
+    "17": 4922,
+    "18": 0,
+    "19": 0,
+    "23": 14175,
+    "24": 36850,
+    "28": 571,
+    "29": 52894,
+    "30": 2209,
+    "31": 200097,
+    "33": 6320,
+    "34": 122494,
+    "38": 31634,
+    "39": 771534,
+    "40": 435,
+    "42": 393909,
+    "46": 25057,
+    "47": 26188,
+    "48": 9318,
+    "50": 1551,
+    "53": 2560,
+    "54": 3111,
+    "56": 11579,
+    "58": 869,
+    "60": 548,
+    "61": 27149,
+    "62": 757,
+    "63": 63602,
+    "64": 41589,
+    "65": 12660,
+    "66": 33287,
+    "67": 42331,
+    "68": 5871137,
+    "69": 5496,
+    "70": 0,
+    "71": 56555,
+    "72": 391728,
+    "73": 16285,
+    "74": 24482,
+    "75": 77350,
+    "76": 57058,
+    "77": 69840,
+    "78": 457482,
+    "79": 19825,
+    "80": 12167,
+    "81": 44427,
+    "82": 52675,
+    "83": 7939937,
+    "84": 457432,
+    "85": 3873,
+    "86": 4328,
+    "87": 9174,
+    "88": 3202,
+    "89": 16528,
+    "90": 2724,
+    "91": 21788,
+    "92": 9091,
+    "93": 4311,
+    "94": 4883,
+    "96": 10080,
+    "97": 20753,
+    "98": 1004,
+    "99": 4423,
+    "100": 4646,
+    "101": 6201,
+    "102": 11109,
+    "103": 2419,
+    "104": 7570,
+    "109": 0
+  }
+}

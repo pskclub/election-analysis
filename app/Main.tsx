@@ -13,6 +13,7 @@ import {
 // Import types and utilities
 import type { AppData, Region, Province, Party, ElectionArea, Candidate, PartyStats, ElectionScores, MultiYearData, ElectionYear } from './types';
 import { fNum } from './utils';
+import { load2562Data } from './loader2562';
 
 // Import new Phase 1 components
 import { CandidateDeepDive } from './CandidateDeepDive';
@@ -624,29 +625,19 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
             const r2566: any = await resultRes2566.json();
             const appData2566 = processElectionData(m2566, r2566);
 
-            // Try to fetch 2562 data from local files
+            // Try to fetch 2562 data using dedicated loader
             const years: ElectionYear[] = [];
             
             try {
-                const [masterRes2562, resultRes2562] = await Promise.all([
-                    fetch('/data/2562/master-data.json'),
-                    fetch('/data/2562/result.json')
-                ]);
-
-                if (masterRes2562.ok && resultRes2562.ok) {
-                    const m2562: any = await masterRes2562.json();
-                    const r2562: any = await resultRes2562.json();
-                    const appData2562 = processElectionData(m2562, r2562);
-                    
-                    years.push({
-                        year: 2562,
-                        label: "2562",
-                        description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
-                        date: "2019-03-24",
-                        data: appData2562
-                    });
-                    console.log('✅ Loaded 2562 election data successfully');
-                }
+                const appData2562 = await load2562Data();
+                years.push({
+                    year: 2562,
+                    label: "2562",
+                    description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
+                    date: "2019-03-24",
+                    data: appData2562
+                });
+                console.log('✅ Loaded 2562 election data successfully');
             } catch (e) {
                 console.warn('⚠️ Could not load 2562 data, continuing with 2566 only:', e);
             }

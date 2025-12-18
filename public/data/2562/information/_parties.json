@@ -1,0 +1,668 @@
+[
+  {
+    "codeEN": "DP",
+    "codeTH": "ปชป",
+    "color": "#06aff3",
+    "id": 1,
+    "name": "ประชาธิปัตย์",
+    "partylist": 150
+  },
+  {
+    "codeEN": "TCP",
+    "codeTH": "ปชท",
+    "color": "#0f41ce",
+    "id": 2,
+    "name": "ประชากรไทย",
+    "partylist": 18
+  },
+  {
+    "codeEN": "MCP",
+    "codeTH": "พมช",
+    "color": "#33338f",
+    "id": 3,
+    "name": "มหาชน",
+    "partylist": 11
+  },
+  {
+    "codeEN": "KT",
+    "codeTH": "กท",
+    "color": "#829aa7",
+    "id": 4,
+    "name": "กสิกรไทย",
+    "partylist": 1
+  },
+  {
+    "codeEN": "NAP",
+    "codeTH": "ควม",
+    "color": "#e6b750",
+    "id": 6,
+    "name": "ความหวังใหม่",
+    "partylist": 13
+  },
+  {
+    "codeEN": "FNTP",
+    "codeTH": "พนท",
+    "color": "#0c327a",
+    "id": 7,
+    "name": "เครือข่ายชาวนาแห่งประเทศไทย",
+    "partylist": 9
+  },
+  {
+    "codeEN": "PT",
+    "codeTH": "พท",
+    "color": "#da3731",
+    "id": 8,
+    "name": "เพื่อไทย",
+    "partylist": 97,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "PP",
+    "codeTH": "พผ",
+    "color": "#f20707",
+    "id": 9,
+    "name": "เพื่อแผ่นดิน",
+    "partylist": 28
+  },
+  {
+    "codeEN": "CPN",
+    "codeTH": "ชพน",
+    "color": "#ffaf41",
+    "id": 10,
+    "name": "ชาติพัฒนา",
+    "partylist": 56
+  },
+  {
+    "codeEN": "TKP",
+    "codeTH": "ทคผ",
+    "color": "#2b2d66",
+    "id": 11,
+    "name": "แทนคุณแผ่นดิน",
+    "partylist": 12
+  },
+  {
+    "codeEN": "CP",
+    "codeTH": "ชทพ",
+    "color": "#ff72a8",
+    "id": 12,
+    "name": "ชาติไทยพัฒนา",
+    "partylist": 67
+  },
+  {
+    "codeEN": "TF",
+    "codeTH": "อท",
+    "color": "#ad1b34",
+    "id": 13,
+    "name": "อนาคตไทย",
+    "partylist": 0
+  },
+  {
+    "codeEN": "BJT",
+    "codeTH": "ภท",
+    "color": "#209fa0",
+    "id": 15,
+    "name": "ภูมิใจไทย",
+    "partylist": 150
+  },
+  {
+    "codeEN": "TSDP",
+    "codeTH": "สปท",
+    "color": "#d32524",
+    "id": 17,
+    "name": "สังคมประชาธิปไตยไทย",
+    "partylist": 6
+  },
+  {
+    "codeEN": "TSN",
+    "codeTH": "ทษช",
+    "color": "#01019a",
+    "id": 18,
+    "name": "ไทยรักษาชาติ",
+    "partylist": 108,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "SPOT",
+    "codeTH": "พก",
+    "color": "#35899a",
+    "id": 19,
+    "name": "พลังคนกีฬา",
+    "partylist": 0
+  },
+  {
+    "codeEN": "PHT",
+    "codeTH": "พธ",
+    "color": "#000099",
+    "id": 23,
+    "name": "เพื่อธรรม",
+    "partylist": 22,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "NDP",
+    "codeTH": "ปธม",
+    "color": "#eb4138",
+    "id": 24,
+    "name": "ประชาธิปไตยใหม่",
+    "partylist": 41
+  },
+  {
+    "codeEN": "TR",
+    "codeTH": "ยพท",
+    "color": "#7a3e21",
+    "id": 28,
+    "name": "ยางพาราไทย",
+    "partylist": 4
+  },
+  {
+    "codeEN": "TTPP",
+    "codeTH": "คพช",
+    "color": "#175a38",
+    "id": 29,
+    "name": "ครูไทยเพื่อประชาชน",
+    "partylist": 82
+  },
+  {
+    "codeEN": "COOP",
+    "codeTH": "พพส",
+    "color": "#395a3d",
+    "id": 30,
+    "name": "พลังสหกรณ์",
+    "partylist": 4
+  },
+  {
+    "codeEN": "TLP",
+    "codeTH": "ทถท",
+    "color": "#259747",
+    "id": 31,
+    "name": "พลังท้องถิ่นไท",
+    "partylist": 78
+  },
+  {
+    "codeEN": "TKCV",
+    "codeTH": "ถกชว",
+    "color": "#bd646d",
+    "id": 33,
+    "name": "ถิ่นกาขาวชาววิไล",
+    "partylist": 8
+  },
+  {
+    "codeEN": "FCV",
+    "codeTH": "รป",
+    "color": "#8dbf44",
+    "id": 34,
+    "name": "รักษ์ผืนป่าประเทศไทย",
+    "partylist": 16
+  },
+  {
+    "codeEN": "TT",
+    "codeTH": "ทธ",
+    "color": "#e43ba2",
+    "id": 38,
+    "name": "ไทรักธรรม",
+    "partylist": 148
+  },
+  {
+    "codeEN": "TLP",
+    "codeTH": "สร",
+    "color": "#b49e31",
+    "id": 39,
+    "name": "เสรีรวมไทย",
+    "partylist": 100,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "RT",
+    "codeTH": "รธ",
+    "color": "#3839a8",
+    "id": 40,
+    "name": "รักษ์ธรรม",
+    "partylist": 0
+  },
+  {
+    "codeEN": "PC",
+    "codeTH": "พพช",
+    "color": "#c0bcc3",
+    "id": 42,
+    "name": "เพื่อชาติ",
+    "partylist": 150,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "DF",
+    "codeTH": "พปต",
+    "color": "#c4403a",
+    "id": 46,
+    "name": "พลังประชาธิปไตย",
+    "partylist": 14,
+    "supportNcpo": true
+  },
+  {
+    "codeEN": "PDP",
+    "codeTH": "ภดภ",
+    "color": "#0c5a38",
+    "id": 47,
+    "name": "ภราดรภาพ",
+    "partylist": 14
+  },
+  {
+    "codeEN": "PTRC",
+    "codeTH": "พทรช",
+    "color": "#fef102",
+    "id": 48,
+    "name": "พลังไทยรักชาติ",
+    "partylist": 12
+  },
+  {
+    "codeEN": "PCM",
+    "codeTH": "พชม",
+    "color": "#aa6a9b",
+    "id": 50,
+    "name": "เพื่อชีวิตใหม่",
+    "partylist": 3
+  },
+  {
+    "codeEN": "CPT",
+    "codeTH": "พคท",
+    "color": "#d9771c",
+    "id": 53,
+    "name": "คนธรรมดาแห่งประเทศไทย",
+    "partylist": 2,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "RTT",
+    "codeTH": "รถท",
+    "color": "#27ac67",
+    "id": 54,
+    "name": "รักท้องถิ่นไทย",
+    "partylist": 0
+  },
+  {
+    "codeEN": "PL",
+    "codeTH": "ผล",
+    "color": "#e08119",
+    "id": 56,
+    "name": "ผึ้งหลวง",
+    "partylist": 18
+  },
+  {
+    "codeEN": "PST",
+    "codeTH": "พพสท",
+    "color": "#dc8428",
+    "id": 58,
+    "name": "เพื่อสหกรณ์ไทย",
+    "partylist": 2
+  },
+  {
+    "codeEN": "DFP",
+    "codeTH": "ปพป",
+    "color": "#d63a40",
+    "id": 60,
+    "name": "ประชาธิปไตยเพื่อประชาชน",
+    "partylist": 3
+  },
+  {
+    "codeEN": "NEWA",
+    "codeTH": "ทลม",
+    "color": "#026aec",
+    "id": 61,
+    "name": "ทางเลือกใหม่",
+    "partylist": 13
+  },
+  {
+    "codeEN": "PVP",
+    "codeTH": "มปช",
+    "color": "#2f3293",
+    "id": 62,
+    "name": "มติประชา",
+    "partylist": 1
+  },
+  {
+    "codeEN": "PRA",
+    "codeTH": "ปชภ",
+    "color": "#076350",
+    "id": 63,
+    "name": "ประชาภิวัฒน์",
+    "partylist": 129
+  },
+  {
+    "codeEN": "TCP",
+    "codeTH": "พพพ",
+    "color": "#2d3180",
+    "id": 64,
+    "name": "พลเมืองไทย",
+    "partylist": 18
+  },
+  {
+    "codeEN": "RJP",
+    "codeTH": "รจท",
+    "color": "#313091",
+    "id": 65,
+    "name": "รวมใจไทย",
+    "partylist": 9
+  },
+  {
+    "codeEN": "NPD",
+    "codeTH": "พธม",
+    "color": "#e9b54a",
+    "id": 66,
+    "name": "พลังธรรมใหม่",
+    "partylist": 24,
+    "supportNcpo": true
+  },
+  {
+    "codeEN": "PPR",
+    "codeTH": "ปชช",
+    "color": "#dfde4a",
+    "id": 67,
+    "name": "ประชาชนปฏิรูป",
+    "partylist": 40,
+    "supportNcpo": true
+  },
+  {
+    "codeEN": "FWP",
+    "codeTH": "อนค",
+    "color": "#ef7824",
+    "id": 68,
+    "name": "อนาคตใหม่",
+    "partylist": 124,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "THMP",
+    "codeTH": "ทษช",
+    "color": "#ec5c2c",
+    "id": 69,
+    "name": "ไทยธรรม",
+    "partylist": 9
+  },
+  {
+    "codeEN": "TF",
+    "codeTH": "พ",
+    "color": "#bc0911",
+    "id": 70,
+    "name": "เพื่อนไทย",
+    "partylist": 52
+  },
+  {
+    "codeEN": "TCL",
+    "codeTH": "ทศล",
+    "color": "#0c5197",
+    "id": 71,
+    "name": "ไทยศรีวิไลย์",
+    "partylist": 26
+  },
+  {
+    "codeEN": "ACT",
+    "codeTH": "รปช",
+    "color": "#303d8e",
+    "id": 72,
+    "name": "รวมพลังประชาชาติไทย",
+    "partylist": 150,
+    "supportNcpo": true
+  },
+  {
+    "codeEN": "SD",
+    "codeTH": "พน",
+    "color": "#f7c704",
+    "id": 73,
+    "name": "สยามพัฒนา",
+    "partylist": 14
+  },
+  {
+    "codeEN": "PKTP",
+    "codeTH": "พคท",
+    "color": "#0a217d",
+    "id": 74,
+    "name": "เพื่อคนไทย",
+    "partylist": 19
+  },
+  {
+    "codeEN": "PLTP",
+    "codeTH": "พลท",
+    "color": "#181f97",
+    "id": 75,
+    "name": "พลังปวงชนไทย",
+    "partylist": 62,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "PTRT",
+    "codeTH": "พทรท",
+    "color": "#245896",
+    "id": 76,
+    "name": "พลังไทยรักไทย",
+    "partylist": 30
+  },
+  {
+    "codeEN": "TNPP",
+    "codeTH": "พพชท",
+    "color": "#08663b",
+    "id": 77,
+    "name": "พลังชาติไทย",
+    "partylist": 77
+  },
+  {
+    "codeEN": "PCC",
+    "codeTH": "ปช",
+    "color": "#a35f26",
+    "id": 78,
+    "name": "ประชาชาติ",
+    "partylist": 58,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "LDHP",
+    "codeTH": "ผธ",
+    "color": "#594835",
+    "id": 79,
+    "name": "แผ่นดินธรรม",
+    "partylist": 24
+  },
+  {
+    "codeEN": "KTP",
+    "codeTH": "คลท",
+    "color": "#0eafeb",
+    "id": 80,
+    "name": "คลองไทย",
+    "partylist": 27
+  },
+  {
+    "codeEN": "TPJ",
+    "codeTH": "ปธม",
+    "color": "#c32429",
+    "id": 81,
+    "name": "ประชาธรรมไทย",
+    "partylist": 61
+  },
+  {
+    "codeEN": "PYP",
+    "codeTH": "ปย",
+    "color": "#ea1f25",
+    "id": 82,
+    "name": "ประชานิยม",
+    "partylist": 112
+  },
+  {
+    "codeEN": "PPRP",
+    "codeTH": "พปชร",
+    "color": "#1f68dd",
+    "id": 83,
+    "name": "พลังประชารัฐ",
+    "partylist": 120,
+    "supportNcpo": true
+  },
+  {
+    "codeEN": "NEP",
+    "codeTH": "ศม",
+    "color": "#6e2fff",
+    "id": 84,
+    "name": "เศรษฐกิจใหม่",
+    "partylist": 81,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "NRRP",
+    "codeTH": "ทรร",
+    "color": "#674590",
+    "id": 85,
+    "name": "ไทยรุ่งเรือง",
+    "partylist": 7
+  },
+  {
+    "codeEN": "PFL",
+    "codeTH": "พลร",
+    "color": "#36aadc",
+    "id": 86,
+    "name": "พลังรัก",
+    "partylist": 6
+  },
+  {
+    "codeEN": "TEP",
+    "codeTH": "ชพท",
+    "color": "#406887",
+    "id": 87,
+    "name": "ชาติพันธุ์ไทย",
+    "partylist": 15
+  },
+  {
+    "codeEN": "BKTP",
+    "codeTH": "พภกท",
+    "color": "#148e14",
+    "id": 88,
+    "name": "ภูมิพลังเกษตรกรไทย",
+    "partylist": 5
+  },
+  {
+    "codeEN": "PPS",
+    "codeTH": "พพ",
+    "color": "#c67328",
+    "id": 89,
+    "name": "พลังสังคม",
+    "partylist": 15
+  },
+  {
+    "codeEN": "TPLP",
+    "codeTH": "พรงท",
+    "color": "#73c9ec",
+    "id": 90,
+    "name": "พลังแรงงานไทย",
+    "partylist": 6
+  },
+  {
+    "codeEN": "PBN",
+    "codeTH": "พทช",
+    "color": "#6ab36d",
+    "id": 91,
+    "name": "พลังไทสร้างชาติ",
+    "partylist": 12
+  },
+  {
+    "codeEN": "POFP",
+    "codeTH": "พลธ",
+    "color": "#059b3a",
+    "id": 92,
+    "name": "พลังศรัทธา",
+    "partylist": 8
+  },
+  {
+    "codeEN": "PPDT",
+    "codeTH": "พผดท",
+    "color": "#fbf008",
+    "id": 93,
+    "name": "พลังแผ่นดินทอง",
+    "partylist": 6
+  },
+  {
+    "codeEN": "GP",
+    "codeTH": "พก",
+    "color": "#c3067e",
+    "id": 94,
+    "name": "กลาง",
+    "partylist": 6,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "TPPTP",
+    "codeTH": "ปรชท",
+    "color": "#1d1376",
+    "id": 96,
+    "name": "ประชาไทย",
+    "partylist": 18
+  },
+  {
+    "codeEN": "GREEN",
+    "codeTH": "กร",
+    "color": "#69c80a",
+    "id": 97,
+    "name": "กรีน",
+    "partylist": 15,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "TDPT",
+    "codeTH": "พพปท",
+    "color": "#0722af",
+    "id": 98,
+    "name": "พัฒนาประเทศไทย",
+    "partylist": 2
+  },
+  {
+    "codeEN": "FDP",
+    "codeTH": "ฐรท",
+    "color": "#105495",
+    "id": 99,
+    "name": "ฐานรากไทย",
+    "partylist": 14
+  },
+  {
+    "codeEN": "CMP",
+    "codeTH": "พสมช",
+    "color": "#010101",
+    "id": 100,
+    "name": "สามัญชน",
+    "partylist": 6,
+    "supportNcpo": false
+  },
+  {
+    "codeEN": "TTP",
+    "codeTH": "พพคท",
+    "color": "#d3cdba",
+    "id": 101,
+    "name": "พลังครูไทย",
+    "partylist": 6
+  },
+  {
+    "codeEN": "THN",
+    "codeTH": "ภคท",
+    "color": "#f36e2d",
+    "id": 102,
+    "name": "ภาคีเครือข่ายไทย",
+    "partylist": 24
+  },
+  {
+    "codeEN": "TDPP",
+    "codeTH": "พพทด",
+    "color": "#82ea13",
+    "id": 103,
+    "name": "พลังไทยดี",
+    "partylist": 6
+  },
+  {
+    "codeEN": "PHTP",
+    "codeTH": "ทพท",
+    "color": "#142d89",
+    "id": 104,
+    "name": "เพื่อไทยพัฒนา",
+    "partylist": 12
+  },
+  {
+    "codeEN": "TW",
+    "codeTH": "คท",
+    "color": "#cf3636",
+    "id": 109,
+    "name": "คนงานไทย",
+    "partylist": 1
+  }
+]

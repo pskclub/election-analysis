@@ -14,8 +14,10 @@ export const EnhancedOverview: React.FC<EnhancedOverviewProps> = ({ data }) => {
     const seatAnalysis = useMemo(() => analyzeSeatsByCategory(data), [data]);
     
     const stats = useMemo(() => {
-        const totalVotes = data.electionScores?.[1]?.totalVotes || 0;
-        const turnout = data.electionScores?.[1]?.percentVoter || 0;
+        // Use ID 0 (Nationwide) if available, otherwise fallback to 1 or default
+        const totalVotes = data.electionScores?.[0]?.totalVotes || data.electionScores?.[1]?.totalVotes || 0;
+        const turnout = data.electionScores?.[0]?.percentVoter || data.electionScores?.[1]?.percentVoter || 0;
+        
         const totalSeats = data.electionAreas.length;
         const totalCandidates = data.candidates.length;
         
