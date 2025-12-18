@@ -173,6 +173,7 @@ model PoliticalRelationship {
 model User {
   id          Int              @id @default(autoincrement())
   username    String           @unique
+  password    String
   simulations UserSimulation[]
   favorites   UserFavorite[]
 
