@@ -577,3 +577,5 @@ scripts/node_modules/yn/lenient.js
 scripts/node_modules/yn/license
 scripts/node_modules/yn/package.json
 scripts/node_modules/yn/readme.md
+
+/app/generated/prisma

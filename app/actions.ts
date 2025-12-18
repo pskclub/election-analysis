@@ -1,0 +1,194 @@
+'use server'
+
+import { prisma } from '../lib/prisma'
+import { AppData, Region, Province, Party, Candidate, PartyStats, ElectionScores, ElectionArea } from './types'
+
+export async function getElectionData(year: number): Promise<AppData | null> {
+    console.log(`Fetching data for Year ${year} from DB...`);
+    
+    // 1. Get Election
+    const election = await prisma.election.findFirst({
+        where: { year_th: year }
+    });
+
+    if (!election) {
+        console.warn(`Election ${year} not found in DB.`);
+        return null;
+    }
+
+    // 2. Fetch Master Data
+    const [regionsDb, provincesDb, partiesDb, areasDb] = await Promise.all([
+        prisma.region.findMany(),
+        prisma.province.findMany(),
+        prisma.party.findMany(),
+        prisma.constituency.findMany({
+            include: {
+                election_stats: {
+                    where: { election_id: election.id }
+                }
+            }
+        })
+    ]);
+
+    // 3. Fetch Candidates & Scores
+    const participations = await prisma.candidateParticipation.findMany({
+        where: { election_id: election.id },
+        include: {
+            person: true,
+            party: true
+        }
+    });
+
+    console.log(`Found ${participations.length} participations for ${year}.`);
+
+    // 4. Transform to AppData format
+
+    // Regions
+    const regions: Region[] = regionsDb.map(r => ({ id: r.id, name: r.name }));
+
+    // Provinces
+    const provinces: Province[] = provincesDb.map(p => ({
+        id: p.id,
+        name: p.name,
+        regionId: p.region_id
+    }));
+
+    // Parties
+    const parties: Party[] = partiesDb.map(p => ({
+        id: p.id,
+        name: p.name,
+        color: p.color || '#999'
+    }));
+    // const partyMap = new Map<number, Party>(parties.map(p => [p.id, p]));
+
+    // Areas
+    const electionAreas: ElectionArea[] = areasDb.map(a => ({
+        id: a.id,
+        name: a.name || `เขต ${a.district_number}`,
+        provinceId: a.province_id,
+        areaNo: a.district_number
+    }));
+
+    // Candidates
+    const candidates: Candidate[] = participations.map(p => {
+        // Use DB ID for uniqueness - Prevents Duplicate Key Error
+        return {
+            id: p.id,
+            fullName: `${p.person.first_name} ${p.person.last_name}`,
+            partyId: p.party_id,
+            electionAreaId: p.constituency_id || 0,
+            score: p.score,
+            partyName: p.party.name,
+            partyColor: p.party.color || '#ccc',
+            isIncumbent: false
+        };
+    });
+
+    // 5. Calculate Stats (On the fly aggregation)
+    
+    // Aggregation for Falback
+    const partyScoreAggr: Record<number, number> = {};
+    const zoneMaxScore: Record<number, number> = {};
+
+    candidates.forEach(c => {
+        if(c.electionAreaId > 0) {
+            partyScoreAggr[c.partyId] = (partyScoreAggr[c.partyId] || 0) + c.score;
+            const currentMax = zoneMaxScore[c.electionAreaId] || 0;
+            if (c.score > currentMax) zoneMaxScore[c.electionAreaId] = c.score;
+        }
+    });
+
+    // Party Stats Strategy: Use DB Stored First
+    const partyStatsDb = await prisma.partyElectionStats.findMany({
+        where: { election_id: election.id },
+        include: { party: true }
+    });
+
+    let partyStats: PartyStats[] = [];
+
+    if (partyStatsDb.length > 0) {
+         partyStats = partyStatsDb.map(ps => ({
+            id: ps.party.id,
+            name: ps.party.name,
+            color: ps.party.color || '#999',
+            totalVotes: ps.total_votes,
+            areaSeats: ps.constituency_seats,
+            partyListSeats: ps.partylist_seats,
+            totalSeat: ps.total_seats
+        })).sort((a,b) => b.totalSeat - a.totalSeat);
+    } else {
+        // Fallback Logic
+        const totalVotesAll = Object.values(partyScoreAggr).reduce((a,b)=>a+b, 0);
+        const votePerMP = totalVotesAll / 500; 
+
+        partyStats = parties.map(p => {
+            const score = partyScoreAggr[p.id] || 0;
+            
+            const constituencySeats = candidates.filter(c => 
+                c.partyId === p.id && 
+                c.score > 0 && 
+                c.score === zoneMaxScore[c.electionAreaId]
+            ).length;
+
+            let totalSeats = constituencySeats;
+            let partyListSeats = 0;
+
+            if (year === 2562) {
+                const theoretical = Math.round(score / votePerMP);
+                partyListSeats = Math.max(0, theoretical - constituencySeats);
+                totalSeats = constituencySeats + partyListSeats;
+            }
+
+            return {
+                id: p.id,
+                name: p.name,
+                color: p.color,
+                totalVotes: score,
+                areaSeats: constituencySeats,
+                partyListSeats: partyListSeats,
+                totalSeat: totalSeats
+            }
+        }).filter(ps => ps.totalVotes > 0 || ps.totalSeat > 0).sort((a,b) => b.totalSeat - a.totalSeat);
+    }
+
+    // Election Scores (Turnout)
+    const electionScores: ElectionScores = {};
+    let globalTurnoutVotes = 0;
+    let globalEligible = 0;
+
+    areasDb.forEach(a => {
+        // Did we seed stats?
+        const stats = a.election_stats[0]; // Filtered by election_id
+        const eligible = stats?.total_eligible_voters || 0;
+        const turnoutVotes = stats?.turnout_voters || 0; 
+        
+        // If stats missing, calculate turnout from candidates
+        const calculatedTurnout = candidates.filter(c => c.electionAreaId === a.id).reduce((s,c) => s + c.score, 0);
+        
+        const finalTurnout = turnoutVotes > 0 ? turnoutVotes : calculatedTurnout;
+        
+        globalTurnoutVotes += finalTurnout;
+        globalEligible += eligible; // likely 0 if not seeded
+
+        electionScores[a.id] = {
+            totalVotes: finalTurnout,
+            percentVoter: eligible > 0 ? (finalTurnout / eligible) * 100 : 0
+        };
+    });
+    
+    // Global
+    electionScores[0] = {
+        totalVotes: globalTurnoutVotes,
+        percentVoter: globalEligible > 0 ? (globalTurnoutVotes / globalEligible) * 100 : 0
+    };
+
+    return {
+        regions,
+        provinces,
+        parties,
+        candidates,
+        partyStats,
+        electionAreas,
+        electionScores
+    };
+}

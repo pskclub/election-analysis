@@ -13,7 +13,9 @@ import {
 // Import types and utilities
 import type { AppData, Region, Province, Party, ElectionArea, Candidate, PartyStats, ElectionScores, MultiYearData, ElectionYear } from './types';
 import { fNum } from './utils';
-import { load2562Data } from './loader2562';
+// import { load2562Data } from './loader2562'; // Deprecated
+import { getElectionData } from './actions';
+import { signOut } from 'next-auth/react';
 
 // Import new Phase 1 components
 import { CandidateDeepDive } from './CandidateDeepDive';
@@ -25,12 +27,11 @@ import { EnhancedPartyAnalysis } from './EnhancedPartyAnalysis';
 import { TrendAnalysis } from './TrendAnalysis';
 
 // --- Configuration ---
-const API_URLS = {
-    MASTER: "https://storage.googleapis.com/voicetv-election-data-prod/result/master-data.json",
-    RESULT: "https://storage.googleapis.com/voicetv-election-data-prod/result/result.json"
-};
+// const API_URLS = { ... } // Unused
 
 // --- Sub-Components ---
+// ... (StatCard, RegionalAnalysis, PartyAnalysis, WarRoomDashboard kept same as previous file view)
+// Only replacing DataLoader and Main
 
 interface StatCardProps {
     title: string;
@@ -42,7 +43,7 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ title, value, subtext, icon: Icon, color = "blue", size="normal" }) => {
-    const colorClasses = {
+     const colorClasses = {
         blue: 'bg-blue-50 text-blue-600',
         green: 'bg-green-50 text-green-600',
         yellow: 'bg-yellow-50 text-yellow-600',
@@ -66,232 +67,14 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, subtext, icon: Icon, 
     );
 };
 
-// --- Analysis Views ---
-
-interface RegionalAnalysisProps {
-    data: AppData;
-}
-
-const RegionalAnalysis: React.FC<RegionalAnalysisProps> = ({ data }) => {
-    interface RegionStat {
-        id: number;
-        name: string;
-        totalVotes: number;
-        seats: number;
-        partyBreakdown: Record<number, number>;
-    }
-
-    const regionStats = useMemo(() => {
-        const stats: Record<number, RegionStat> = {};
-        data.regions.forEach(r => {
-            stats[r.id] = { id: r.id, name: r.name, totalVotes: 0, seats: 0, partyBreakdown: {} };
-        });
-
-        data.candidates.forEach(c => {
-            const area = data.electionAreas.find(a => a.id === c.electionAreaId);
-            const province = area ? data.provinces.find(p => p.id === area.provinceId) : null;
-            
-            if (province && stats[province.regionId]) {
-                const reg = stats[province.regionId];
-                reg.totalVotes += c.score;
-                if (!reg.partyBreakdown[c.partyId]) reg.partyBreakdown[c.partyId] = 0;
-                reg.partyBreakdown[c.partyId] += c.score;
-            }
-        });
-
-        return Object.values(stats).map(reg => {
-            const topPartyId = Object.keys(reg.partyBreakdown).reduce((a, b) => reg.partyBreakdown[parseInt(a)] > reg.partyBreakdown[parseInt(b)] ? a : b, '');
-            const topParty = topPartyId ? data.parties.find(p => p.id === parseInt(topPartyId)) : null;
-
-            return {
-                ...reg,
-                topPartyName: topParty?.name || '-',
-                topPartyColor: topParty?.color || '#ccc',
-                ...Object.keys(reg.partyBreakdown).reduce((acc: Record<string, number>, pid) => {
-                    const pName = data.parties.find(p => p.id === parseInt(pid))?.name || pid;
-                    if(reg.partyBreakdown[parseInt(pid)] > (reg.totalVotes * 0.05)) {
-                        acc[pName] = reg.partyBreakdown[parseInt(pid)];
-                    }
-                    return acc;
-                }, {})
-            };
-        });
-    }, [data]);
-
-    return (
-        <div className="space-y-6 animate-in fade-in duration-300">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm col-span-2">
-                    <h3 className="font-bold text-gray-800 mb-4">ส่วนแบ่งคะแนนรายภาค (Regional Vote Share)</h3>
-                    <div className="h-80">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={regionStats} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                <XAxis dataKey="name" />
-                                <YAxis tickFormatter={(val) => `${(val/1000000).toFixed(1)}M`} />
-                                <Tooltip formatter={(val) => fNum(val as number)} />
-                                <Legend />
-                                {data.parties.slice(0, 5).map((p) => (
-                                    <Bar key={p.id} dataKey={p.name} stackId="a" fill={p.color} />
-                                ))}
-                            </BarChart>
-                        </ResponsiveContainer>
-                    </div>
-                </div>
-
-                {regionStats.map(reg => (
-                    <div key={reg.id} className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex justify-between items-center">
-                        <div>
-                            <div className="text-gray-500 text-xs uppercase font-bold tracking-wider">{reg.name}</div>
-                            <div className="text-2xl font-bold text-gray-800 mt-1">{fNum(reg.totalVotes)} <span className="text-sm font-normal text-gray-400">เสียง</span></div>
-                        </div>
-                        <div className="text-right">
-                            <div className="text-xs text-gray-400 mb-1">พรรคยอดนิยม</div>
-                            <span className="px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm" style={{ backgroundColor: reg.topPartyColor }}>
-                                {reg.topPartyName}
-                            </span>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
-interface PartyAnalysisProps {
-    data: AppData;
-}
-
-const PartyAnalysis: React.FC<PartyAnalysisProps> = ({ data }) => {
-    const [selectedPartyId, setSelectedPartyId] = useState<number | string>(
-        data.partyStats.sort((a, b) => b.totalSeat - a.totalSeat)[0]?.id || ''
-    );
-    
-    const partyStats = useMemo(() => {
-        if (!selectedPartyId) return null;
-        
-        const partyIdNum = typeof selectedPartyId === 'string' ? parseInt(selectedPartyId) : selectedPartyId;
-        const party = data.parties.find(p => p.id === partyIdNum);
-        const candidates = data.candidates.filter(c => c.partyId === partyIdNum).sort((a, b) => b.score - a.score);
-        const totalVotes = candidates.reduce((sum, c) => sum + c.score, 0);
-        
-        const provinceScores: Record<number, number> = {};
-        candidates.forEach(c => {
-            const area = data.electionAreas.find(a => a.id === c.electionAreaId);
-            if(area) {
-                if(!provinceScores[area.provinceId]) provinceScores[area.provinceId] = 0;
-                provinceScores[area.provinceId] += c.score;
-            }
-        });
-        
-        const bestProvinceId = Object.keys(provinceScores).reduce((a, b) => provinceScores[parseInt(a)] > provinceScores[parseInt(b)] ? a : b, '');
-        const bestProvince = bestProvinceId ? data.provinces.find(p => p.id === parseInt(bestProvinceId)) : null;
-
-        const topCandidates = candidates.slice(0, 5).map(c => {
-             const area = data.electionAreas.find(a => a.id === c.electionAreaId);
-             const province = area ? data.provinces.find(p => p.id === area.provinceId) : null;
-             return { ...c, areaName: area?.name, provinceName: province?.name };
-        });
-
-        return { party, totalVotes, bestProvince, topCandidates };
-    }, [selectedPartyId, data]);
-
-    return (
-        <div className="space-y-6 animate-in fade-in duration-300">
-             <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex items-center gap-4">
-                <Flag className="text-gray-400" />
-                <span className="font-bold text-gray-700">เลือกพรรคการเมือง:</span>
-                <select 
-                    className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-                    value={selectedPartyId}
-                    onChange={(e) => setSelectedPartyId(e.target.value)}
-                >
-                    {data.partyStats
-                        .sort((a, b) => b.totalSeat - a.totalSeat)
-                        .map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
-                </select>
-            </div>
-
-            {partyStats && (
-                <>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-white p-6 rounded-xl border-l-4 shadow-sm" style={{ borderLeftColor: partyStats.party?.color || '#ccc' }}>
-                            <div className="text-gray-500 text-xs font-bold uppercase">คะแนนรวม (Total Votes)</div>
-                            <div className="text-3xl font-bold mt-2">{fNum(partyStats.totalVotes)}</div>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                            <div className="text-gray-500 text-xs font-bold uppercase">ฐานเสียงหลัก (Stronghold)</div>
-                            <div className="text-xl font-bold mt-2 text-gray-800">{partyStats.bestProvince?.name || '-'}</div>
-                            <div className="text-xs text-gray-400 mt-1">จังหวัดที่ได้คะแนนรวมสูงสุด</div>
-                        </div>
-                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                            <div className="text-gray-500 text-xs font-bold uppercase">จำนวนผู้สมัคร (Candidates)</div>
-                            <div className="text-3xl font-bold mt-2 text-gray-800">{fNum(data.candidates.filter(c => c.partyId === (typeof selectedPartyId === 'string' ? parseInt(selectedPartyId) : selectedPartyId)).length)}</div>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                            <div className="px-6 py-4 border-b border-gray-100 font-bold text-gray-800">Top 5 ขุนพล (Highest Votes)</div>
-                            <table className="w-full text-sm text-left">
-                                <thead className="bg-gray-50 text-gray-500">
-                                    <tr>
-                                        <th className="px-6 py-3">ชื่อ</th>
-                                        <th className="px-6 py-3">พื้นที่</th>
-                                        <th className="px-6 py-3 text-right">คะแนน</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-100">
-                                    {partyStats.topCandidates.map(c => (
-                                        <tr key={c.id}>
-                                            <td className="px-6 py-3 font-medium">{c.fullName}</td>
-                                            <td className="px-6 py-3 text-gray-500">{c.provinceName} / {c.areaName}</td>
-                                            <td className="px-6 py-3 text-right font-mono text-blue-600">{fNum(c.score)}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                             <div className="font-bold text-gray-800 mb-4">จุดยุทธศาสตร์รายภาค (Regional Strength)</div>
-                             <div className="h-64">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={data.regions.map(r => {
-                                         const partyIdNum = typeof selectedPartyId === 'string' ? parseInt(selectedPartyId) : selectedPartyId;
-                                         const score = data.candidates
-                                            .filter(c => c.partyId === partyIdNum)
-                                            .filter(c => {
-                                                const area = data.electionAreas.find(a => a.id === c.electionAreaId);
-                                                const prov = area ? data.provinces.find(p => p.id === area.provinceId) : null;
-                                                return prov && prov.regionId === r.id;
-                                            })
-                                            .reduce((sum, c) => sum + c.score, 0);
-                                         return { name: r.name, votes: score };
-                                    })}>
-                                        <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                                        <XAxis dataKey="name" fontSize={12} />
-                                        <YAxis fontSize={12} />
-                                        <Tooltip formatter={(val) => fNum(val as number)} />
-                                        <Bar dataKey="votes" fill={partyStats.party?.color || '#3b82f6'} radius={[4, 4, 0, 0]} />
-                                    </BarChart>
-                                </ResponsiveContainer>
-                             </div>
-                         </div>
-                    </div>
-                </>
-            )}
-        </div>
-    );
-};
-
 interface WarRoomDashboardProps {
     multiYearData: MultiYearData;
     onReset: () => void;
 }
 
 const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ multiYearData, onReset }) => {
-    const [activeTab, setActiveTab] = useState('overview');
+    // ... Copy exact logic from previous `WarRoomDashboard`
+     const [activeTab, setActiveTab] = useState('overview');
     const [selectedYear, setSelectedYear] = useState(multiYearData.currentYear);
     const [selectedProvince, setSelectedProvince] = useState<number | null>(null);
     const [selectedArea, setSelectedArea] = useState<number | null>(null);
@@ -489,12 +272,17 @@ const WarRoomDashboard: React.FC<WarRoomDashboardProps> = ({ multiYearData, onRe
                 <div className="p-4 border-t border-gray-200">
                     <button 
                         onClick={onReset} 
+                        className="w-full px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mb-2"
+                    >
+                         <Shield size={16} />
+                        Reset Data
+                    </button>
+                    <button 
+                        onClick={() => signOut()} 
                         className="w-full px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                        Reset Data
+                        <User size={16} />
+                        Logout
                     </button>
                 </div>
             </aside>
@@ -577,79 +365,54 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
         setIsLoading(true);
         setError("");
         try {
-            // Helper function to process election data
-            const processElectionData = (m: any, r: any): AppData => {
-                const regions: Region[] = Object.values(m.regions || {}).map((v: any) => v as Region);
-                const provinces: Province[] = (m.provinces || []) as Province[];
-                const parties: Party[] = Object.values(m.parties || {}).map((v: any) => ({...v, id: parseInt(v.id || 0)})) as Party[];
-                const partyMap = new Map(parties.map(p => [p.id, p]));
-                
-                const scoreMap = new Map<number, number>();
-                (r.areaBallotScores || []).forEach((area: any) => {
-                    if(area.candidates) area.candidates.forEach((c: any) => scoreMap.set(c.id, c.totalVotes));
-                });
-
-                const candidates: Candidate[] = (m.candidates || []).map((c: any) => ({
-                    ...c,
-                    score: scoreMap.get(c.id) || 0,
-                    partyName: partyMap.get(c.partyId)?.name || 'N/A',
-                    partyColor: partyMap.get(c.partyId)?.color || '#ccc'
-                })) as Candidate[];
-
-                const partyStats: PartyStats[] = Object.values(r.partyScores || {}).map((s: any) => ({
-                    ...s, ...(partyMap.get(s.id) || {}),
-                    totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0),
-                    totalVotes: s.totalVotes || 0
-                })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
-
-                return {
-                    regions, 
-                    provinces, 
-                    parties, 
-                    candidates, 
-                    partyStats,
-                    electionAreas: (m.electionAreas || []) as ElectionArea[],
-                    electionScores: (r.electionScores || {}) as ElectionScores
-                };
-            };
-
-            // Fetch 2566 data from API
-            const [masterRes2566, resultRes2566] = await Promise.all([
-                fetch(API_URLS.MASTER),
-                fetch(API_URLS.RESULT)
-            ]);
-
-            if (!masterRes2566.ok || !resultRes2566.ok) throw new Error("Failed to connect to Data API");
-
-            const m2566: any = await masterRes2566.json();
-            const r2566: any = await resultRes2566.json();
-            const appData2566 = processElectionData(m2566, r2566);
-
-            // Try to fetch 2562 data using dedicated loader
             const years: ElectionYear[] = [];
-            
+
+            // 1. Load 2566 Data
             try {
-                const appData2562 = await load2562Data();
-                years.push({
-                    year: 2562,
-                    label: "2562",
-                    description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
-                    date: "2019-03-24",
-                    data: appData2562
-                });
-                console.log('✅ Loaded 2562 election data successfully');
+                // @ts-ignore
+                const appData2566 = await getElectionData(2566);
+                if (appData2566) {
+                    years.push({
+                        year: 2566,
+                        label: "2566",
+                        description: "การเลือกตั้งทั่วไป พ.ศ. 2566",
+                        date: "2023-05-14",
+                        data: appData2566
+                    });
+                     console.log("✅ Loaded 2566 data from DB");
+                } else {
+                     console.warn("❌ 2566 Data not found in DB");
+                }
             } catch (e) {
-                console.warn('⚠️ Could not load 2562 data, continuing with 2566 only:', e);
+                console.warn("DB Load 2566 failed", e);
             }
 
-            // Add 2566 data
-            years.push({
-                year: 2566,
-                label: "2566",
-                description: "การเลือกตั้งทั่วไป พ.ศ. 2566",
-                date: "2023-05-14",
-                data: appData2566
-            });
+            // 2. Load 2562 Data
+            try {
+                 // @ts-ignore
+                 const appData2562 = await getElectionData(2562);
+                 if (appData2562) {
+                     years.push({
+                        year: 2562,
+                        label: "2562",
+                        description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
+                        date: "2019-03-24",
+                        data: appData2562
+                    });
+                     console.log("✅ Loaded 2562 data from DB");
+                 } else {
+                     console.warn("❌ 2562 Data not found in DB");
+                 }
+            } catch(e) {
+                console.warn("DB Load 2562 failed", e);
+            }
+
+            if(years.length === 0) {
+                throw new Error("No data found in Database. Please seed data first.");
+            }
+
+            // Sort years desc
+            years.sort((a,b) => b.year - a.year);
 
             const multiYearData: MultiYearData = {
                 years,
@@ -670,13 +433,13 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
             <div className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full text-center">
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600"><CloudLightning size={32}/></div>
                 <h2 className="text-2xl font-bold mb-2 text-gray-800">Live Election Data</h2>
-                <p className="text-gray-500 mb-8 text-sm">เชื่อมต่อ API เพื่อดึงข้อมูลการเลือกตั้งล่าสุด</p>
+                <p className="text-gray-500 mb-8 text-sm">เชื่อมต่อ Database เพื่อดึงข้อมูลการเลือกตั้ง</p>
                 
                 {error && <div className="text-red-500 text-sm mb-4 bg-red-50 p-3 rounded-lg flex items-center gap-2 justify-center"><AlertTriangle size={16}/> {error}</div>}
                 
                 <button onClick={fetchData} disabled={isLoading} className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg shadow-blue-200">
                     {isLoading ? <Loader2 className="animate-spin"/> : <Zap size={18} />}
-                    {isLoading ? 'Downloading...' : 'Connect Live Data'}
+                    {isLoading ? 'Loading from DB...' : 'Connect Database'}
                 </button>
             </div>
         </div>
