@@ -297,3 +297,4 @@ erDiagram
     *   `related_politician_id`: FK (Link แบบ Manual หรือ Heuristic ว่าเกี่ยวข้องกับนักการเมืองคนไหน)
 
 ---
+
