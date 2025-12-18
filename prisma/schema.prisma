@@ -1,0 +1,217 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Region {
+  id         Int        @id @default(autoincrement())
+  name       String
+  color_code String?
+  provinces  Province[]
+
+  @@map("regions")
+}
+
+model Province {
+  id              Int            @id @default(autoincrement())
+  region_id       Int
+  name            String
+  code_name       String?
+  total_districts Int            @default(0)
+  region          Region         @relation(fields: [region_id], references: [id])
+  constituencies  Constituency[]
+
+  @@map("provinces")
+}
+
+model Constituency {
+  id                       Int                         @id @default(autoincrement())
+  province_id              Int
+  district_number          Int
+  name                     String?
+  geojson_url              String?
+  province                 Province                    @relation(fields: [province_id], references: [id])
+  election_stats           ConstituencyElectionStats[]
+  candidate_participations CandidateParticipation[]
+
+  @@map("constituencies")
+}
+
+model Election {
+  id                       Int                         @id @default(autoincrement())
+  year_th                  Int
+  election_date            DateTime
+  description              String?
+  is_active                Boolean                     @default(false)
+  constituency_stats       ConstituencyElectionStats[]
+  party_stats              PartyElectionStats[]
+  candidate_participations CandidateParticipation[]
+
+  @@map("elections")
+}
+
+model ConstituencyElectionStats {
+  id                    Int          @id @default(autoincrement())
+  election_id           Int
+  constituency_id       Int
+  total_eligible_voters Int          @default(0)
+  turnout_voters        Int          @default(0)
+  invalid_votes         Int          @default(0)
+  no_votes              Int          @default(0)
+  election              Election     @relation(fields: [election_id], references: [id])
+  constituency          Constituency @relation(fields: [constituency_id], references: [id])
+
+  @@map("constituency_election_stats")
+}
+
+model Party {
+  id                       Int                      @id @default(autoincrement())
+  name                     String
+  short_name               String?
+  color                    String?
+  logo_url                 String?
+  status                   PartyStatus              @default(ACTIVE)
+  established_date         DateTime?
+  dissolved_date           DateTime?
+  successor_party_id       Int?
+  successor_party          Party?                   @relation("PartyLineage", fields: [successor_party_id], references: [id])
+  predecessor_parties      Party[]                  @relation("PartyLineage")
+  election_stats           PartyElectionStats[]
+  candidate_participations CandidateParticipation[]
+
+  @@map("parties")
+}
+
+enum PartyStatus {
+  ACTIVE
+  DISSOLVED
+  MERGED
+}
+
+model PartyElectionStats {
+  id                 Int      @id @default(autoincrement())
+  election_id        Int
+  party_id           Int
+  total_votes        Int      @default(0)
+  constituency_seats Int      @default(0)
+  partylist_seats    Int      @default(0)
+  total_seats        Int      @default(0)
+  election           Election @relation(fields: [election_id], references: [id])
+  party              Party    @relation(fields: [party_id], references: [id])
+
+  @@map("party_election_stats")
+}
+
+model Person {
+  id                       Int                      @id @default(autoincrement())
+  prefix                   String?
+  first_name               String
+  last_name                String
+  nickname                 String?
+  birth_date               DateTime?
+  gender                   String?
+  education                Json?
+  ex_occupation            String?
+  candidate_participations CandidateParticipation[]
+  political_relationships  PoliticalRelationship[]
+  user_favorites           UserFavorite[]
+  social_stats             SocialStatsDaily[]
+
+  @@map("people")
+}
+
+model CandidateParticipation {
+  id              Int           @id @default(autoincrement())
+  election_id     Int
+  person_id       Int
+  party_id        Int
+  constituency_id Int?
+  candidate_type  CandidateType
+  candidate_no    Int?
+  list_order      Int?
+  score           Int           @default(0)
+  is_winner       Boolean       @default(false)
+  status          String? // 'ปกติ', 'ใบแดง', 'ใบส้ม'
+  election        Election      @relation(fields: [election_id], references: [id])
+  person          Person        @relation(fields: [person_id], references: [id])
+  party           Party         @relation(fields: [party_id], references: [id])
+  constituency    Constituency? @relation(fields: [constituency_id], references: [id])
+
+  @@map("candidate_participations")
+}
+
+enum CandidateType {
+  CONSTITUENCY
+  PARTY_LIST
+  PM
+}
+
+model PoliticalGroup {
+  id             Int                     @id @default(autoincrement())
+  name           String
+  influence_area String?
+  relationships  PoliticalRelationship[]
+
+  @@map("political_groups")
+}
+
+model PoliticalRelationship {
+  id        Int            @id @default(autoincrement())
+  person_id Int
+  group_id  Int
+  role      String?
+  person    Person         @relation(fields: [person_id], references: [id])
+  group     PoliticalGroup @relation(fields: [group_id], references: [id])
+
+  @@map("political_relationships")
+}
+
+model User {
+  id          Int              @id @default(autoincrement())
+  username    String           @unique
+  simulations UserSimulation[]
+  favorites   UserFavorite[]
+
+  @@map("users")
+}
+
+model UserSimulation {
+  id          Int      @id @default(autoincrement())
+  user_id     Int
+  name        String
+  config_json Json
+  created_at  DateTime @default(now())
+  user        User     @relation(fields: [user_id], references: [id])
+
+  @@map("user_simulations")
+}
+
+model UserFavorite {
+  user_id    Int
+  person_id  Int
+  note       String?
+  created_at DateTime @default(now())
+  user       User     @relation(fields: [user_id], references: [id])
+  person     Person   @relation(fields: [person_id], references: [id])
+
+  @@id([user_id, person_id])
+  @@map("user_favorites")
+}
+
+model SocialStatsDaily {
+  id         Int      @id @default(autoincrement())
+  date       DateTime
+  person_id  Int?
+  party_id   Int?
+  platform   String // 'FB' | 'TWITTER' | 'TIKTOK'
+  followers  Int      @default(0)
+  engagement Int      @default(0)
+  mentions   Int      @default(0)
+  person     Person?  @relation(fields: [person_id], references: [id])
+
+  @@map("social_stats_daily")
+}

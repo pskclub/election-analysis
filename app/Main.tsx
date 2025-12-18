@@ -14,6 +14,7 @@ import {
 import type { AppData, Region, Province, Party, ElectionArea, Candidate, PartyStats, ElectionScores, MultiYearData, ElectionYear } from './types';
 import { fNum } from './utils';
 import { load2562Data } from './loader2562';
+import { getElectionData } from './actions';
 
 // Import new Phase 1 components
 import { CandidateDeepDive } from './CandidateDeepDive';
@@ -577,69 +578,70 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
         setIsLoading(true);
         setError("");
         try {
-            // Helper function to process election data
-            const processElectionData = (m: any, r: any): AppData => {
-                const regions: Region[] = Object.values(m.regions || {}).map((v: any) => v as Region);
-                const provinces: Province[] = (m.provinces || []) as Province[];
-                const parties: Party[] = Object.values(m.parties || {}).map((v: any) => ({...v, id: parseInt(v.id || 0)})) as Party[];
-                const partyMap = new Map(parties.map(p => [p.id, p]));
-                
-                const scoreMap = new Map<number, number>();
-                (r.areaBallotScores || []).forEach((area: any) => {
-                    if(area.candidates) area.candidates.forEach((c: any) => scoreMap.set(c.id, c.totalVotes));
-                });
-
-                const candidates: Candidate[] = (m.candidates || []).map((c: any) => ({
-                    ...c,
-                    score: scoreMap.get(c.id) || 0,
-                    partyName: partyMap.get(c.partyId)?.name || 'N/A',
-                    partyColor: partyMap.get(c.partyId)?.color || '#ccc'
-                })) as Candidate[];
-
-                const partyStats: PartyStats[] = Object.values(r.partyScores || {}).map((s: any) => ({
-                    ...s, ...(partyMap.get(s.id) || {}),
-                    totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0),
-                    totalVotes: s.totalVotes || 0
-                })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
-
-                return {
-                    regions, 
-                    provinces, 
-                    parties, 
-                    candidates, 
-                    partyStats,
-                    electionAreas: (m.electionAreas || []) as ElectionArea[],
-                    electionScores: (r.electionScores || {}) as ElectionScores
-                };
-            };
-
-            // Fetch 2566 data from API
-            const [masterRes2566, resultRes2566] = await Promise.all([
-                fetch(API_URLS.MASTER),
-                fetch(API_URLS.RESULT)
-            ]);
-
-            if (!masterRes2566.ok || !resultRes2566.ok) throw new Error("Failed to connect to Data API");
-
-            const m2566: any = await masterRes2566.json();
-            const r2566: any = await resultRes2566.json();
-            const appData2566 = processElectionData(m2566, r2566);
-
-            // Try to fetch 2562 data using dedicated loader
             const years: ElectionYear[] = [];
-            
+
+            // 1. Load 2566 Data
+            // Try DB First
+            let appData2566: AppData | null = null;
             try {
-                const appData2562 = await load2562Data();
-                years.push({
-                    year: 2562,
-                    label: "2562",
-                    description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
-                    date: "2019-03-24",
-                    data: appData2562
-                });
-                console.log('✅ Loaded 2562 election data successfully');
+                // @ts-ignore
+                appData2566 = await getElectionData(2566);
+                if (appData2566) {
+                    if (appData2566.candidates.length === 0) appData2566 = null; 
+                    else console.log("✅ Loaded 2566 data from DB");
+                }
             } catch (e) {
-                console.warn('⚠️ Could not load 2562 data, continuing with 2566 only:', e);
+                console.warn("DB Load 2566 failed, falling back to API", e);
+            }
+
+            // Fallback to API if DB failed
+            if (!appData2566) {
+                // Helper function to process election data
+                const processElectionData = (m: any, r: any): AppData => {
+                    const regions: Region[] = Object.values(m.regions || {}).map((v: any) => v as Region);
+                    const provinces: Province[] = (m.provinces || []) as Province[];
+                    const parties: Party[] = Object.values(m.parties || {}).map((v: any) => ({...v, id: parseInt(v.id || 0)})) as Party[];
+                    const partyMap = new Map(parties.map(p => [p.id, p]));
+                    
+                    const scoreMap = new Map<number, number>();
+                    (r.areaBallotScores || []).forEach((area: any) => {
+                        if(area.candidates) area.candidates.forEach((c: any) => scoreMap.set(c.id, c.totalVotes));
+                    });
+
+                    const candidates: Candidate[] = (m.candidates || []).map((c: any) => ({
+                        ...c,
+                        score: scoreMap.get(c.id) || 0,
+                        partyName: partyMap.get(c.partyId)?.name || 'N/A',
+                        partyColor: partyMap.get(c.partyId)?.color || '#ccc'
+                    })) as Candidate[];
+
+                    const partyStats: PartyStats[] = Object.values(r.partyScores || {}).map((s: any) => ({
+                        ...s, ...(partyMap.get(s.id) || {}),
+                        totalSeat: (s.areaSeats || 0) + (s.partyListSeats || 0),
+                        totalVotes: s.totalVotes || 0
+                    })).sort((a: any, b: any) => b.totalSeat - a.totalSeat) as PartyStats[];
+
+                    return {
+                        regions, 
+                        provinces, 
+                        parties, 
+                        candidates, 
+                        partyStats,
+                        electionAreas: (m.electionAreas || []) as ElectionArea[],
+                        electionScores: (r.electionScores || {}) as ElectionScores
+                    };
+                };
+
+                const [masterRes2566, resultRes2566] = await Promise.all([
+                    fetch(API_URLS.MASTER),
+                    fetch(API_URLS.RESULT)
+                ]);
+
+                if (!masterRes2566.ok || !resultRes2566.ok) throw new Error("Failed to connect to Data API");
+
+                const m2566: any = await masterRes2566.json();
+                const r2566: any = await resultRes2566.json();
+                appData2566 = processElectionData(m2566, r2566);
             }
 
             // Add 2566 data
@@ -648,8 +650,45 @@ const DataLoader: React.FC<DataLoaderProps> = ({ onDataLoaded }) => {
                 label: "2566",
                 description: "การเลือกตั้งทั่วไป พ.ศ. 2566",
                 date: "2023-05-14",
-                data: appData2566
+                data: appData2566!
             });
+
+            // 2. Load 2562 Data
+            let appData2562: AppData | null = null;
+            try {
+                 // Try DB
+                 // @ts-ignore
+                 appData2562 = await getElectionData(2562);
+                 if (appData2562) {
+                     if (appData2562.candidates.length === 0) appData2562 = null;
+                     else console.log("✅ Loaded 2562 data from DB");
+                 }
+            } catch(e) {
+                console.warn("DB Load 2562 failed", e);
+            }
+
+            // Fallback to File
+            if (!appData2562) {
+                try {
+                    appData2562 = await load2562Data();
+                    console.log('✅ Loaded 2562 election data from File');
+                } catch (e) {
+                    console.warn('⚠️ Could not load 2562 data from file either:', e);
+                }
+            }
+
+            if (appData2562) {
+                years.push({
+                    year: 2562,
+                    label: "2562",
+                    description: "การเลือกตั้งทั่วไป พ.ศ. 2562",
+                    date: "2019-03-24",
+                    data: appData2562
+                });
+            }
+
+            // Sort years desc
+            years.sort((a,b) => b.year - a.year);
 
             const multiYearData: MultiYearData = {
                 years,
