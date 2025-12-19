@@ -21,24 +21,30 @@ export const EnhancedOverview: React.FC<EnhancedOverviewProps> = ({ data }) => {
         const totalSeats = data.electionAreas.length;
         const totalCandidates = data.candidates.length;
         
-        // Calculate winners by party
+        // Calculate winners by party - USE partyStats instead of seatAnalysis
         const winnersByParty: Record<number, number> = {};
-        seatAnalysis.all.forEach(seat => {
-            if (!winnersByParty[seat.winner.partyId]) {
-                winnersByParty[seat.winner.partyId] = 0;
-            }
-            winnersByParty[seat.winner.partyId]++;
+        
+        // Use data.partyStats for accurate seat counts
+        data.partyStats.forEach(ps => {
+            winnersByParty[ps.id] = ps.areaSeats || 0;
+        });
+
+        console.log('🔍 EnhancedOverview - Party Stats:', {
+            totalParties: data.partyStats.length,
+            pheuThai: data.partyStats.find(p => p.name.includes('เพื่อไทย')),
+            winnersByParty
         });
 
         // Top 3 parties
         const topParties = Object.entries(winnersByParty)
             .map(([partyId, seats]) => {
                 const party = data.parties.find(p => p.id === parseInt(partyId));
+                const partyStats = data.partyStats.find(ps => ps.id === parseInt(partyId));
                 return {
                     partyId: parseInt(partyId),
                     partyName: party?.name || 'Unknown',
                     partyColor: party?.color || '#ccc',
-                    seats
+                    seats: partyStats?.areaSeats || seats // Use partyStats.areaSeats for accuracy
                 };
             })
             .sort((a, b) => b.seats - a.seats)
