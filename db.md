@@ -103,8 +103,20 @@
     *   `candidate_no`: เบอร์ผู้สมัคร
     *   `list_order`: ลำดับบัญชีรายชื่อ
     *   `score`: คะแนนที่ได้ (**สำคัญมากใช้วิเคราะห์ผล**)
-    *   `is_winner`: ชนะหรือไม่
-    *   `status`: สถานะ (ปกติ, ใบแดง, ใบส้ม)
+    *   `is_winner`: ชนะหรือไม่ (`TRUE` = ได้เป็น, `FALSE` = สอบตก, `NULL` = รอผล/ยังไม่ประกาศ)
+    *   `status`: สถานะของผู้สมัคร
+    *   *Enum Values*:
+        *   `NORMAL`: ปกติ
+        *   `ORANGE_CARD`: **ใบส้ม** (ระงับสิทธิชั่วคราว 1 ปี - ทุจริตแต่ไม่ชัดว่าจงใจหรือไม่ / ยังไม่ประกาศผล)
+        *   `RED_CARD`: **ใบแดง** (เพิกถอนสิทธิเลือกตั้ง - ทุจริตชัดเจน / ศาลสั่งหลังประกาศผลแล้ว)
+        *   `BLACK_CARD`: **ใบดำ** (เพิกถอนสิทธิรับสมัครตลอดชีพ - ทุจริตร้ายแรง)
+
+    > [!IMPORTANT]
+    > **Constraints & Data Integrity**:
+    > *   **Party List Unique Rank**: ในการเลือกตั้งหนึ่งครั้ง (`election_id`), พรรคหนึ่ง (`party_id`) ต้องไม่มีลำดับบัญชีรายชื่อ (`list_order`) ซ้ำกัน
+    >     *   `UNIQUE (election_id, party_id, list_order) WHERE candidate_type = 'PARTY_LIST'`
+    > *   **Constituency Candidate No**: ในเขตเลือกตั้งหนึ่ง (`constituency_id`) ของปีนั้น ต้องไม่มีเบอร์ผู้สมัคร (`candidate_no`) ซ้ำกัน
+    >     *   `UNIQUE (election_id, constituency_id, candidate_no) WHERE candidate_type = 'CONSTITUENCY'`
 
 ---
 
