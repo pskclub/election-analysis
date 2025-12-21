@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
-import { TrendingUp, TrendingDown, Users, Trophy, Activity, Target, MapPin, Percent, Award } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { Users, Trophy, Activity, Target, Percent, Award } from 'lucide-react';
 import { AppData } from './types';
 import { fNum, fPercent, analyzeSeatsByCategory } from './utils';
 
@@ -44,6 +44,7 @@ export const EnhancedOverview: React.FC<EnhancedOverviewProps> = ({ data }) => {
                     partyId: parseInt(partyId),
                     partyName: party?.name || 'Unknown',
                     partyColor: party?.color || '#ccc',
+                    partyLogo: party?.logo_url, // Add logo
                     seats: partyStats?.areaSeats || seats // Use partyStats.areaSeats for accuracy
                 };
             })
@@ -73,6 +74,7 @@ export const EnhancedOverview: React.FC<EnhancedOverviewProps> = ({ data }) => {
             name: p.name,
             seats: p.totalSeat,
             color: p.color,
+            logo: p.logo_url, // Add logo
             areaSeats: p.areaSeats || 0,
             partyListSeats: p.partyListSeats || 0
         }));
@@ -171,7 +173,11 @@ export const EnhancedOverview: React.FC<EnhancedOverviewProps> = ({ data }) => {
                         <div className="relative">
                             <div className="flex items-center justify-between mb-3">
                                 <div className="flex items-center gap-2">
-                                    <Award size={20} style={{ color: party.partyColor }} />
+                                    {party.partyLogo ? (
+                                        <img src={party.partyLogo} alt={party.partyName} className="w-8 h-8 rounded-full bg-white object-contain p-0.5" />
+                                    ) : (
+                                        <Award size={20} style={{ color: party.partyColor }} />
+                                    )}
                                     <span className="text-xs font-bold text-gray-500">อันดับ {index + 1}</span>
                                 </div>
                                 <div 
@@ -261,10 +267,14 @@ export const EnhancedOverview: React.FC<EnhancedOverviewProps> = ({ data }) => {
                                     <td className="px-6 py-4 font-bold text-gray-600">#{index + 1}</td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2">
-                                            <div 
-                                                className="w-3 h-3 rounded-full"
-                                                style={{ backgroundColor: party.color }}
-                                            />
+                                            {party.logo ? (
+                                                <img src={party.logo} alt={party.name} className="w-6 h-6 object-contain" />
+                                            ) : (
+                                                <div 
+                                                    className="w-3 h-3 rounded-full"
+                                                    style={{ backgroundColor: party.color }}
+                                                />
+                                            )}
                                             <span className="font-medium text-gray-900">{party.name}</span>
                                         </div>
                                     </td>

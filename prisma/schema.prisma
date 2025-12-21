@@ -116,6 +116,7 @@ model Person {
   gender                   String?
   education                Json?
   ex_occupation            String?
+  image_url                String?
   candidate_participations CandidateParticipation[]
   political_relationships  PoliticalRelationship[]
   user_favorites           UserFavorite[]

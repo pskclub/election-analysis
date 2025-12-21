@@ -2,9 +2,9 @@
 
 import React, { useMemo, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
-import { MapPin, TrendingUp, Users, Trophy, Target, Award, Zap } from 'lucide-react';
+import { MapPin, Users, Trophy, Target, Award } from 'lucide-react';
 import { AppData } from './types';
-import { fNum, fPercent, analyzeSeatsByCategory, analyzeProvinces } from './utils';
+import { fNum, fPercent, analyzeSeatsByCategory } from './utils';
 
 interface EnhancedRegionalAnalysisProps {
     data: AppData;
@@ -13,7 +13,7 @@ interface EnhancedRegionalAnalysisProps {
 export const EnhancedRegionalAnalysis: React.FC<EnhancedRegionalAnalysisProps> = ({ data }) => {
     const [selectedRegionId, setSelectedRegionId] = useState<number | null>(null);
 
-    const provinceAnalysis = useMemo(() => analyzeProvinces(data), [data]);
+    // const provinceAnalysis = useMemo(() => analyzeProvinces(data), [data]);
     const seatAnalysis = useMemo(() => analyzeSeatsByCategory(data), [data]);
 
     const regionStats = useMemo(() => {
@@ -59,6 +59,7 @@ export const EnhancedRegionalAnalysis: React.FC<EnhancedRegionalAnalysisProps> =
                         partyId: parseInt(partyId),
                         partyName: party?.name || 'Unknown',
                         partyColor: party?.color || '#ccc',
+                        partyLogo: party?.logo_url,
                         seats,
                         votes: partyVotes[parseInt(partyId)] || 0
                     };
@@ -257,7 +258,11 @@ export const EnhancedRegionalAnalysis: React.FC<EnhancedRegionalAnalysisProps> =
                                     style={{ borderColor: party.partyColor }}
                                 >
                                     <div className="flex items-center justify-between mb-3">
-                                        <Award size={18} style={{ color: party.partyColor }} />
+                                        {party.partyLogo ? (
+                                            <img src={party.partyLogo} alt={party.partyName} className="w-8 h-8 object-contain" />
+                                        ) : (
+                                            <Award size={18} style={{ color: party.partyColor }} />
+                                        )}
                                         <span className="text-xs font-bold text-gray-500">อันดับ {index + 1}</span>
                                     </div>
                                     <h4 className="font-bold text-gray-900 mb-2">{party.partyName}</h4>

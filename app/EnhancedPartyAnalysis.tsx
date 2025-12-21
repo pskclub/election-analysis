@@ -167,7 +167,18 @@ export const EnhancedPartyAnalysis: React.FC<EnhancedPartyAnalysisProps> = ({ da
                     >
                         <div className="flex items-start justify-between mb-4">
                             <div>
-                                <h2 className="text-2xl font-bold text-gray-900 mb-2">{partyStats.party?.name}</h2>
+                                <div className="flex items-center gap-3 mb-2">
+                                    {partyStats.party?.logo_url && (
+                                        <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shrink-0 bg-white p-1">
+                                            <img 
+                                                src={partyStats.party.logo_url} 
+                                                alt={partyStats.party.name} 
+                                                className="w-full h-full object-contain"
+                                            />
+                                        </div>
+                                    )}
+                                    <h2 className="text-2xl font-bold text-gray-900 m-0">{partyStats.party?.name}</h2>
+                                </div>
                                 <div className="flex items-center gap-4 text-sm text-gray-600">
                                     <span className="flex items-center gap-1">
                                         <Users size={14} />
@@ -353,7 +364,18 @@ export const EnhancedPartyAnalysis: React.FC<EnhancedPartyAnalysisProps> = ({ da
                                     {partyStats.topCandidates.map((c, index) => (
                                         <tr key={c.id} className="hover:bg-gray-50">
                                             <td className="px-6 py-3 font-bold text-gray-600">#{index + 1}</td>
-                                            <td className="px-6 py-3 font-medium text-gray-900">{c.fullName}</td>
+                                            <td className="px-6 py-3 font-medium text-gray-900">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-full bg-gray-100 overflow-hidden shrink-0 border border-gray-200">
+                                                        {c.image_url ? (
+                                                            <img src={c.image_url} alt={c.fullName} className="w-full h-full object-cover" />
+                                                        ) : (
+                                                            <Users size={16} className="w-full h-full p-1.5 text-gray-400" />
+                                                        )}
+                                                    </div>
+                                                    {c.fullName}
+                                                </div>
+                                            </td>
                                             <td className="px-6 py-3 text-gray-600">
                                                 <div>{c.provinceName}</div>
                                                 <div className="text-xs text-gray-400">{c.areaName}</div>

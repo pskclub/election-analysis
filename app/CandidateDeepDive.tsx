@@ -83,6 +83,13 @@ export const CandidateDeepDive: React.FC<CandidateDeepDiveProps> = ({ data }) =>
                                 }`}
                             >
                                 <div className="flex items-start justify-between gap-2">
+                                    <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-100 shrink-0 border border-gray-200">
+                                        {candidate.image_url ? (
+                                            <img src={candidate.image_url} alt={candidate.fullName} className="w-full h-full object-cover" />
+                                        ) : (
+                                            <User className="w-full h-full p-2 text-gray-400" />
+                                        )}
+                                    </div>
                                     <div className="flex-1 min-w-0">
                                         <div className="font-medium text-gray-900 truncate flex items-center gap-2">
                                             {candidate.fullName}
@@ -122,24 +129,36 @@ export const CandidateDeepDive: React.FC<CandidateDeepDiveProps> = ({ data }) =>
                                     style={{ backgroundColor: selectedCandidate.partyColor }}
                                 />
                                 <div className="p-6">
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                                {selectedCandidate.fullName}
-                                                {selectedCandidate.isWinner && (
-                                                    <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full font-medium flex items-center gap-1">
-                                                        <Trophy size={14} />
-                                                        ชนะเลือกตั้ง
-                                                    </span>
-                                                )}
-                                            </h2>
-                                            <p className="text-gray-600 mt-1">{selectedCandidate.partyName}</p>
+                                    <div className="flex items-start gap-6 mb-4">
+                                        <div className="w-24 h-24 rounded-full bg-gray-100 border-4 border-white shadow-md overflow-hidden shrink-0">
+                                            {selectedCandidate.image_url ? (
+                                                <img src={selectedCandidate.image_url} alt={selectedCandidate.fullName} className="w-full h-full object-cover" />
+                                            ) : (
+                                                <User className="w-full h-full p-4 text-gray-300" />
+                                            )}
                                         </div>
-                                        <div className="text-right">
-                                            <div className="text-3xl font-bold text-gray-900">
-                                                {fNum(selectedCandidate.score)}
+
+                                        <div className="flex-1">
+                                            <div className="flex items-start justify-between">
+                                                <div>
+                                                    <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                                                        {selectedCandidate.fullName}
+                                                        {selectedCandidate.isWinner && (
+                                                            <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full font-medium flex items-center gap-1">
+                                                                <Trophy size={14} />
+                                                                ชนะ
+                                                            </span>
+                                                        )}
+                                                    </h2>
+                                                    <p className="text-gray-600 mt-1 text-lg">{selectedCandidate.partyName}</p>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-3xl font-bold text-gray-900">
+                                                        {fNum(selectedCandidate.score)}
+                                                    </div>
+                                                    <div className="text-sm text-gray-500">คะแนนเสียง</div>
+                                                </div>
                                             </div>
-                                            <div className="text-sm text-gray-500">คะแนนเสียง</div>
                                         </div>
                                     </div>
 

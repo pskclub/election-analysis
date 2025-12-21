@@ -153,7 +153,16 @@ export const TargetSeatAnalyzer: React.FC<TargetSeatAnalyzerProps> = ({ data }) 
                                         <div className="text-xs text-gray-500">{seat.areaName}</div>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="font-medium text-gray-900">{seat.winner.fullName}</div>
+                                        <div className="font-medium text-gray-900 flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-full bg-gray-100 overflow-hidden shrink-0 border border-gray-200">
+                                                {seat.winner.image_url ? (
+                                                    <img src={seat.winner.image_url} alt={seat.winner.fullName} className="w-full h-full object-cover" />
+                                                ) : (
+                                                    <div className="w-full h-full bg-gray-200" />
+                                                )}
+                                            </div>
+                                            {seat.winner.fullName}
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4">
                                         <span

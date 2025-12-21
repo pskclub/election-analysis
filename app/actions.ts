@@ -5,7 +5,7 @@ import { AppData, Region, Province, Party, Candidate, PartyStats, ElectionScores
 
 export async function getElectionData(year: number): Promise<AppData | null> {
     console.log(`Fetching data for Year ${year} from DB...`);
-    
+
     // 1. Get Election
     const election = await prisma.election.findFirst({
         where: { year_th: year }
@@ -39,7 +39,18 @@ export async function getElectionData(year: number): Promise<AppData | null> {
         }
     });
 
-    console.log(`Found ${participations.length} participations for ${year}.`);
+    // 3b. Fetch Person Images manually (bypass stale Prisma Client types)
+    // We fetch ALL person images involved in this election to ensure we get them even if generated Types are missing image_url
+    interface PersonImage { id: number; image_url: string | null }
+    const personImages: PersonImage[] = await prisma.$queryRaw`
+        SELECT p.id, p.image_url 
+        FROM people p 
+        JOIN candidate_participations cp ON p.id = cp.person_id 
+        WHERE cp.election_id = ${election.id}
+    `;
+    const personImageMap = new Map<number, string | null>(personImages.map(p => [p.id, p.image_url]));
+
+    console.log(`Fetched ${personImages.length} person images via Raw Query.`);
 
     // 4. Transform to AppData format
 
@@ -57,7 +68,8 @@ export async function getElectionData(year: number): Promise<AppData | null> {
     const parties: Party[] = partiesDb.map(p => ({
         id: p.id,
         name: p.name,
-        color: p.color || '#999'
+        color: p.color || '#999',
+        logo_url: (p as any).logo_url || undefined
     }));
     // const partyMap = new Map<number, Party>(parties.map(p => [p.id, p]));
 
@@ -80,18 +92,20 @@ export async function getElectionData(year: number): Promise<AppData | null> {
             score: p.score,
             partyName: p.party.name,
             partyColor: p.party.color || '#ccc',
-            isIncumbent: false
+            isIncumbent: false,
+            // Try to get from RAW query map first, falling back to prisma object (if it worked)
+            image_url: personImageMap.get(p.person.id) || (p.person as any).image_url || undefined
         };
     });
 
     // 5. Calculate Stats (On the fly aggregation)
-    
+
     // Aggregation for Falback
     const partyScoreAggr: Record<number, number> = {};
     const zoneMaxScore: Record<number, number> = {};
 
     candidates.forEach(c => {
-        if(c.electionAreaId > 0) {
+        if (c.electionAreaId > 0) {
             partyScoreAggr[c.partyId] = (partyScoreAggr[c.partyId] || 0) + c.score;
             const currentMax = zoneMaxScore[c.electionAreaId] || 0;
             if (c.score > currentMax) zoneMaxScore[c.electionAreaId] = c.score;
@@ -107,7 +121,7 @@ export async function getElectionData(year: number): Promise<AppData | null> {
     let partyStats: PartyStats[] = [];
 
     if (partyStatsDb.length > 0) {
-         partyStats = partyStatsDb.map(ps => ({
+        partyStats = partyStatsDb.map(ps => ({
             id: ps.party.id,
             name: ps.party.name,
             color: ps.party.color || '#999',
@@ -115,18 +129,18 @@ export async function getElectionData(year: number): Promise<AppData | null> {
             areaSeats: ps.constituency_seats,
             partyListSeats: ps.partylist_seats,
             totalSeat: ps.total_seats
-        })).sort((a,b) => b.totalSeat - a.totalSeat);
+        })).sort((a, b) => b.totalSeat - a.totalSeat);
     } else {
         // Fallback Logic
-        const totalVotesAll = Object.values(partyScoreAggr).reduce((a,b)=>a+b, 0);
-        const votePerMP = totalVotesAll / 500; 
+        const totalVotesAll = Object.values(partyScoreAggr).reduce((a, b) => a + b, 0);
+        const votePerMP = totalVotesAll / 500;
 
         partyStats = parties.map(p => {
             const score = partyScoreAggr[p.id] || 0;
-            
-            const constituencySeats = candidates.filter(c => 
-                c.partyId === p.id && 
-                c.score > 0 && 
+
+            const constituencySeats = candidates.filter(c =>
+                c.partyId === p.id &&
+                c.score > 0 &&
                 c.score === zoneMaxScore[c.electionAreaId]
             ).length;
 
@@ -148,7 +162,7 @@ export async function getElectionData(year: number): Promise<AppData | null> {
                 partyListSeats: partyListSeats,
                 totalSeat: totalSeats
             }
-        }).filter(ps => ps.totalVotes > 0 || ps.totalSeat > 0).sort((a,b) => b.totalSeat - a.totalSeat);
+        }).filter(ps => ps.totalVotes > 0 || ps.totalSeat > 0).sort((a, b) => b.totalSeat - a.totalSeat);
     }
 
     // Election Scores (Turnout)
@@ -160,13 +174,13 @@ export async function getElectionData(year: number): Promise<AppData | null> {
         // Did we seed stats?
         const stats = a.election_stats[0]; // Filtered by election_id
         const eligible = stats?.total_eligible_voters || 0;
-        const turnoutVotes = stats?.turnout_voters || 0; 
-        
+        const turnoutVotes = stats?.turnout_voters || 0;
+
         // If stats missing, calculate turnout from candidates
-        const calculatedTurnout = candidates.filter(c => c.electionAreaId === a.id).reduce((s,c) => s + c.score, 0);
-        
+        const calculatedTurnout = candidates.filter(c => c.electionAreaId === a.id).reduce((s, c) => s + c.score, 0);
+
         const finalTurnout = turnoutVotes > 0 ? turnoutVotes : calculatedTurnout;
-        
+
         globalTurnoutVotes += finalTurnout;
         globalEligible += eligible; // likely 0 if not seeded
 
@@ -175,7 +189,7 @@ export async function getElectionData(year: number): Promise<AppData | null> {
             percentVoter: eligible > 0 ? (finalTurnout / eligible) * 100 : 0
         };
     });
-    
+
     // Global
     electionScores[0] = {
         totalVotes: globalTurnoutVotes,

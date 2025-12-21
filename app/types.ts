@@ -15,6 +15,7 @@ export interface Party {
     id: number;
     name: string;
     color: string;
+    logo_url?: string;
 }
 
 export interface ElectionArea {
@@ -37,6 +38,7 @@ export interface Candidate {
     previousScore?: number;
     isIncumbent?: boolean;
     yearsInPolitics?: number;
+    image_url?: string;
 }
 
 export interface PartyStats extends Party {
